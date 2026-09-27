@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bzourieh Jleilati Admin</title>
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <header class="admin-header">
+      <div>
+        <p>Store admin</p>
+        <h1>Bzourieh Jleilati</h1>
+      </div>
+      <a href="index.html">Open store</a>
+    </header>
+
+    <main class="admin-shell">
+      <section class="stats" aria-label="Admin overview">
+        <article>
+          <span>Today orders</span>
+          <strong id="ordersCount">0</strong>
+        </article>
+        <article>
+          <span>Total sales</span>
+          <strong id="salesTotal">€0.00</strong>
+        </article>
+        <article>
+          <span>Low stock</span>
+          <strong id="lowStockCount">0</strong>
+        </article>
+        <article>
+          <span>Notifications</span>
+          <strong id="noticeCount">0</strong>
+        </article>
+      </section>
+
+      <section class="admin-grid">
+        <article class="panel orders-panel">
+          <div class="panel-head">
+            <div>
+              <p>New orders</p>
+              <h2>Orders and customers</h2>
+            </div>
+            <button id="seedOrder" type="button">Add sample order</button>
+          </div>
+          <div id="ordersList" class="orders-list"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <div>
+              <p>Inventory</p>
+              <h2>Stock by grams</h2>
+            </div>
+          </div>
+          <div id="stockList" class="stock-list"></div>
+        </article>
+      </section>
+
+      <section class="admin-grid">
+        <article class="panel">
+          <div class="panel-head">
+            <div>
+              <p>Catalog</p>
+              <h2>Add a product</h2>
+            </div>
+          </div>
+          <form id="productForm" class="product-form">
+            <label>Product name<input required name="name" placeholder="Example: Zaatar Extra" /></label>
+            <label>Short description<textarea name="desc" placeholder="Example: Hand-selected thyme blend for breakfast and manakish"></textarea></label>
+            <label>Category
+              <select name="category">
+                <option value="spices">Spices</option>
+                <option value="mixes">Spice blends</option>
+                <option value="flavors">Flavourings</option>
+                <option value="zaatar">Za’atar</option>
+                <option value="herbs">Herbs</option>
+                <option value="attara">Herbal goods</option>
+                <option value="food">Food goods</option>
+                <option value="body-care">Body care</option>
+                <option value="nuts">Nuts</option>
+                <option value="special-offers">Special offers</option>
+              </select>
+            </label>
+            <label>Photo<input name="photo" type="file" accept="image/*" /></label>
+            <div class="price-grid">
+              <label>100 g €<input required name="price100" type="number" min="0" step="0.01" /></label>
+              <label>200 g €<input required name="price200" type="number" min="0" step="0.01" /></label>
+              <label>500 g €<input required name="price500" type="number" min="0" step="0.01" /></label>
+              <label>1 kg €<input required name="price1000" type="number" min="0" step="0.01" /></label>
+            </div>
+            <label>Available stock quantity in grams<input required name="stock" type="number" min="0" step="100" value="10000" /></label>
+            <button type="submit">Add product to website</button>
+          </form>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <div>
+              <p>Catalog</p>
+              <h2>Update product details</h2>
+            </div>
+          </div>
+          <form id="nameForm" class="product-form">
+            <label>Choose product
+              <select id="nameProductSelect" name="productId"></select>
+            </label>
+            <label>New product name<input required name="name" placeholder="Enter the updated product name" /></label>
+            <button type="submit">Save product name</button>
+            <p class="muted" id="nameUpdateNotice">The saved name will appear on the storefront, stock list, and future orders.</p>
+          </form>
+          <hr class="panel-divider" />
+          <form id="descriptionForm" class="product-form">
+            <label>Choose product
+              <select id="descriptionProductSelect" name="productId"></select>
+            </label>
+            <label>New product description<textarea required name="description" placeholder="Enter the updated product description"></textarea></label>
+            <button type="submit">Save description</button>
+            <p class="muted" id="descriptionUpdateNotice">The saved description will replace the product text on the storefront.</p>
+          </form>
+          <hr class="panel-divider" />
+          <form id="imageForm" class="product-form">
+            <label>Choose product
+              <select id="imageProductSelect" name="productId"></select>
+            </label>
+            <label>New photo<input required name="photo" type="file" accept="image/*" /></label>
+            <button type="submit">Save new photo</button>
+            <p class="muted" id="imageUpdateNotice">The selected image will replace that product photo on the storefront.</p>
+          </form>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <div>
+              <p>Customers</p>
+              <h2>Customer list</h2>
+            </div>
+            <button id="downloadCustomers" type="button">Download CSV</button>
+          </div>
+          <div id="customersList" class="customers-list"></div>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <p>Important</p>
+            <h2>Owner notifications</h2>
+          </div>
+        </div>
+        <div id="notifications" class="notifications"></div>
+      </section>
+    </main>
+
+    <script src="admin.js"></script>
+  </body>
+</html>
