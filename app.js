@@ -10312,11 +10312,24 @@ const defaultTestUser = {
   address: "Breite Str. 14, 66115 Saarbrücken, Germany",
 };
 
+const publicConfig = window.JLEILATI_CONFIG || {};
 const integrations = {
-  googleClientId: localStorage.getItem("jleilatiGoogleClientId") || "",
-  stripePublishableKey: localStorage.getItem("jleilatiStripePublishableKey") || "",
+  googleClientId: publicConfig.googleClientId || localStorage.getItem("jleilatiGoogleClientId") || "",
+  stripePublishableKey: publicConfig.stripePublishableKey || localStorage.getItem("jleilatiStripePublishableKey") || "",
   shippingProvider: "DHL",
 };
+
+async function loadLiveIntegrations() {
+  try {
+    const response = await fetch("/api/config", { cache: "no-store" });
+    if (!response.ok) return;
+    const config = await response.json();
+    integrations.googleClientId = config.googleClientId || integrations.googleClientId;
+    integrations.stripePublishableKey = config.stripePublishableKey || integrations.stripePublishableKey;
+  } catch (error) {
+    // Local static preview has no Vercel API route; config.js/localStorage still work there.
+  }
+}
 
 function loadUsers() {
   let users = [];
@@ -11927,4 +11940,4 @@ document.querySelector("#googleAuthButton").addEventListener("click", handleGoog
 document.querySelector("#checkoutForm").addEventListener("submit", handleCheckout);
 document.querySelector("#accountProfileForm").addEventListener("submit", handleAccountSave);
 
-rerender();
+loadLiveIntegrations().finally(rerender);

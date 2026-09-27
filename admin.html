@@ -145,6 +145,23 @@
       <section class="panel">
         <div class="panel-head">
           <div>
+            <p>Integrations</p>
+            <h2>Google and Stripe test keys</h2>
+          </div>
+        </div>
+        <form id="integrationForm" class="product-form">
+          <label>Google Client ID<input name="googleClientId" placeholder="1234567890-xxxx.apps.googleusercontent.com" /></label>
+          <label>Stripe publishable key<input name="stripePublishableKey" placeholder="pk_test_..." /></label>
+          <button type="submit">Save browser test keys</button>
+          <p class="muted" id="integrationNotice">
+            These fields are for testing in this browser. For the public site, add the same public keys to config.js. Never paste Google client secret or Stripe secret key here.
+          </p>
+        </form>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div>
             <p>Important</p>
             <h2>Owner notifications</h2>
           </div>

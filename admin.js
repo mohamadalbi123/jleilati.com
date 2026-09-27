@@ -1116,6 +1116,22 @@ function renderNotifications() {
   document.querySelector("#lowStockCount").textContent = notices.length;
 }
 
+function renderIntegrationSettings() {
+  const form = document.querySelector("#integrationForm");
+  if (!form) return;
+  form.elements.googleClientId.value = localStorage.getItem("jleilatiGoogleClientId") || "";
+  form.elements.stripePublishableKey.value = localStorage.getItem("jleilatiStripePublishableKey") || "";
+}
+
+function saveIntegrationSettings(event) {
+  event.preventDefault();
+  const form = event.target;
+  localStorage.setItem("jleilatiGoogleClientId", form.elements.googleClientId.value.trim());
+  localStorage.setItem("jleilatiStripePublishableKey", form.elements.stripePublishableKey.value.trim());
+  document.querySelector("#integrationNotice").textContent =
+    "Saved for this browser. Open the storefront in this same browser to test Google sign-in and Stripe-ready checkout.";
+}
+
 function renderStats() {
   const current = orders();
   const total = current.reduce((sum, order) => sum + order.totals.total, 0);
@@ -1319,6 +1335,7 @@ function render() {
   renderNameProductOptions();
   renderDescriptionProductOptions();
   renderImageProductOptions();
+  renderIntegrationSettings();
 }
 
 document.querySelector("#seedOrder").addEventListener("click", addSampleOrder);
@@ -1327,4 +1344,5 @@ document.querySelector("#productForm").addEventListener("submit", addProduct);
 document.querySelector("#nameForm").addEventListener("submit", updateProductName);
 document.querySelector("#descriptionForm").addEventListener("submit", updateProductDescription);
 document.querySelector("#imageForm").addEventListener("submit", updateProductImage);
+document.querySelector("#integrationForm").addEventListener("submit", saveIntegrationSettings);
 render();
