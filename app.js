@@ -10397,6 +10397,7 @@ const state = {
   category: "all",
   searchQuery: "",
   activeSearchInput: "headerSearch",
+  authTab: "signin",
   cart: [],
   pendingCheckout: false,
   account: savedAccount || { ...defaultTestUser },
@@ -10696,13 +10697,136 @@ function localize(value) {
   return value[state.lang] || value.en || value.ar;
 }
 
+function hasArabicText(value) {
+  return /[\u0600-\u06ff]/.test(String(value || ""));
+}
+
+const arabicProductBaseNames = {
+  "زنجبيل": { en: "Ginger", de: "Ingwer", fr: "Gingembre" },
+  "فلفل أسود": { en: "Black pepper", de: "Schwarzer Pfeffer", fr: "Poivre noir" },
+  "فلفل أبيض": { en: "White pepper", de: "Weisser Pfeffer", fr: "Poivre blanc" },
+  "خولنجان": { en: "Galangal", de: "Galgant", fr: "Galanga" },
+  "كركم": { en: "Turmeric", de: "Kurkuma", fr: "Curcuma" },
+  "كمون": { en: "Cumin", de: "Kreuzkuemmel", fr: "Cumin" },
+  "يانسون نجمة": { en: "Star anise", de: "Sternanis", fr: "Badiane" },
+  "يانسون": { en: "Anise", de: "Anis", fr: "Anis" },
+  "كزبرة": { en: "Coriander", de: "Koriander", fr: "Coriandre" },
+  "قرنفل": { en: "Cloves", de: "Nelken", fr: "Clous de girofle" },
+  "لومي": { en: "Dried lime", de: "Getrocknete Limette", fr: "Citron noir seche" },
+  "شمرا": { en: "Fennel", de: "Fenchel", fr: "Fenouil" },
+  "بهار حلو": { en: "Allspice", de: "Piment", fr: "Piment de la Jamaique" },
+  "قرفة عيدان": { en: "Cinnamon sticks", de: "Zimtstangen", fr: "Batons de cannelle" },
+  "قرفة سيجار": { en: "Cinnamon sticks", de: "Zimtstangen", fr: "Batons de cannelle" },
+  "قرفة": { en: "Cinnamon", de: "Zimt", fr: "Cannelle" },
+  "سمسم": { en: "Sesame", de: "Sesam", fr: "Sesame" },
+  "حبة البركة": { en: "Nigella seeds", de: "Schwarzkuemmel", fr: "Nigelle" },
+  "سماق": { en: "Sumac", de: "Sumach", fr: "Sumac" },
+  "قشر السماق": { en: "Sumac peel", de: "Sumachschale", fr: "Ecorce de sumac" },
+  "هيل": { en: "Cardamom", de: "Kardamom", fr: "Cardamome" },
+  "ملح صيني": { en: "Chinese salt", de: "Chinasalz", fr: "Sel chinois" },
+  "ثوم": { en: "Garlic", de: "Knoblauch", fr: "Ail" },
+  "بصل": { en: "Onion", de: "Zwiebel", fr: "Oignon" },
+  "محلب": { en: "Mahlab", de: "Mahlab", fr: "Mahlab" },
+  "فليفلة حلوة": { en: "Sweet paprika", de: "Edelsuesser Paprika", fr: "Paprika doux" },
+  "فليفلة وسط": { en: "Medium paprika", de: "Mittelscharfer Paprika", fr: "Paprika moyen" },
+  "شطة": { en: "Chili", de: "Chili", fr: "Piment" },
+  "أوريغانو": { en: "Oregano", de: "Oregano", fr: "Origan" },
+  "حلبة": { en: "Fenugreek", de: "Bockshornklee", fr: "Fenugrec" },
+  "ورق غار": { en: "Bay leaves", de: "Lorbeerblaetter", fr: "Laurier" },
+  "كراوية": { en: "Caraway", de: "Kuemmel", fr: "Carvi" },
+  "رز": { en: "Rice", de: "Reis", fr: "Riz" },
+  "كربونة": { en: "Baking soda", de: "Natron", fr: "Bicarbonate" },
+  "قلي": { en: "Qali", de: "Qali", fr: "Qali" },
+  "نعنع": { en: "Mint", de: "Minze", fr: "Menthe" },
+  "جوزة الطيب": { en: "Nutmeg", de: "Muskatnuss", fr: "Noix de muscade" },
+  "فلفل مشكل": { en: "Mixed pepper", de: "Pfeffermischung", fr: "Poivre melange" },
+  "ماجي أبيض": { en: "White Maggi blend", de: "Weisse Maggi-Mischung", fr: "Melange Maggi blanc" },
+  "ماجي": { en: "Maggi blend", de: "Maggi-Mischung", fr: "Melange Maggi" },
+  "سبع بهارات": { en: "Seven spice blend", de: "Sieben-Gewuerze-Mischung", fr: "Sept epices" },
+  "سمك": { en: "Fish spice blend", de: "Fischgewuerz", fr: "Epices poisson" },
+  "بهارات فروج بالفرن": { en: "Oven chicken spice blend", de: "Backhendl-Gewuerz", fr: "Epices poulet au four" },
+  "همبرغر دجاج": { en: "Chicken burger spice blend", de: "Chickenburger-Gewuerz", fr: "Epices burger poulet" },
+  "همبرغر لحمة": { en: "Beef burger spice blend", de: "Burger-Gewuerz", fr: "Epices burger viande" },
+  "زعتر": { en: "Zaatar", de: "Zaatar", fr: "Zaatar" },
+  "أهليج": { en: "Ahlij", de: "Ahlij", fr: "Ahlij" },
+  "زعفران": { en: "Saffron", de: "Safran", fr: "Safran" },
+};
+
+function translatedArabicProductName(arabicName, product) {
+  const source = String(arabicName || "").trim();
+  const baseKey = Object.keys(arabicProductBaseNames)
+    .sort((a, b) => b.length - a.length)
+    .find((key) => source.includes(key));
+  const category = productCategory(product);
+  const fallback = `${localize(category?.name || { en: "Product" })} ${String(product.id).split("-").pop() || ""}`.trim();
+  if (!baseKey) return fallback;
+
+  let name = arabicProductBaseNames[baseKey][state.lang] || arabicProductBaseNames[baseKey].en;
+  const descriptors = {
+    en: [
+      ["مطحونة", "ground"],
+      ["مطحون", "ground"],
+      ["بودرة", "powder"],
+      ["حب", "whole"],
+      ["عيدان", "sticks"],
+      ["سيجار", "sticks"],
+      ["ني", "raw"],
+      ["محمص", "roasted"],
+      ["أبيض", "white"],
+      ["أسود", "black"],
+      ["أحمر", "red"],
+      ["أصفر", "yellow"],
+    ],
+    de: [
+      ["مطحونة", "gemahlen"],
+      ["مطحون", "gemahlen"],
+      ["بودرة", "Pulver"],
+      ["حب", "ganz"],
+      ["عيدان", "Stangen"],
+      ["سيجار", "Stangen"],
+      ["ني", "roh"],
+      ["محمص", "geroestet"],
+      ["أبيض", "weiss"],
+      ["أسود", "schwarz"],
+      ["أحمر", "rot"],
+      ["أصفر", "gelb"],
+    ],
+    fr: [
+      ["مطحونة", "moulu"],
+      ["مطحون", "moulu"],
+      ["بودرة", "poudre"],
+      ["حب", "entier"],
+      ["عيدان", "batons"],
+      ["سيجار", "batons"],
+      ["ني", "cru"],
+      ["محمص", "grille"],
+      ["أبيض", "blanc"],
+      ["أسود", "noir"],
+      ["أحمر", "rouge"],
+      ["أصفر", "jaune"],
+    ],
+  };
+  const extras = (descriptors[state.lang] || descriptors.en)
+    .filter(([arabicWord]) => source.includes(arabicWord) && !baseKey.includes(arabicWord))
+    .map(([, translated]) => translated);
+  return [name, ...new Set(extras)].join(" ");
+}
+
 function productNameObject(product) {
   const override = productNameOverrides[product.id];
-  if (!override) return product.name;
+  const baseName = { ...product.name };
+  if (!baseName.en || hasArabicText(baseName.en)) baseName.en = translatedArabicProductName(baseName.ar, product);
+  if (!baseName.de || hasArabicText(baseName.de)) baseName.de = translatedArabicProductName(baseName.ar, product);
+  if (!baseName.fr || hasArabicText(baseName.fr)) baseName.fr = translatedArabicProductName(baseName.ar, product);
+  if (!override) return baseName;
   if (typeof override === "string") {
-    return { ar: override, de: override, en: override, fr: override };
+    return hasArabicText(override) ? { ...baseName, ar: override } : { ar: override, de: override, en: override, fr: override };
   }
-  return { ...product.name, ...override };
+  const normalizedOverride = { ...override };
+  ["en", "de", "fr"].forEach((lang) => {
+    if (hasArabicText(normalizedOverride[lang])) delete normalizedOverride[lang];
+  });
+  return { ...baseName, ...normalizedOverride };
 }
 
 function localizedProductName(product) {
@@ -10809,6 +10933,7 @@ function applyLanguage() {
   const languageSelect = document.querySelector("#languageSelect");
   if (languageSelect) languageSelect.value = state.lang;
   renderCountryOptions();
+  updateGoogleAuthLabel();
 }
 
 function renderProductSuggestions() {
@@ -11225,6 +11350,14 @@ function switchAuthTab(tab) {
   document.querySelectorAll("[data-auth-panel]").forEach((panel) => {
     panel.classList.toggle("hidden", panel.dataset.authPanel !== tab);
   });
+  state.authTab = tab;
+  updateGoogleAuthLabel();
+}
+
+function updateGoogleAuthLabel() {
+  const googleLabel = document.querySelector("#googleAuthButton span");
+  if (!googleLabel) return;
+  googleLabel.textContent = t(state.authTab === "signup" ? "signupGoogle" : "loginGoogle");
 }
 
 function openAccountForCheckout(tab) {
@@ -11610,16 +11743,91 @@ function handleAccountSave(event) {
   savedNotice.classList.remove("error");
 }
 
+function decodeJwtPayload(token) {
+  try {
+    const payload = token.split(".")[1];
+    const normalized = payload.replace(/-/g, "+").replace(/_/g, "/");
+    return JSON.parse(decodeURIComponent(atob(normalized).split("").map((char) => `%${(`00${char.charCodeAt(0).toString(16)}`).slice(-2)}`).join("")));
+  } catch (error) {
+    return null;
+  }
+}
+
+function completeGoogleAccount(profile) {
+  const email = String(profile.email || "").trim().toLowerCase();
+  if (!email) return;
+  const allUsers = loadUsers();
+  let user = allUsers.find((item) => item.email === email);
+  if (user) {
+    Object.assign(user, {
+      firstName: user.firstName || profile.given_name || profile.name || "Google",
+      secondName: user.secondName || profile.family_name || "",
+    });
+  } else {
+    user = {
+      ...defaultTestUser,
+      firstName: profile.given_name || profile.name || "Google",
+      secondName: profile.family_name || "",
+      email,
+      password: "",
+      phone: "",
+      address: "",
+      street: "",
+      city: "",
+      postalCode: "",
+      country: "",
+      countryCode: "",
+      provider: "google",
+    };
+    allUsers.push(user);
+  }
+  saveUsers(allUsers);
+  state.account = { ...user };
+  localStorage.setItem("jleilatiCurrentUser", user.email);
+  fillAccountDashboard();
+  setAccountView("dashboard");
+  if (state.pendingCheckout && state.cart.length) {
+    state.pendingCheckout = false;
+    closeAccount();
+    openDrawer();
+    renderCart();
+  }
+}
+
 function handleGoogleAuth() {
-  const message =
-    state.lang === "ar"
-      ? "تسجيل Google جاهز للربط. أضف Google Client ID في الإعدادات ثم نربطه بالخدمة الحقيقية."
-      : state.lang === "de"
-        ? "Google-Anmeldung ist vorbereitet. Füge die Google Client ID hinzu, dann verbinden wir den echten Dienst."
-        : state.lang === "fr"
-          ? "La connexion Google est préparée. Ajoutez le Google Client ID, puis nous connecterons le vrai service."
-          : "Google sign-in is prepared. Add the Google Client ID, then we can connect the real service.";
-  alert(message);
+  if (!integrations.googleClientId) {
+    const message =
+      state.lang === "ar"
+        ? "أضف Google Client ID أولاً لتفعيل تسجيل الدخول عبر Google."
+        : state.lang === "de"
+          ? "Fuege zuerst die Google Client ID hinzu, um Google-Anmeldung zu aktivieren."
+          : state.lang === "fr"
+            ? "Ajoutez d'abord le Google Client ID pour activer Google."
+            : "Add the Google Client ID first to enable Google sign-in.";
+    alert(message);
+    return;
+  }
+  if (!window.google?.accounts?.id) {
+    const message =
+      state.lang === "ar"
+        ? "خدمة Google لم تجهز بعد. انتظر لحظة ثم حاول مرة أخرى."
+        : state.lang === "de"
+          ? "Google ist noch nicht bereit. Bitte kurz warten und erneut versuchen."
+          : state.lang === "fr"
+            ? "Google n'est pas encore pret. Patientez un instant puis reessayez."
+            : "Google is not ready yet. Please wait a moment and try again.";
+    alert(message);
+    return;
+  }
+
+  window.google.accounts.id.initialize({
+    client_id: integrations.googleClientId,
+    callback: (response) => {
+      const profile = decodeJwtPayload(response.credential);
+      if (profile) completeGoogleAccount(profile);
+    },
+  });
+  window.google.accounts.id.prompt();
 }
 
 function rerender() {

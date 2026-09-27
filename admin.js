@@ -962,6 +962,10 @@ function productDescriptionOverrides() {
   return JSON.parse(localStorage.getItem("jleilatiProductDescriptions") || "{}");
 }
 
+function hasArabicText(value) {
+  return /[\u0600-\u06ff]/.test(String(value || ""));
+}
+
 function allProducts() {
   const overrides = productNameOverrides();
   return [...products, ...customProducts()].map((product) => ({
@@ -1233,7 +1237,7 @@ function updateProductName(event) {
     "jleilatiProductNames",
     JSON.stringify({
       ...current,
-      [productId]: { ar: name, de: name, en: name, fr: name },
+      [productId]: hasArabicText(name) ? { ...(current[productId] || {}), ar: name } : { ar: name, de: name, en: name, fr: name },
     })
   );
   form.reset();
@@ -1287,7 +1291,7 @@ async function addProduct(event) {
     featured: 200 + Date.now(),
     image,
     startingStock,
-    name: { ar: name, de: name, en: name, fr: name },
+    name: hasArabicText(name) ? { ar: name } : { ar: name, de: name, en: name, fr: name },
     desc: {
       ar: description,
       de: description,
