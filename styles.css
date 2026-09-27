@@ -972,20 +972,18 @@ body[dir="rtl"] .trust-strip small {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.42rem;
-  min-height: 2rem;
-  padding: 0.34rem 0.7rem;
+  width: 2.35rem;
+  height: 2.35rem;
+  padding: 0;
   border: 1px solid rgba(212, 166, 66, 0.28);
   border-radius: 999px;
   color: #f5ead1;
-  font-size: 0.84rem;
-  font-weight: 900;
   text-decoration: none;
 }
 
 .footer-social svg {
-  width: 1rem;
-  height: 1rem;
+  width: 1.18rem;
+  height: 1.18rem;
   fill: none;
   stroke: currentColor;
   stroke-linecap: round;
