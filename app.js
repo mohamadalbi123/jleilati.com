@@ -11820,7 +11820,7 @@ function handleGoogleAuth() {
     alert(message);
     return;
   }
-  if (!window.google?.accounts?.id) {
+  if (!window.google?.accounts?.oauth2 && !window.google?.accounts?.id) {
     const message =
       state.lang === "ar"
         ? "خدمة Google لم تجهز بعد. انتظر لحظة ثم حاول مرة أخرى."
@@ -11830,6 +11830,47 @@ function handleGoogleAuth() {
             ? "Google n'est pas encore pret. Patientez un instant puis reessayez."
             : "Google is not ready yet. Please wait a moment and try again.";
     alert(message);
+    return;
+  }
+
+  if (window.google?.accounts?.oauth2) {
+    const tokenClient = window.google.accounts.oauth2.initTokenClient({
+      client_id: integrations.googleClientId,
+      scope: "openid email profile",
+      prompt: "select_account",
+      callback: async (response) => {
+        if (!response?.access_token) return;
+        try {
+          const profileResponse = await fetch("https://www.googleapis.com/oauth2/v3/userinfo", {
+            headers: { Authorization: `Bearer ${response.access_token}` },
+          });
+          if (!profileResponse.ok) throw new Error("Google profile request failed");
+          completeGoogleAccount(await profileResponse.json());
+        } catch (error) {
+          const message =
+            state.lang === "ar"
+              ? "تعذر جلب بيانات حساب Google. حاول مرة أخرى."
+              : state.lang === "de"
+                ? "Google-Kontodaten konnten nicht geladen werden. Bitte erneut versuchen."
+                : state.lang === "fr"
+                  ? "Impossible de charger le profil Google. Veuillez reessayer."
+                  : "Could not load the Google profile. Please try again.";
+          alert(message);
+        }
+      },
+      error_callback: () => {
+        const message =
+          state.lang === "ar"
+            ? "لم يكتمل تسجيل الدخول عبر Google. حاول مرة أخرى."
+            : state.lang === "de"
+              ? "Google-Anmeldung wurde nicht abgeschlossen. Bitte erneut versuchen."
+              : state.lang === "fr"
+                ? "La connexion Google n'a pas ete terminee. Veuillez reessayer."
+                : "Google sign-in was not completed. Please try again.";
+        alert(message);
+      },
+    });
+    tokenClient.requestAccessToken();
     return;
   }
 
