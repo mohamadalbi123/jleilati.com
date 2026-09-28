@@ -2537,3 +2537,135 @@ body[dir="ltr"] .footer-shell {
     min-width: 0;
   }
 }
+
+@media (max-width: 900px) {
+  .site-footer {
+    overflow: hidden;
+  }
+
+  .footer-shell,
+  body[dir="rtl"] .footer-shell,
+  body[dir="ltr"] .footer-shell {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-areas:
+      "contact"
+      "service"
+      "shop"
+      "about" !important;
+    gap: 0.85rem !important;
+    width: min(100% - 1.5rem, 32rem);
+    padding: 1.25rem 0;
+    direction: inherit;
+    text-align: start;
+  }
+
+  .footer-contact,
+  .footer-service,
+  .footer-shop,
+  .footer-about-cta,
+  body[dir="rtl"] .footer-contact,
+  body[dir="rtl"] .footer-service,
+  body[dir="rtl"] .footer-shop,
+  body[dir="rtl"] .footer-about-cta {
+    display: grid;
+    justify-self: stretch;
+    justify-items: stretch;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    padding: 0.95rem;
+    border: 1px solid rgba(212, 166, 66, 0.16);
+    border-radius: 0.8rem;
+    background: rgba(255, 250, 242, 0.035);
+    text-align: start;
+  }
+
+  .footer-contact {
+    grid-area: contact;
+  }
+
+  .footer-service {
+    grid-area: service;
+  }
+
+  .footer-shop {
+    grid-area: shop;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.46rem 0.8rem;
+  }
+
+  .footer-shop h3 {
+    grid-column: 1 / -1;
+  }
+
+  .footer-about-cta {
+    grid-area: about;
+  }
+
+  .footer-shell h3 {
+    margin: 0 0 0.28rem;
+    font-size: 1.02rem;
+    line-height: 1.25;
+  }
+
+  .footer-text-link,
+  .footer-contact a,
+  .footer-shop a,
+  .footer-service span,
+  body[dir="rtl"] .footer-contact a,
+  body[dir="rtl"] .footer-shop a,
+  body[dir="rtl"] .footer-service span {
+    justify-content: flex-start;
+    width: auto;
+    max-width: 100%;
+    color: #d6cfbf;
+    font-size: 0.92rem;
+    line-height: 1.42;
+    text-align: start;
+    word-break: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .footer-service span,
+  body[dir="rtl"] .footer-service span {
+    grid-template-columns: 0.75rem minmax(0, 1fr);
+    justify-items: start;
+    width: 100%;
+    text-align: start;
+  }
+
+  body[dir="rtl"] .footer-service span::before {
+    grid-column: 1;
+  }
+
+  .footer-address-block {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .footer-address-link,
+  body[dir="rtl"] .footer-address-link {
+    justify-content: flex-start;
+    text-align: start;
+  }
+
+  .footer-social div {
+    justify-content: flex-start;
+  }
+
+  .footer-brand-row {
+    padding: 1rem;
+  }
+
+  .footer-bottom {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .footer-shop {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
