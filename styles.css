@@ -218,7 +218,22 @@ textarea:focus {
 .cart-button {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
+  justify-content: center;
+  gap: 0.48rem;
+}
+
+.cart-button svg {
+  width: 1.24rem;
+  height: 1.24rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.cart-button span {
+  display: none;
 }
 
 .cart-button strong {
@@ -2039,15 +2054,7 @@ body[dir="ltr"] .footer-shell {
   }
 
   .header-search {
-    grid-column: 1 / -1;
-    width: 100%;
-    min-width: 0;
-  }
-
-  .header-search input {
-    min-height: 2.65rem;
-    border-radius: 999px;
-    font-size: 0.95rem;
+    display: none;
   }
 
   .icon-button {
@@ -2068,11 +2075,68 @@ body[dir="ltr"] .footer-shell {
   }
 
   .cart-button {
+    width: 2.75rem;
+    height: 2.45rem;
     min-height: 2.45rem;
-    padding: 0.5rem 0.68rem;
+    padding: 0;
+    border-radius: 0.72rem;
+  }
+
+  .cart-button svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .cart-button strong {
+    min-width: 1.25rem;
+    height: 1.25rem;
+    font-size: 0.78rem;
   }
 
   .hero {
+    display: grid;
+    min-height: 11rem;
+    place-items: end start;
+    padding: 0.85rem 0.72rem;
+    border-bottom: 1px solid rgba(212, 166, 66, 0.28);
+  }
+
+  .hero img {
+    object-position: center bottom;
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(90deg, rgba(5, 6, 4, 0.86), rgba(5, 6, 4, 0.48)),
+      linear-gradient(180deg, rgba(5, 6, 4, 0.2), rgba(5, 6, 4, 0.68));
+  }
+
+  .hero-content {
+    width: min(100%, 22rem);
+    margin: 0;
+    justify-items: start;
+    text-align: start;
+  }
+
+  body[dir="rtl"] .hero-content {
+    justify-items: end;
+    text-align: end;
+  }
+
+  .hero-logo {
+    display: none;
+  }
+
+  .hero-line {
+    margin: 0;
+    font-size: 1.02rem;
+    line-height: 1.2;
+  }
+
+  .hero-line::before,
+  .hero-line::after,
+  .hero p:not(.eyebrow),
+  .hero-actions {
     display: none;
   }
 
