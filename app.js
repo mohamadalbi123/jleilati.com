@@ -11134,6 +11134,22 @@ function renderProducts() {
   document.querySelector("#productCount").textContent = t("productsFound", { count: list.length });
   grid.innerHTML = "";
 
+  if (!list.length) {
+    grid.innerHTML = `
+      <div class="empty-products">
+        <strong>${state.lang === "ar" ? "لا توجد منتجات هنا حالياً" : state.lang === "de" ? "Hier sind gerade keine Produkte" : state.lang === "fr" ? "Aucun produit ici pour le moment" : "No products here yet"}</strong>
+        <button type="button">${state.lang === "ar" ? "عرض كل المنتجات" : state.lang === "de" ? "Alle Produkte anzeigen" : state.lang === "fr" ? "Voir tous les produits" : "View all products"}</button>
+      </div>
+    `;
+    grid.querySelector("button").addEventListener("click", () => {
+      state.category = "all";
+      clearSearch();
+      renderFilters();
+      renderProducts();
+    });
+    return;
+  }
+
   list.forEach((product) => {
     const node = template.content.firstElementChild.cloneNode(true);
     const category = productCategory(product);
