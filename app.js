@@ -94,8 +94,8 @@ const i18n = {
     cart: "السلة",
     heroEyebrow: "من روح أسواق دمشق إلى بيتك",
     heroTitle: "بزورية جليلاتي",
-    heroTitleTop: "بزورية",
-    heroTitleBottom: "جليلاتي",
+    heroTitleTop: "",
+    heroTitleBottom: "بزورية جليلاتي",
     heroLine: "أفخر أنواع البهارات والتوابل",
     heroText: "نكهات من كل أنحاء العالم ... إلى مطبخك",
     heroCta: "تسوق الآن",
@@ -160,7 +160,7 @@ const i18n = {
     autofillAccount: "استخدم بيانات حسابي",
     guestCheckout: "أو أكمل كضيف",
     stripeReady: "الدفع عبر Stripe",
-    stripeText: "الدفع بالبطاقة جاهز للربط مع Stripe بوضع الاختبار عند إضافة مفاتيح الحساب.",
+    stripeText: "سيتم تحويلك إلى Stripe لإتمام الدفع الآمن بالبطاقة.",
     freeShipping: "الشحن مجاني لهذا الطلب.",
     paidShipping: "أضف منتجات بقيمة €{amount} لتحصل على شحن مجاني. الشحن الآن €10.",
     selectWeight: "اختر الوزن",
@@ -220,7 +220,7 @@ const i18n = {
     dir: "ltr",
     lang: "de",
     topline: "Europaweiter Versand · kostenlos ab 51 € · 10 € darunter",
-    brandName: "Bzourieh Jleilati",
+    brandName: "Jleilati Gewürze",
     brandLine: "Feinste Gewürze und Spezialitäten",
     navHome: "Start",
     navShop: "Shop",
@@ -238,9 +238,9 @@ const i18n = {
     navContact: "Kontakt",
     cart: "Warenkorb",
     heroEyebrow: "Vom Geist der Damaszener Märkte zu dir nach Hause",
-    heroTitle: "Bzourieh Jleilati",
+    heroTitle: "Jleilati Gewürze",
     heroTitleTop: "",
-    heroTitleBottom: "Bzourieh Jleilati",
+    heroTitleBottom: "Jleilati Gewürze",
     heroLine: "Feinste Gewürze und Spezialitäten",
     heroText: "Gewürze, Kräuter, Nüsse und Lebensmittel für syrische und arabische Familien in Europa.",
     heroCta: "Jetzt einkaufen",
@@ -305,7 +305,7 @@ const i18n = {
     autofillAccount: "Kontodaten verwenden",
     guestCheckout: "Oder als Gast fortfahren",
     stripeReady: "Zahlung über Stripe",
-    stripeText: "Kartenzahlung ist für Stripe-Testmodus vorbereitet, sobald die Kontoschlüssel hinterlegt sind.",
+    stripeText: "Sie werden zu Stripe weitergeleitet, um die Kartenzahlung sicher abzuschließen.",
     freeShipping: "Der Versand ist für diese Bestellung kostenlos.",
     paidShipping: "Noch {amount} € bis zum kostenlosen Versand. Versand jetzt 10 €.",
     selectWeight: "Gewicht wählen",
@@ -365,7 +365,7 @@ const i18n = {
     dir: "ltr",
     lang: "en",
     topline: "Shipping across Europe · free over €51 · €10 below €51",
-    brandName: "Bzourieh Jleilati",
+    brandName: "Jleilati Spices",
     brandLine: "Finest spices and specialties",
     navHome: "Home",
     navShop: "Shop",
@@ -383,9 +383,9 @@ const i18n = {
     navContact: "Contact us",
     cart: "Cart",
     heroEyebrow: "From the spirit of Damascus markets to your home",
-    heroTitle: "Bzourieh Jleilati",
+    heroTitle: "Jleilati Spices",
     heroTitleTop: "",
-    heroTitleBottom: "Bzourieh Jleilati",
+    heroTitleBottom: "Jleilati Spices",
     heroLine: "Finest spices and seasonings",
     heroText: "Spices, herbs, nuts, and pantry goods selected for Syrian and Arab families across Europe.",
     heroCta: "Shop now",
@@ -450,7 +450,7 @@ const i18n = {
     autofillAccount: "Use my account details",
     guestCheckout: "Or continue as guest",
     stripeReady: "Stripe payment",
-    stripeText: "Card checkout is prepared for Stripe test mode once the account keys are added.",
+    stripeText: "You will be redirected to Stripe to complete secure card payment.",
     freeShipping: "Shipping is free for this order.",
     paidShipping: "Add €{amount} more for free shipping. Shipping is €10 now.",
     selectWeight: "Select weight",
@@ -510,7 +510,7 @@ const i18n = {
     dir: "ltr",
     lang: "fr",
     topline: "Livraison en Europe · gratuite au-dessus de 51 € · 10 € en dessous",
-    brandName: "Bzourieh Jleilati",
+    brandName: "Épices Jleilati",
     brandLine: "Épices et spécialités fines",
     navHome: "Accueil",
     navShop: "Boutique",
@@ -528,9 +528,9 @@ const i18n = {
     navContact: "Contact",
     cart: "Panier",
     heroEyebrow: "De l'esprit des marchés de Damas à votre maison",
-    heroTitle: "Bzourieh Jleilati",
+    heroTitle: "Épices Jleilati",
     heroTitleTop: "",
-    heroTitleBottom: "Bzourieh Jleilati",
+    heroTitleBottom: "Épices Jleilati",
     heroLine: "Épices et assaisonnements fins",
     heroText: "Épices, herbes, noix et produits d'épicerie choisis pour les familles syriennes et arabes en Europe.",
     heroCta: "Acheter",
@@ -595,7 +595,7 @@ const i18n = {
     autofillAccount: "Utiliser mes informations",
     guestCheckout: "Ou continuer en invité",
     stripeReady: "Paiement Stripe",
-    stripeText: "Le paiement par carte est prêt pour le mode test Stripe lorsque les clés du compte sont ajoutées.",
+    stripeText: "Vous serez redirigé vers Stripe pour finaliser le paiement sécurisé par carte.",
     freeShipping: "La livraison est gratuite pour cette commande.",
     paidShipping: "Ajoutez {amount} € pour la livraison gratuite. Livraison actuelle : 10 €.",
     selectWeight: "Choisir le poids",
@@ -664,9 +664,9 @@ const categories = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "image": "assets/category-spices.png",
     "color": "#d4a642"
@@ -838,9 +838,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -886,9 +886,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -934,9 +934,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -982,9 +982,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -1030,9 +1030,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -1078,9 +1078,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -1126,9 +1126,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -1174,9 +1174,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -1222,9 +1222,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -1270,9 +1270,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -1318,9 +1318,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -1366,9 +1366,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -1414,9 +1414,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -1462,9 +1462,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -1510,9 +1510,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -1558,9 +1558,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -1606,9 +1606,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -1654,9 +1654,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -1702,9 +1702,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -1750,9 +1750,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -1798,9 +1798,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -1846,9 +1846,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -1894,9 +1894,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -1942,9 +1942,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -1990,9 +1990,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -2038,9 +2038,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -2086,9 +2086,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -2134,9 +2134,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -2182,9 +2182,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -2230,9 +2230,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -2278,9 +2278,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -2326,9 +2326,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -2374,9 +2374,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -2422,9 +2422,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -2470,9 +2470,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -2518,9 +2518,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -2566,9 +2566,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -2614,9 +2614,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -2662,9 +2662,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -2710,9 +2710,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -2758,9 +2758,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -2806,9 +2806,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -2854,9 +2854,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -2902,9 +2902,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -2950,9 +2950,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -2998,9 +2998,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -3046,9 +3046,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -3094,9 +3094,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -3142,9 +3142,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -3190,9 +3190,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -3238,9 +3238,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -3286,9 +3286,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -3334,9 +3334,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -3382,9 +3382,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -3430,9 +3430,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -3478,9 +3478,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -3526,9 +3526,9 @@ const products = [
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
-      "en": "Selected spices from the official Bzourieh Jleilati list.",
-      "de": "Ausgewählte Gewürze aus der offiziellen Bzourieh-Jleilati-Liste.",
-      "fr": "Épices sélectionnées de la liste officielle de Bzourieh Jleilati."
+      "en": "Selected spices from the official Jleilati Spices list.",
+      "de": "Ausgewählte Gewürze aus der offiziellen Jleilati-Gewürze-Liste.",
+      "fr": "Épices sélectionnées de la liste officielle d’Épices Jleilati."
     },
     "variants": [
       {
@@ -10227,9 +10227,9 @@ const products = [
     },
     "desc": {
       "ar": "زعفران مختار بعناية من قائمة بزورية جليلاتي.",
-      "en": "Carefully selected saffron from the Bzourieh Jleilati list.",
-      "de": "Sorgfältig ausgewählter Safran aus der Bzourieh-Jleilati-Liste.",
-      "fr": "Safran soigneusement sélectionné de la liste Bzourieh Jleilati."
+      "en": "Carefully selected saffron from the Jleilati Spices list.",
+      "de": "Sorgfältig ausgewählter Safran aus der Jleilati-Gewürze-Liste.",
+      "fr": "Safran soigneusement sélectionné de la liste Épices Jleilati."
     },
     "variants": [
       {
@@ -10560,7 +10560,7 @@ Delivery
 Jleilati ships to European countries made available during checkout. Estimated delivery time is generally 2-4 working days, subject to shipping provider delays and destination.
 
 Payment
-Payments may be processed by third-party payment providers such as Stripe once connected. Jleilati does not directly store complete card details where these are processed securely by an external payment provider.
+Payments are processed by third-party payment providers such as Stripe. Jleilati does not directly store complete card details where these are processed securely by an external payment provider.
 
 Food products, allergens and safety
 Customers are responsible for checking ingredients, allergen information, preparation instructions, storage instructions and other product information before consuming a product.
@@ -10607,7 +10607,7 @@ Orders and contracts
 We process personal data where necessary to receive and fulfil orders, process payments, arrange delivery, communicate with customers and comply with legal obligations.
 
 Payments and delivery
-Online payments may be processed by an external payment provider such as Stripe once connected. Delivery data may be provided to the relevant shipping company.
+Online payments are processed by an external payment provider such as Stripe. Delivery data may be provided to the relevant shipping company.
 
 Hosting and Cloudflare
 Cloudflare may process technical information such as IP addresses, timestamps, requested resources and security-related data to deliver and protect the website.
@@ -11727,6 +11727,7 @@ async function startStripeCheckout(order, lines, shipping) {
       orderId: order.id,
       customer: order.customer,
       shipping,
+      returnPath: `${window.location.pathname}${window.location.search}`,
       lines: lines.map((line) => ({
         name: `${localizedProductName(line.product)} - ${formatWeightLabel(line.variant.label)}`,
         quantity: line.quantity,
@@ -11769,7 +11770,7 @@ async function handleCheckout(event) {
     },
     payment: {
       provider: "stripe",
-      status: integrations.stripePublishableKey ? "ready_for_test_checkout" : "pending_stripe_keys",
+      status: "ready_for_checkout",
     },
     shippingWorkflow: {
       provider: integrations.shippingProvider,
@@ -11794,38 +11795,20 @@ async function handleCheckout(event) {
     })),
   };
 
-  if (integrations.stripePublishableKey) {
-    try {
-      const checkout = await startStripeCheckout(order, lines, shipping);
-      order.status = "pending_payment";
-      order.payment.status = "redirected_to_stripe";
-      order.payment.checkoutSession = checkout.id || "";
-      orders.unshift(order);
-      localStorage.setItem("jleilatiOrders", JSON.stringify(orders.slice(0, 25)));
-      localStorage.setItem("jleilatiPendingOrder", String(order.id));
-      window.location.href = checkout.url;
-      return;
-    } catch (error) {
-      alert(error.message || t("stripeText"));
-      return;
-    }
+  try {
+    const checkout = await startStripeCheckout(order, lines, shipping);
+    order.status = "pending_payment";
+    order.payment.status = "redirected_to_stripe";
+    order.payment.checkoutSession = checkout.id || "";
+    orders.unshift(order);
+    localStorage.setItem("jleilatiOrders", JSON.stringify(orders.slice(0, 25)));
+    localStorage.setItem("jleilatiPendingOrder", String(order.id));
+    window.location.href = checkout.url;
+    return;
+  } catch (error) {
+    alert(error.message || t("stripeText"));
+    return;
   }
-
-  lines.forEach((line) => {
-    const product = products.find((item) => item.id === line.productId);
-    const variant = product.variants.find((item) => item.id === line.variantId);
-    variant.stock = Math.max(0, variant.stock - line.quantity);
-  });
-
-  orders.unshift(order);
-  localStorage.setItem("jleilatiOrders", JSON.stringify(orders.slice(0, 25)));
-  state.cart = [];
-  saveCart();
-  document.querySelector("#confirmation").classList.remove("hidden");
-  document.querySelector("#confirmation").textContent = t("orderDone", { id: orderId });
-  form.reset();
-  renderProducts();
-  renderCart();
 }
 
 function handleAccountSave(event) {
@@ -12004,13 +11987,27 @@ function rerender() {
 function handlePaymentReturn() {
   const params = new URLSearchParams(window.location.search);
   if (params.get("payment") !== "success") return;
+  const paidOrderId = params.get("order") || localStorage.getItem("jleilatiPendingOrder") || "";
+  if (paidOrderId) {
+    const orders = JSON.parse(localStorage.getItem("jleilatiOrders") || "[]").map((order) =>
+      String(order.id) === String(paidOrderId)
+        ? {
+            ...order,
+            status: "in_progress",
+            notification: "Stripe payment received. Prepare order for shipping.",
+            payment: { ...(order.payment || {}), provider: "stripe", status: "paid" },
+          }
+        : order
+    );
+    localStorage.setItem("jleilatiOrders", JSON.stringify(orders));
+  }
   state.cart = [];
   saveCart();
   localStorage.removeItem("jleilatiPendingOrder");
   const confirmation = document.querySelector("#confirmation");
   if (confirmation) {
     confirmation.classList.remove("hidden");
-    confirmation.textContent = t("orderDone", { id: params.get("order") || "Stripe" });
+    confirmation.textContent = t("orderDone", { id: paidOrderId || "Stripe" });
   }
   params.delete("payment");
   params.delete("order");
