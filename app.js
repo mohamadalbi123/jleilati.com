@@ -206,7 +206,7 @@ const i18n = {
     cookiePolicy: "سياسة ملفات تعريف الارتباط",
     privacyPolicy: "سياسة الخصوصية",
     acceptPolicies: "أوافق على الأحكام والشروط وسياسة ملفات تعريف الارتباط.",
-    orderDone: "تم حفظ الطلب #{id}. تم الدفع بنجاح، وسيصل إشعار الطلب للمتجر والعميل.",
+    orderDone: "تم الدفع بنجاح. شكراً لك، تم استلام طلبك #{id} وسنبدأ بتجهيزه.",
     lowStock: "مخزون منخفض",
     inStock: "متوفر",
     stockOut: "نافد",
@@ -351,7 +351,7 @@ const i18n = {
     cookiePolicy: "Cookie-Richtlinie",
     privacyPolicy: "Datenschutzerklärung",
     acceptPolicies: "Ich akzeptiere die Bedingungen und die Cookie-Richtlinie.",
-    orderDone: "Bestellung #{id} gespeichert. Zahlung erfolgreich; Benachrichtigungen gehen an Shop und Kunde.",
+    orderDone: "Zahlung erfolgreich. Vielen Dank, deine Bestellung #{id} ist eingegangen und wird vorbereitet.",
     lowStock: "Niedriger Bestand",
     inStock: "Verfügbar",
     stockOut: "Ausverkauft",
@@ -496,7 +496,7 @@ const i18n = {
     cookiePolicy: "Cookie policy",
     privacyPolicy: "Privacy policy",
     acceptPolicies: "I accept the terms, conditions and cookie policy.",
-    orderDone: "Order #{id} saved. Payment successful; confirmation will go to the store and customer.",
+    orderDone: "Payment successful. Thank you, order #{id} was received and will be prepared.",
     lowStock: "Low stock",
     inStock: "In stock",
     stockOut: "Out of stock",
@@ -641,7 +641,7 @@ const i18n = {
     cookiePolicy: "Politique des cookies",
     privacyPolicy: "Politique de confidentialité",
     acceptPolicies: "J'accepte les conditions et la politique relative aux cookies.",
-    orderDone: "Commande #{id} enregistrée. Paiement réussi; confirmation envoyée à la boutique et au client.",
+    orderDone: "Paiement réussi. Merci, votre commande #{id} a été reçue et sera préparée.",
     lowStock: "Stock faible",
     inStock: "Disponible",
     stockOut: "Épuisé",
@@ -11315,10 +11315,12 @@ function renderCart() {
   const container = document.querySelector("#cartItems");
   const summary = document.querySelector("#cartSummary");
   const checkout = document.querySelector("#checkoutForm");
+  const checkoutMode = document.querySelector("#checkoutMode");
   const authGate = document.querySelector("#cartAuthGate");
   if (!lines.length) {
     summary.classList.add("hidden");
     checkout.classList.add("hidden");
+    if (checkoutMode) checkoutMode.style.display = "";
     authGate.classList.add("hidden");
     container.innerHTML = `
       <div class="empty-cart">
@@ -11339,10 +11341,11 @@ function renderCart() {
   if (loggedInUser) {
     state.account = { ...loggedInUser };
     checkout.classList.remove("hidden");
+    if (checkoutMode) checkoutMode.style.display = "grid";
     authGate.classList.add("hidden");
-    autofillCheckout();
   } else {
     checkout.classList.add("hidden");
+    if (checkoutMode) checkoutMode.style.display = "";
     authGate.classList.remove("hidden");
   }
   container.innerHTML = lines
@@ -11636,6 +11639,10 @@ function autofillCheckout() {
 
 function continueAsGuest() {
   const form = document.querySelector("#checkoutForm");
+  ["firstName", "secondName", "email", "phone", "addressSearch", "street", "city", "postalCode"].forEach((name) => {
+    if (form.elements[name]) form.elements[name].value = "";
+  });
+  if (form.elements.country) form.elements.country.value = "DE";
   form.elements.firstName.focus();
 }
 
@@ -12005,10 +12012,21 @@ function handlePaymentReturn() {
   saveCart();
   localStorage.removeItem("jleilatiPendingOrder");
   const confirmation = document.querySelector("#confirmation");
+  const message = t("orderDone", { id: paidOrderId || "Stripe" });
   if (confirmation) {
     confirmation.classList.remove("hidden");
-    confirmation.textContent = t("orderDone", { id: paidOrderId || "Stripe" });
+    confirmation.textContent = message;
   }
+  const toast = document.createElement("div");
+  toast.className = "payment-success-toast";
+  toast.setAttribute("role", "status");
+  toast.textContent = message;
+  document.body.appendChild(toast);
+  window.setTimeout(() => toast.classList.add("is-visible"), 40);
+  window.setTimeout(() => {
+    toast.classList.remove("is-visible");
+    window.setTimeout(() => toast.remove(), 300);
+  }, 7000);
   params.delete("payment");
   params.delete("order");
   const query = params.toString();

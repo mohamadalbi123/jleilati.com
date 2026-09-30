@@ -240,7 +240,7 @@
           </div>
         </div>
         <form class="checkout" id="checkoutForm">
-          <div class="checkout-mode">
+          <div class="checkout-mode" id="checkoutMode">
             <button type="button" id="autofillButton" data-i18n="autofillAccount">Use my account details</button>
             <button type="button" id="guestButton" class="ghost-action" data-i18n="guestCheckout">Continue as guest</button>
           </div>
@@ -254,10 +254,6 @@
           <input required name="street" data-i18n-placeholder="street" placeholder="Street and building number" />
           <input required name="city" data-i18n-placeholder="city" placeholder="City" />
           <input required name="postalCode" data-i18n-placeholder="postalCode" placeholder="Postal code" />
-          <div class="payment-box">
-            <strong data-i18n="stripeReady">Stripe payment</strong>
-            <p data-i18n="stripeText">You will be redirected to Stripe to complete secure card payment.</p>
-          </div>
           <label class="accept-line checkout-accept"><input required name="acceptPolicies" type="checkbox" /><span data-i18n="acceptPolicies">I accept the terms, conditions and cookie policy.</span></label>
           <button type="submit" data-i18n="payNow">Pay by card and confirm order</button>
         </form>

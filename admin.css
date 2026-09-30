@@ -74,6 +74,11 @@ textarea {
   cursor: pointer;
 }
 
+.admin-table button:disabled {
+  cursor: default;
+  opacity: 0.55;
+}
+
 .admin-shell {
   display: grid;
   gap: 1rem;
@@ -148,16 +153,18 @@ textarea {
 
 .admin-table-wrap {
   width: 100%;
+  max-height: 34rem;
   overflow-x: auto;
+  overflow-y: auto;
+  border: 1px solid rgba(31, 59, 44, 0.12);
+  border-radius: 0.7rem;
+  background: #fffdf8;
 }
 
 .admin-table {
   width: 100%;
   border-collapse: collapse;
   background: #fffdf8;
-  border: 1px solid rgba(31, 59, 44, 0.12);
-  border-radius: 0.7rem;
-  overflow: hidden;
 }
 
 .admin-table th,
@@ -169,6 +176,9 @@ textarea {
 }
 
 .admin-table th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   background: rgba(31, 59, 44, 0.08);
   color: var(--green);
   font-weight: 900;
@@ -182,6 +192,49 @@ textarea {
 
 .admin-table tr:last-child td {
   border-bottom: 0;
+}
+
+.excel-table {
+  min-width: 76rem;
+  font-size: 0.9rem;
+}
+
+.excel-table th,
+.excel-table td {
+  border-right: 1px solid rgba(31, 59, 44, 0.08);
+  padding: 0.55rem 0.65rem;
+}
+
+.excel-table th:last-child,
+.excel-table td:last-child {
+  border-right: 0;
+}
+
+.excel-table tbody tr:nth-child(even) {
+  background: rgba(31, 59, 44, 0.025);
+}
+
+.excel-table tbody tr:hover {
+  background: rgba(212, 166, 66, 0.1);
+}
+
+.excel-table .strong-cell {
+  color: var(--ink);
+  font-weight: 950;
+  white-space: nowrap;
+}
+
+.excel-table .wide-cell {
+  min-width: 13rem;
+  max-width: 22rem;
+}
+
+.orders-table {
+  min-width: 96rem;
+}
+
+.customers-table {
+  min-width: 82rem;
 }
 
 .admin-table input {

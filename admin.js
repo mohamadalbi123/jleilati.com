@@ -1,4 +1,5 @@
 const money = new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" });
+const dateTime = new Intl.DateTimeFormat("de-DE", { dateStyle: "short", timeStyle: "short" });
 
 const categoryMeta = [
   { id: "spices", label: "Spices", prefix: "spices" },
@@ -1020,6 +1021,26 @@ function orders() {
   return JSON.parse(localStorage.getItem("jleilatiOrders") || "[]");
 }
 
+function formatOrderDate(value) {
+  if (!value) return "-";
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? "-" : dateTime.format(date);
+}
+
+function statusLabel(status) {
+  if (status === "sent") return "Sent";
+  if (status === "pending_payment") return "Pending payment";
+  return "In progress";
+}
+
+function paymentLabel(order) {
+  const status = order.payment?.status || "";
+  if (status === "paid") return "Paid";
+  if (status === "redirected_to_stripe") return "Stripe started";
+  if (status === "ready_for_checkout") return "Ready";
+  return status || "-";
+}
+
 function inventory() {
   return { ...Object.fromEntries(allProducts().map((product) => [product.id, 10000])), ...JSON.parse(localStorage.getItem("jleilatiInventory") || "{}") };
 }
@@ -1046,14 +1067,18 @@ function renderOrders() {
   }
   list.innerHTML = `
     <div class="admin-table-wrap">
-      <table class="admin-table">
+      <table class="admin-table excel-table orders-table">
         <thead>
           <tr>
             <th>Order</th>
-            <th>Customer</th>
-            <th>Contact</th>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
             <th>Address</th>
-            <th>Items</th>
+            <th>Products</th>
+            <th>Payment</th>
+            <th>Shipping</th>
             <th>Total</th>
             <th>Status</th>
             <th>Action</th>
@@ -1064,14 +1089,18 @@ function renderOrders() {
             .map(
               (order) => `
                 <tr>
-                  <td>#${order.id}</td>
-                  <td>${order.customer.firstName} ${order.customer.secondName}</td>
-                  <td>${order.customer.email}<br />${order.customer.phone}</td>
-                  <td>${order.customer.address}</td>
-                  <td>${(order.lines || []).map((line) => `${line.productName} · ${line.weight} × ${line.quantity || 1}`).join("<br />")}</td>
-                  <td>${money.format(order.totals.total)}</td>
-                  <td><span class="status-pill ${order.status === "sent" ? "sent" : ""}">${order.status === "sent" ? "Sent" : "In progress"}</span></td>
-                  <td><button type="button" data-sent="${order.id}">Mark sent</button></td>
+                  <td class="strong-cell">#${order.id}</td>
+                  <td>${formatOrderDate(order.createdAt)}</td>
+                  <td>${[order.customer.firstName, order.customer.secondName].filter(Boolean).join(" ") || "-"}</td>
+                  <td>${order.customer.email || "-"}</td>
+                  <td>${order.customer.phone || "-"}</td>
+                  <td class="wide-cell">${order.customer.address || "-"}</td>
+                  <td class="wide-cell">${(order.lines || []).map((line) => `${line.productName} · ${line.weight} × ${line.quantity || 1}`).join("<br />") || "-"}</td>
+                  <td>${paymentLabel(order)}</td>
+                  <td>${order.shippingWorkflow?.labelStatus === "created" ? "Label created" : "Ready for label"}</td>
+                  <td class="strong-cell">${money.format(order.totals?.total || 0)}</td>
+                  <td><span class="status-pill ${order.status === "sent" ? "sent" : ""}">${statusLabel(order.status)}</span></td>
+                  <td><button type="button" data-sent="${order.id}" ${order.status === "sent" ? "disabled" : ""}>Mark sent</button></td>
                 </tr>
               `
             )
@@ -1250,7 +1279,7 @@ function renderCustomers() {
   }
   area.innerHTML = `
     <div class="admin-table-wrap">
-      <table class="admin-table">
+      <table class="admin-table excel-table customers-table">
         <thead>
           <tr>
             <th>Name</th>
@@ -1260,6 +1289,8 @@ function renderCustomers() {
             <th>Orders</th>
             <th>Total purchase</th>
             <th>Last order</th>
+            <th>Last date</th>
+            <th>Last status</th>
           </tr>
         </thead>
         <tbody>
@@ -1267,13 +1298,15 @@ function renderCustomers() {
             .map(
               (customer) => `
                 <tr>
-                  <td>${customer.name}</td>
-                  <td>${customer.email}</td>
-                  <td>${customer.phone}</td>
-                  <td>${customer.address}</td>
+                  <td class="strong-cell">${customer.name || "-"}</td>
+                  <td>${customer.email || "-"}</td>
+                  <td>${customer.phone || "-"}</td>
+                  <td class="wide-cell">${customer.address || "-"}</td>
                   <td>${customer.orderCount}</td>
-                  <td>${money.format(customer.total)}</td>
+                  <td class="strong-cell">${money.format(customer.total)}</td>
                   <td>#${customer.lastOrderId}</td>
+                  <td>${formatOrderDate(customer.lastOrderDate)}</td>
+                  <td>${statusLabel(customer.lastStatus)}</td>
                 </tr>
               `
             )
@@ -1297,12 +1330,14 @@ function customerSummaries() {
       orderCount: 0,
       total: 0,
       lastOrderId: order.id,
+      lastOrderDate: order.createdAt || "",
       lastStatus: order.status || "in_progress",
       products: [],
     };
     existing.orderCount += 1;
     existing.total += Number(order.totals?.total || 0);
     existing.lastOrderId = order.id;
+    existing.lastOrderDate = order.createdAt || existing.lastOrderDate;
     existing.lastStatus = order.status || "in_progress";
     existing.products.push(...(order.lines || []).map((line) => `${line.productName} ${line.weight || ""}`.trim()));
     map.set(key, existing);
@@ -1311,7 +1346,7 @@ function customerSummaries() {
 }
 
 function downloadCustomers() {
-  const rows = [["Name", "Email", "Phone", "Address", "Orders", "Total purchase", "Last order", "Last status", "Products purchased"]];
+  const rows = [["Name", "Email", "Phone", "Address", "Orders", "Total purchase", "Last order", "Last date", "Last status", "Products purchased"]];
   customerSummaries().forEach((customer) => {
     rows.push([
       customer.name,
@@ -1321,6 +1356,7 @@ function downloadCustomers() {
       customer.orderCount,
       customer.total.toFixed(2),
       customer.lastOrderId,
+      formatOrderDate(customer.lastOrderDate),
       customer.lastStatus,
       [...new Set(customer.products)].join("; "),
     ]);
