@@ -85,6 +85,17 @@
         animation: languageFade 12s infinite;
       }
 
+      .coming-soon span {
+        display: block;
+      }
+
+      .coming-soon .status {
+        margin-top: 0.45rem;
+        color: var(--cream);
+        font-size: 0.45em;
+        letter-spacing: 0;
+      }
+
       .coming-soon li:first-child {
         color: var(--gold);
         direction: rtl;
@@ -181,10 +192,10 @@
 
       <main aria-label="Coming soon">
         <ul class="coming-soon">
-          <li lang="ar">بزورية جليلاتي — قريباً</li>
-          <li>Jleilati Spices — Coming Soon</li>
-          <li lang="fr">Épices Jleilati — Bientôt en ligne</li>
-          <li lang="de">Jleilati Gewürze — Bald online</li>
+          <li lang="ar"><span>بزورية جليلاتي</span><span class="status">قريباً</span></li>
+          <li><span>Jleilati Spices</span><span class="status">Coming Soon</span></li>
+          <li lang="fr"><span>Épices Jleilati</span><span class="status">Bientôt en ligne</span></li>
+          <li lang="de"><span>Jleilati Gewürze</span><span class="status">Bald online</span></li>
         </ul>
 
         <nav class="socials" aria-label="Social media">
