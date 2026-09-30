@@ -967,7 +967,7 @@ function customProducts() {
     name: product.name?.en || product.name?.ar || product.name,
     category: product.category,
     variants: product.variants || [],
-    hidden: Boolean(product.hidden),
+    hidden: false,
   }));
 }
 
@@ -1540,7 +1540,7 @@ async function addProduct(event) {
     featured: 200 + Date.now(),
     image,
     startingStock,
-    hidden: !form.elements.published.checked,
+    hidden: false,
     name: hasArabicText(name) ? { ar: name } : { ar: name, de: name, en: name, fr: name },
     desc: {
       ar: description,
@@ -1551,7 +1551,7 @@ async function addProduct(event) {
     variants,
   };
   saveProduct(product);
-  if (product.hidden) {
+  if (!form.elements.published.checked) {
     const hidden = hiddenProducts();
     hidden.add(product.id);
     saveHiddenProducts(hidden);

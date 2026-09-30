@@ -10294,7 +10294,7 @@ const products = [
 ];
 
 const savedProducts = JSON.parse(localStorage.getItem("jleilatiCustomProducts") || "[]");
-savedProducts.forEach((product) => products.push(product));
+savedProducts.forEach((product) => products.push({ ...product, hidden: false }));
 let hiddenProductIds = new Set();
 try {
   hiddenProductIds = new Set(JSON.parse(localStorage.getItem("jleilatiHiddenProducts") || "[]"));
@@ -10304,6 +10304,23 @@ try {
 for (let index = products.length - 1; index >= 0; index -= 1) {
   if (hiddenProductIds.has(products[index].id) || products[index].hidden) products.splice(index, 1);
 }
+const adminInventory = JSON.parse(localStorage.getItem("jleilatiInventory") || "{}");
+products.forEach((product) => {
+  if (!Object.prototype.hasOwnProperty.call(adminInventory, product.id)) return;
+  const gramsAvailable = Math.max(0, Number(adminInventory[product.id]) || 0);
+  const variants = product.variants || [];
+  if (!variants.length) return;
+  if (gramsAvailable <= 0) {
+    variants.forEach((variant) => {
+      variant.stock = 0;
+    });
+    return;
+  }
+  variants.forEach((variant) => {
+    const grams = Math.max(1, Number(variant.grams) || 1);
+    variant.stock = Math.max(0, Math.floor(gramsAvailable / grams));
+  });
+});
 const productImageOverrides = JSON.parse(localStorage.getItem("jleilatiProductImages") || "{}");
 const productNameOverrides = JSON.parse(localStorage.getItem("jleilatiProductNames") || "{}");
 const productDescriptionOverrides = JSON.parse(localStorage.getItem("jleilatiProductDescriptions") || "{}");
@@ -10918,6 +10935,22 @@ function firstAvailableVariant(product) {
   return product.variants.find((variant) => variant.stock > 0) || product.variants[0];
 }
 
+function productHasAvailableStock(product) {
+  return (product.variants || []).some((variant) => Number(variant.stock || 0) > 0);
+}
+
+function visibleCategories() {
+  const availableCategoryIds = new Set(products.filter(productHasAvailableStock).map((product) => product.category));
+  return categories.filter((category) => availableCategoryIds.has(category.id));
+}
+
+function renderCategoryNavigation() {
+  const visibleCategoryIds = new Set(visibleCategories().map((category) => category.id));
+  document.querySelectorAll("[data-nav-category]").forEach((link) => {
+    link.classList.toggle("hidden", !visibleCategoryIds.has(link.dataset.navCategory));
+  });
+}
+
 function getInventory(productId, variantId) {
   const product = products.find((item) => item.id === productId);
   return product?.variants.find((variant) => variant.id === variantId)?.stock || 0;
@@ -11032,6 +11065,7 @@ function renderSearchSuggestions(value) {
   }
 
   const matches = products
+    .filter(productHasAvailableStock)
     .filter((product) => {
       const haystack = productNameSearchText(product);
       return haystack.includes(query);
@@ -11091,7 +11125,7 @@ function clearSearch() {
 
 function renderCategories() {
   const grid = document.querySelector("#categoryGrid");
-  grid.innerHTML = categories
+  grid.innerHTML = visibleCategories()
     .filter((category) => category.home !== false)
     .map(
       (category) => `
@@ -11118,9 +11152,11 @@ function renderCategories() {
 function renderFilters() {
   const filters = document.querySelector("#filters");
   const allLabel = state.lang === "ar" ? "الكل" : state.lang === "de" ? "Alle" : state.lang === "fr" ? "Tous" : "All";
+  const listedCategories = visibleCategories();
+  if (state.category !== "all" && !listedCategories.some((category) => category.id === state.category)) state.category = "all";
   filters.innerHTML = [
     { id: "all", label: allLabel },
-    ...categories.map((category) => ({ id: category.id, label: localize(category.name) })),
+    ...listedCategories.map((category) => ({ id: category.id, label: localize(category.name) })),
   ]
     .map(
       (filter) => `
@@ -11144,7 +11180,8 @@ function renderFilters() {
 function filteredProducts() {
   const search = state.searchQuery.trim().toLowerCase();
   const sort = document.querySelector("#sortSelect").value;
-  let list = search ? [...products] : products.filter((product) => state.category === "all" || product.category === state.category);
+  let list = products.filter(productHasAvailableStock);
+  if (!search) list = list.filter((product) => state.category === "all" || product.category === state.category);
 
   if (search) {
     list = list.filter((product) => {
@@ -11637,15 +11674,6 @@ function autofillCheckout() {
   form.elements.country.value = account.countryCode || countryCodeForName(account.country) || "DE";
 }
 
-function continueAsGuest() {
-  const form = document.querySelector("#checkoutForm");
-  ["firstName", "secondName", "email", "phone", "addressSearch", "street", "city", "postalCode"].forEach((name) => {
-    if (form.elements[name]) form.elements[name].value = "";
-  });
-  if (form.elements.country) form.elements.country.value = "DE";
-  form.elements.firstName.focus();
-}
-
 function applyAddressSuggestion() {
   const form = document.querySelector("#checkoutForm");
   const selected = addressSuggestions.find((address) => address.label === form.elements.addressSearch.value);
@@ -11985,6 +12013,7 @@ function rerender() {
   applyLanguage();
   renderProductSuggestions();
   renderAddressSuggestions();
+  renderCategoryNavigation();
   renderCategories();
   renderFilters();
   renderProducts();
@@ -12114,7 +12143,6 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
   });
 });
 document.querySelector("#autofillButton").addEventListener("click", autofillCheckout);
-document.querySelector("#guestButton").addEventListener("click", continueAsGuest);
 document.querySelector("#addressSearch").addEventListener("change", applyAddressSuggestion);
 document.querySelector("#addressSearch").addEventListener("blur", applyAddressSuggestion);
 document.querySelector("#addressSearch").addEventListener("focus", (event) => renderAddressSuggestions(event.target.form.elements.country.value));
