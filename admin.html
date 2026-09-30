@@ -29,37 +29,37 @@
           <span>Low stock</span>
           <strong id="lowStockCount">0</strong>
         </article>
-        <article>
+        <article id="notificationShortcut" class="clickable-stat" tabindex="0" role="button">
           <span>Notifications</span>
           <strong id="noticeCount">0</strong>
         </article>
       </section>
 
-      <section class="admin-grid">
-        <article class="panel orders-panel">
-          <div class="panel-head">
-            <div>
-              <p>New orders</p>
-              <h2>Orders and customers</h2>
-            </div>
-            <button id="seedOrder" type="button">Add sample order</button>
+      <section class="panel" id="notificationsPanel">
+        <div class="panel-head">
+          <div>
+            <p>Notifications</p>
+            <h2>New orders</h2>
           </div>
-          <div id="ordersList" class="orders-list"></div>
-        </article>
+          <button id="seedOrder" type="button">Add sample order</button>
+        </div>
+        <div id="ordersList" class="orders-list"></div>
+        <hr class="panel-divider" />
+        <div id="notifications" class="notifications"></div>
+      </section>
 
-        <article class="panel">
-          <div class="panel-head">
-            <div>
-              <p>Inventory</p>
-              <h2>Stock by grams</h2>
-            </div>
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <p>Inventory</p>
+            <h2>Products by category</h2>
           </div>
-          <div id="stockList" class="stock-list"></div>
-        </article>
+        </div>
+        <div id="stockList" class="stock-list"></div>
       </section>
 
       <section class="admin-grid">
-        <article class="panel">
+        <article class="panel" id="addProductPanel">
           <div class="panel-head">
             <div>
               <p>Catalog</p>
@@ -152,16 +152,6 @@
           </div>
           <div id="customersList" class="customers-list"></div>
         </article>
-      </section>
-
-      <section class="panel">
-        <div class="panel-head">
-          <div>
-            <p>Important</p>
-            <h2>Owner notifications</h2>
-          </div>
-        </div>
-        <div id="notifications" class="notifications"></div>
       </section>
     </main>
 

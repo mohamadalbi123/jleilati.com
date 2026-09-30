@@ -1,5 +1,18 @@
 const money = new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" });
 
+const categoryMeta = [
+  { id: "spices", label: "Spices", prefix: "spices" },
+  { id: "mixes", label: "Spice blends", prefix: "mixes" },
+  { id: "flavors", label: "Flavourings", prefix: "flavors" },
+  { id: "zaatar", label: "Za'atar", prefix: "zaatar" },
+  { id: "herbs", label: "Herbs", prefix: "herbs" },
+  { id: "attara", label: "Herbal goods", prefix: "attara" },
+  { id: "food", label: "Food goods", prefix: "food" },
+  { id: "body-care", label: "Body care", prefix: "body-care" },
+  { id: "nuts", label: "Nuts", prefix: "nuts" },
+  { id: "special-offers", label: "Special offers", prefix: "special-offers" },
+];
+
 const products = [
   [
     "spices-001",
@@ -981,11 +994,21 @@ function hasArabicText(value) {
   return /[\u0600-\u06ff]/.test(String(value || ""));
 }
 
+function categoryForProduct(product) {
+  if (product.category) return product.category;
+  return categoryMeta.find((category) => product.id.startsWith(`${category.prefix}-`))?.id || "spices";
+}
+
+function categoryLabel(categoryId) {
+  return categoryMeta.find((category) => category.id === categoryId)?.label || categoryId;
+}
+
 function allProducts() {
   const overrides = productNameOverrides();
   const hidden = hiddenProducts();
   return [...products, ...customProducts()].map((product) => ({
     ...product,
+    category: categoryForProduct(product),
     name: overrides[product.id]?.ar || overrides[product.id]?.en || overrides[product.id] || product.name,
     hidden: hidden.has(product.id) || Boolean(product.hidden),
   }));
@@ -1041,33 +1064,45 @@ function renderOrders() {
   const list = document.querySelector("#ordersList");
   const current = orders();
   if (!current.length) {
-    list.innerHTML = '<div class="order-card"><h3>No orders yet</h3><p>New paid orders will appear here after checkout.</p></div>';
+    list.innerHTML = '<div class="notice"><p>No orders yet. New paid orders will appear here after checkout.</p></div>';
     return;
   }
-  list.innerHTML = current
-    .map(
-      (order) => `
-      <article class="order-card">
-        <div class="order-meta">
-          <div>
-            <h3>#${order.id} · ${order.customer.firstName} ${order.customer.secondName}</h3>
-            <small>${order.customer.email} · ${order.customer.phone}</small>
-          </div>
-          <strong>${money.format(order.totals.total)}</strong>
-        </div>
-        <div class="status-row">
-          <span class="status-pill ${order.status === "sent" ? "sent" : ""}">${order.status === "sent" ? "تم الشحن" : "In progress"}</span>
-          <button type="button" data-sent="${order.id}">Order sent · تم الشحن</button>
-        </div>
-        <p>${order.customer.address}</p>
-        <ul class="line-list">
-          ${order.lines.map((line) => `<li>${line.productName} · ${line.weight} · ${line.grams} g sold</li>`).join("")}
-        </ul>
-        <small>${order.notification}</small>
-      </article>
-    `
-    )
-    .join("");
+  list.innerHTML = `
+    <div class="admin-table-wrap">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Order</th>
+            <th>Customer</th>
+            <th>Contact</th>
+            <th>Address</th>
+            <th>Items</th>
+            <th>Total</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${current
+            .map(
+              (order) => `
+                <tr>
+                  <td>#${order.id}</td>
+                  <td>${order.customer.firstName} ${order.customer.secondName}</td>
+                  <td>${order.customer.email}<br />${order.customer.phone}</td>
+                  <td>${order.customer.address}</td>
+                  <td>${(order.lines || []).map((line) => `${line.productName} · ${line.weight} × ${line.quantity || 1}`).join("<br />")}</td>
+                  <td>${money.format(order.totals.total)}</td>
+                  <td><span class="status-pill ${order.status === "sent" ? "sent" : ""}">${order.status === "sent" ? "Sent" : "In progress"}</span></td>
+                  <td><button type="button" data-sent="${order.id}">Mark sent</button></td>
+                </tr>
+              `
+            )
+            .join("")}
+        </tbody>
+      </table>
+    </div>
+  `;
 
   list.querySelectorAll("[data-sent]").forEach((button) => {
     button.addEventListener("click", () => {
@@ -1082,35 +1117,70 @@ function renderStock() {
   const list = document.querySelector("#stockList");
   const stock = inventory();
   const sold = soldByProduct();
-  list.innerHTML = allProducts()
-    .map((product) => {
-      const start = stock[product.id] || 0;
-      const used = sold[product.id] || 0;
-      const remaining = Math.max(0, start - used);
-      const percent = start ? Math.max(0, Math.min(100, (remaining / start) * 100)) : 0;
-      const low = remaining <= 1000;
-      return `
-        <article class="stock-row ${low ? "low" : ""}">
-          <div>
-            <p><strong>${product.name}</strong></p>
-            <small>${remaining} g available · ${used} g sold · start ${start} g</small>
-            <div class="stock-bar"><span style="width:${percent}%"></span></div>
+  const grouped = categoryMeta.map((category) => ({
+    ...category,
+    products: allProducts().filter((product) => product.category === category.id),
+  }));
+  list.innerHTML = grouped
+    .map(
+      (category, index) => `
+        <details class="category-stock" ${index === 0 ? "open" : ""}>
+          <summary>
+            <span>${category.label}</span>
+            <small>${category.products.length} products</small>
+          </summary>
+          <div class="category-tools">
+            <button type="button" data-add-category="${category.id}">Add new product under ${category.label}</button>
           </div>
-          <div class="stock-actions">
-            <input type="number" min="100" step="100" value="1000" aria-label="grams to adjust for ${product.name}" />
-            <button type="button" data-add="${product.id}">Add g</button>
-            <button type="button" data-remove="${product.id}">Reduce g</button>
-            <button type="button" data-set="${product.id}">Set start</button>
+          <div class="admin-table-wrap">
+            <table class="admin-table inventory-table">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Visible</th>
+                  <th>Available</th>
+                  <th>Sold</th>
+                  <th>Start</th>
+                  <th>Adjust grams</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${category.products
+                  .map((product) => {
+                    const start = stock[product.id] || 0;
+                    const used = sold[product.id] || 0;
+                    const remaining = Math.max(0, start - used);
+                    const low = remaining <= 1000;
+                    return `
+                      <tr class="${low ? "low-row" : ""}">
+                        <td><strong>${product.name}</strong></td>
+                        <td>${product.hidden ? "Hidden" : "Published"}</td>
+                        <td>${remaining} g</td>
+                        <td>${used} g</td>
+                        <td>${start} g</td>
+                        <td><input type="number" min="100" step="100" value="1000" aria-label="grams to adjust for ${product.name}" /></td>
+                        <td class="stock-actions">
+                          <button type="button" data-add="${product.id}">Add</button>
+                          <button type="button" data-remove="${product.id}">Reduce</button>
+                          <button type="button" data-set="${product.id}">Set</button>
+                        </td>
+                      </tr>
+                    `;
+                  })
+                  .join("")}
+              </tbody>
+            </table>
           </div>
-        </article>
-      `;
-    })
+        </details>
+      `
+    )
     .join("");
 
   list.querySelectorAll("[data-add]").forEach((button) => {
     button.addEventListener("click", () => {
       const next = inventory();
-      const value = Number(button.previousElementSibling.value || 0);
+      const value = Number(button.closest("tr").querySelector("input").value || 0);
       next[button.dataset.add] = (next[button.dataset.add] || 0) + value;
       saveInventory(next);
       render();
@@ -1119,7 +1189,7 @@ function renderStock() {
   list.querySelectorAll("[data-remove]").forEach((button) => {
     button.addEventListener("click", () => {
       const next = inventory();
-      const value = Number(button.parentElement.querySelector("input").value || 0);
+      const value = Number(button.closest("tr").querySelector("input").value || 0);
       next[button.dataset.remove] = Math.max(0, (next[button.dataset.remove] || 0) - value);
       saveInventory(next);
       render();
@@ -1128,10 +1198,18 @@ function renderStock() {
   list.querySelectorAll("[data-set]").forEach((button) => {
     button.addEventListener("click", () => {
       const next = inventory();
-      const value = Number(button.parentElement.querySelector("input").value || 0);
+      const value = Number(button.closest("tr").querySelector("input").value || 0);
       next[button.dataset.set] = Math.max(0, value);
       saveInventory(next);
       render();
+    });
+  });
+  list.querySelectorAll("[data-add-category]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const form = document.querySelector("#productForm");
+      form.elements.category.value = button.dataset.addCategory;
+      document.querySelector("#addProductPanel").scrollIntoView({ behavior: "smooth", block: "start" });
+      form.elements.name.focus();
     });
   });
 }
@@ -1140,6 +1218,7 @@ function renderNotifications() {
   const area = document.querySelector("#notifications");
   const stock = inventory();
   const sold = soldByProduct();
+  const newOrders = orders().filter((order) => order.status !== "sent").length;
   const notices = allProducts()
     .map((product) => {
       const remaining = Math.max(0, (stock[product.id] || 0) - (sold[product.id] || 0));
@@ -1149,7 +1228,7 @@ function renderNotifications() {
     })
     .filter(Boolean);
   area.innerHTML = notices.join("") || '<div class="notice"><p>No urgent stock notifications.</p></div>';
-  document.querySelector("#noticeCount").textContent = notices.length;
+  document.querySelector("#noticeCount").textContent = notices.length + newOrders;
   document.querySelector("#lowStockCount").textContent = notices.length;
 }
 
@@ -1196,19 +1275,40 @@ function renderCustomers() {
     area.innerHTML = '<div class="notice"><p>No customers yet.</p></div>';
     return;
   }
-  area.innerHTML = customers
-    .map(
-      (customer) => `
-      <div class="customer-row">
-        <strong>${customer.name}</strong>
-        <span>${customer.email}</span>
-        <span>${customer.phone}</span>
-        <span>${customer.address}</span>
-        <small>${customer.orderCount} orders · ${money.format(customer.total)} · Last #${customer.lastOrderId}</small>
-      </div>
-    `
-    )
-    .join("");
+  area.innerHTML = `
+    <div class="admin-table-wrap">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Orders</th>
+            <th>Total purchase</th>
+            <th>Last order</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${customers
+            .map(
+              (customer) => `
+                <tr>
+                  <td>${customer.name}</td>
+                  <td>${customer.email}</td>
+                  <td>${customer.phone}</td>
+                  <td>${customer.address}</td>
+                  <td>${customer.orderCount}</td>
+                  <td>${money.format(customer.total)}</td>
+                  <td>#${customer.lastOrderId}</td>
+                </tr>
+              `
+            )
+            .join("")}
+        </tbody>
+      </table>
+    </div>
+  `;
 }
 
 function customerSummaries() {
@@ -1465,6 +1565,14 @@ function render() {
 }
 
 document.querySelector("#seedOrder").addEventListener("click", addSampleOrder);
+document.querySelector("#notificationShortcut").addEventListener("click", () => {
+  document.querySelector("#notificationsPanel").scrollIntoView({ behavior: "smooth", block: "start" });
+});
+document.querySelector("#notificationShortcut").addEventListener("keydown", (event) => {
+  if (event.key !== "Enter" && event.key !== " ") return;
+  event.preventDefault();
+  document.querySelector("#notificationsPanel").scrollIntoView({ behavior: "smooth", block: "start" });
+});
 document.querySelector("#downloadCustomers").addEventListener("click", downloadCustomers);
 document.querySelector("#addVariantRow").addEventListener("click", () => addVariantRow());
 document.querySelector("#productForm").addEventListener("submit", addProduct);

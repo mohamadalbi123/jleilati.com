@@ -55,6 +55,8 @@ textarea {
 .admin-header a,
 .panel-head button,
 .stock-row button,
+.admin-table button,
+.category-tools button,
 .catalog-row button,
 .product-form button,
 .status-row button {
@@ -94,6 +96,15 @@ textarea {
   padding: 1rem;
 }
 
+.clickable-stat {
+  cursor: pointer;
+}
+
+.clickable-stat:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
 .stats span {
   color: var(--muted);
   font-weight: 800;
@@ -129,6 +140,86 @@ textarea {
 .product-form {
   display: grid;
   gap: 0.75rem;
+}
+
+.admin-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fffdf8;
+  border: 1px solid rgba(31, 59, 44, 0.12);
+  border-radius: 0.7rem;
+  overflow: hidden;
+}
+
+.admin-table th,
+.admin-table td {
+  border-bottom: 1px solid rgba(31, 59, 44, 0.1);
+  padding: 0.7rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.admin-table th {
+  background: rgba(31, 59, 44, 0.08);
+  color: var(--green);
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.admin-table td {
+  color: var(--ink);
+  font-weight: 750;
+}
+
+.admin-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.admin-table input {
+  width: 7rem;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  padding: 0.45rem;
+}
+
+.inventory-table .stock-actions {
+  min-width: 14rem;
+}
+
+.low-row td:first-child {
+  color: var(--burgundy);
+}
+
+.category-stock {
+  border: 1px solid rgba(31, 59, 44, 0.12);
+  border-radius: 0.7rem;
+  background: #fffdf8;
+  overflow: hidden;
+}
+
+.category-stock summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  cursor: pointer;
+  color: var(--green);
+  font-weight: 950;
+}
+
+.category-stock summary small {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.category-tools {
+  padding: 0 1rem 0.85rem;
 }
 
 .order-card,
