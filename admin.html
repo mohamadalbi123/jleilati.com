@@ -84,14 +84,16 @@
               </select>
             </label>
             <label>Photo<input name="photo" type="file" accept="image/*" /></label>
-            <div class="price-grid">
-              <label>100 g €<input required name="price100" type="number" min="0" step="0.01" /></label>
-              <label>200 g €<input required name="price200" type="number" min="0" step="0.01" /></label>
-              <label>500 g €<input required name="price500" type="number" min="0" step="0.01" /></label>
-              <label>1 kg €<input required name="price1000" type="number" min="0" step="0.01" /></label>
+            <div class="variant-editor">
+              <div class="variant-editor-head">
+                <strong>Selling units</strong>
+                <button id="addVariantRow" type="button">Add unit</button>
+              </div>
+              <div id="variantRows" class="variant-rows"></div>
             </div>
-            <label>Available stock quantity in grams<input required name="stock" type="number" min="0" step="100" value="10000" /></label>
-            <button type="submit">Add product to website</button>
+            <label class="inline-check"><input name="published" type="checkbox" checked /> Publish to customers now</label>
+            <button type="submit">Create product</button>
+            <p class="muted">Add only the sizes you really sell, for example 100 g and 200 g, or 200 g, 500 g and 1 kg.</p>
           </form>
         </article>
 
@@ -133,6 +135,16 @@
         <article class="panel">
           <div class="panel-head">
             <div>
+              <p>Catalog</p>
+              <h2>Publish or hide products</h2>
+            </div>
+          </div>
+          <div id="catalogVisibilityList" class="catalog-list"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <div>
               <p>Customers</p>
               <h2>Customer list</h2>
             </div>
@@ -140,23 +152,6 @@
           </div>
           <div id="customersList" class="customers-list"></div>
         </article>
-      </section>
-
-      <section class="panel">
-        <div class="panel-head">
-          <div>
-            <p>Integrations</p>
-            <h2>Google and Stripe test keys</h2>
-          </div>
-        </div>
-        <form id="integrationForm" class="product-form">
-          <label>Google Client ID<input name="googleClientId" placeholder="1234567890-xxxx.apps.googleusercontent.com" /></label>
-          <label>Stripe publishable key<input name="stripePublishableKey" placeholder="pk_test_..." /></label>
-          <button type="submit">Save browser test keys</button>
-          <p class="muted" id="integrationNotice">
-            These fields are for testing in this browser. For the public site, add the same public keys to config.js. Never paste Google client secret or Stripe secret key here.
-          </p>
-        </form>
       </section>
 
       <section class="panel">

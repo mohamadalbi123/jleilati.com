@@ -950,7 +950,10 @@ const products = [
 function customProducts() {
   return JSON.parse(localStorage.getItem("jleilatiCustomProducts") || "[]").map((product) => ({
     id: product.id,
-    name: product.name.en || product.name.ar,
+    name: product.name?.en || product.name?.ar || product.name,
+    category: product.category,
+    variants: product.variants || [],
+    hidden: Boolean(product.hidden),
   }));
 }
 
@@ -962,15 +965,29 @@ function productDescriptionOverrides() {
   return JSON.parse(localStorage.getItem("jleilatiProductDescriptions") || "{}");
 }
 
+function hiddenProducts() {
+  try {
+    return new Set(JSON.parse(localStorage.getItem("jleilatiHiddenProducts") || "[]"));
+  } catch (error) {
+    return new Set();
+  }
+}
+
+function saveHiddenProducts(next) {
+  localStorage.setItem("jleilatiHiddenProducts", JSON.stringify([...next]));
+}
+
 function hasArabicText(value) {
   return /[\u0600-\u06ff]/.test(String(value || ""));
 }
 
 function allProducts() {
   const overrides = productNameOverrides();
+  const hidden = hiddenProducts();
   return [...products, ...customProducts()].map((product) => ({
     ...product,
     name: overrides[product.id]?.ar || overrides[product.id]?.en || overrides[product.id] || product.name,
+    hidden: hidden.has(product.id) || Boolean(product.hidden),
   }));
 }
 
@@ -1080,8 +1097,10 @@ function renderStock() {
             <div class="stock-bar"><span style="width:${percent}%"></span></div>
           </div>
           <div class="stock-actions">
-            <input type="number" min="100" step="100" value="1000" aria-label="grams to add for ${product.name}" />
+            <input type="number" min="100" step="100" value="1000" aria-label="grams to adjust for ${product.name}" />
             <button type="button" data-add="${product.id}">Add g</button>
+            <button type="button" data-remove="${product.id}">Reduce g</button>
+            <button type="button" data-set="${product.id}">Set start</button>
           </div>
         </article>
       `;
@@ -1093,6 +1112,24 @@ function renderStock() {
       const next = inventory();
       const value = Number(button.previousElementSibling.value || 0);
       next[button.dataset.add] = (next[button.dataset.add] || 0) + value;
+      saveInventory(next);
+      render();
+    });
+  });
+  list.querySelectorAll("[data-remove]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const next = inventory();
+      const value = Number(button.parentElement.querySelector("input").value || 0);
+      next[button.dataset.remove] = Math.max(0, (next[button.dataset.remove] || 0) - value);
+      saveInventory(next);
+      render();
+    });
+  });
+  list.querySelectorAll("[data-set]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const next = inventory();
+      const value = Number(button.parentElement.querySelector("input").value || 0);
+      next[button.dataset.set] = Math.max(0, value);
       saveInventory(next);
       render();
     });
@@ -1116,20 +1153,33 @@ function renderNotifications() {
   document.querySelector("#lowStockCount").textContent = notices.length;
 }
 
-function renderIntegrationSettings() {
-  const form = document.querySelector("#integrationForm");
-  if (!form) return;
-  form.elements.googleClientId.value = localStorage.getItem("jleilatiGoogleClientId") || "";
-  form.elements.stripePublishableKey.value = localStorage.getItem("jleilatiStripePublishableKey") || "";
-}
+function renderCatalogVisibility() {
+  const list = document.querySelector("#catalogVisibilityList");
+  if (!list) return;
+  list.innerHTML = allProducts()
+    .map(
+      (product) => `
+        <article class="catalog-row ${product.hidden ? "is-hidden" : ""}">
+          <div>
+            <strong>${product.name}</strong>
+            <small>${product.hidden ? "Hidden from customers" : "Published on website"}</small>
+          </div>
+          <button type="button" data-toggle-product="${product.id}">${product.hidden ? "Publish" : "Hide"}</button>
+        </article>
+      `
+    )
+    .join("");
 
-function saveIntegrationSettings(event) {
-  event.preventDefault();
-  const form = event.target;
-  localStorage.setItem("jleilatiGoogleClientId", form.elements.googleClientId.value.trim());
-  localStorage.setItem("jleilatiStripePublishableKey", form.elements.stripePublishableKey.value.trim());
-  document.querySelector("#integrationNotice").textContent =
-    "Saved for this browser. Open the storefront in this same browser to test Google sign-in and Stripe-ready checkout.";
+  list.querySelectorAll("[data-toggle-product]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const hidden = hiddenProducts();
+      const productId = button.dataset.toggleProduct;
+      if (hidden.has(productId)) hidden.delete(productId);
+      else hidden.add(productId);
+      saveHiddenProducts(hidden);
+      render();
+    });
+  });
 }
 
 function renderStats() {
@@ -1140,7 +1190,7 @@ function renderStats() {
 }
 
 function renderCustomers() {
-  const customers = orders().map((order) => ({ ...order.customer, orderId: order.id, status: order.status || "in_progress", total: order.totals.total }));
+  const customers = customerSummaries();
   const area = document.querySelector("#customersList");
   if (!customers.length) {
     area.innerHTML = '<div class="notice"><p>No customers yet.</p></div>';
@@ -1150,29 +1200,56 @@ function renderCustomers() {
     .map(
       (customer) => `
       <div class="customer-row">
-        <strong>${customer.firstName} ${customer.secondName}</strong>
+        <strong>${customer.name}</strong>
         <span>${customer.email}</span>
         <span>${customer.phone}</span>
         <span>${customer.address}</span>
-        <small>#${customer.orderId} · ${customer.status === "sent" ? "تم الشحن" : "In progress"} · ${money.format(customer.total)}</small>
+        <small>${customer.orderCount} orders · ${money.format(customer.total)} · Last #${customer.lastOrderId}</small>
       </div>
     `
     )
     .join("");
 }
 
-function downloadCustomers() {
-  const rows = [["Order ID", "First name", "Second name", "Email", "Phone", "Address", "Status", "Total"]];
+function customerSummaries() {
+  const map = new Map();
   orders().forEach((order) => {
+    const email = String(order.customer.email || "").trim().toLowerCase();
+    const key = email || `${order.customer.phone}-${order.customer.firstName}`;
+    const existing = map.get(key) || {
+      name: [order.customer.firstName, order.customer.secondName].filter(Boolean).join(" "),
+      email: order.customer.email || "",
+      phone: order.customer.phone || "",
+      address: order.customer.address || "",
+      orderCount: 0,
+      total: 0,
+      lastOrderId: order.id,
+      lastStatus: order.status || "in_progress",
+      products: [],
+    };
+    existing.orderCount += 1;
+    existing.total += Number(order.totals?.total || 0);
+    existing.lastOrderId = order.id;
+    existing.lastStatus = order.status || "in_progress";
+    existing.products.push(...(order.lines || []).map((line) => `${line.productName} ${line.weight || ""}`.trim()));
+    map.set(key, existing);
+  });
+  return [...map.values()];
+}
+
+function downloadCustomers() {
+  const rows = [["Name", "Email", "Phone", "Address", "Orders", "Total purchase", "Last order", "Last status", "Products purchased"]];
+  customerSummaries().forEach((customer) => {
     rows.push([
-      order.id,
-      order.customer.firstName,
-      order.customer.secondName,
-      order.customer.email,
-      order.customer.phone,
-      order.customer.address,
-      order.status === "sent" ? "sent" : "in_progress",
-      order.totals.total,
+      customer.name,
+      customer.email,
+      customer.phone,
+      customer.address,
+      customer.orderCount,
+      customer.total.toFixed(2),
+      customer.lastOrderId,
+      customer.lastStatus,
+      [...new Set(customer.products)].join("; "),
     ]);
   });
   const csv = rows.map((row) => row.map((cell) => `"${String(cell || "").replaceAll('"', '""')}"`).join(",")).join("\n");
@@ -1292,14 +1369,61 @@ async function updateProductImage(event) {
   document.querySelector("#imageUpdateNotice").textContent = "Photo saved. Refresh the shop page to see the updated product image.";
 }
 
+function addVariantRow(values = {}) {
+  const rows = document.querySelector("#variantRows");
+  const row = document.createElement("div");
+  row.className = "variant-row";
+  row.innerHTML = `
+    <label>Label<input name="variantLabel" required value="${values.label || ""}" placeholder="100 g" /></label>
+    <label>Grams<input name="variantGrams" required type="number" min="1" step="1" value="${values.grams || ""}" placeholder="100" /></label>
+    <label>Price €<input name="variantPrice" required type="number" min="0" step="0.01" value="${values.price || ""}" placeholder="3.00" /></label>
+    <label>Qty<input name="variantStock" required type="number" min="0" step="1" value="${values.stock ?? ""}" placeholder="100" /></label>
+    <button type="button" data-remove-variant>Remove</button>
+  `;
+  row.querySelector("[data-remove-variant]").addEventListener("click", () => {
+    if (rows.querySelectorAll(".variant-row").length > 1) row.remove();
+  });
+  rows.appendChild(row);
+}
+
+function resetVariantRows() {
+  const rows = document.querySelector("#variantRows");
+  rows.innerHTML = "";
+  addVariantRow({ label: "100 g", grams: 100, price: "", stock: 100 });
+  addVariantRow({ label: "200 g", grams: 200, price: "", stock: 50 });
+}
+
+function productVariantsFromForm() {
+  return [...document.querySelectorAll("#variantRows .variant-row")]
+    .map((row) => {
+      const label = row.querySelector('[name="variantLabel"]').value.trim();
+      const grams = Number(row.querySelector('[name="variantGrams"]').value || 0);
+      const price = Number(row.querySelector('[name="variantPrice"]').value || 0);
+      const stock = Number(row.querySelector('[name="variantStock"]').value || 0);
+      return {
+        id: `${grams}g-${Math.random().toString(36).slice(2, 7)}`,
+        label,
+        grams,
+        price,
+        stock,
+      };
+    })
+    .filter((variant) => variant.label && variant.grams > 0 && variant.price >= 0 && variant.stock >= 0);
+}
+
 async function addProduct(event) {
   event.preventDefault();
   const form = event.target;
   const name = form.elements.name.value.trim();
   const description = form.elements.desc.value.trim() || "Product added from the admin dashboard.";
+  const variants = productVariantsFromForm();
+  if (!variants.length) {
+    alert("Add at least one selling unit before creating the product.");
+    return;
+  }
   const id = `custom-${Date.now()}`;
   const image = await fileToDataUrl(form.elements.photo.files[0]);
-  const startingStock = Number(form.elements.stock.value || 0);
+  const startingStock = variants.reduce((sum, variant) => sum + variant.grams * variant.stock, 0);
   const product = {
     id,
     category: form.elements.category.value,
@@ -1307,6 +1431,7 @@ async function addProduct(event) {
     featured: 200 + Date.now(),
     image,
     startingStock,
+    hidden: !form.elements.published.checked,
     name: hasArabicText(name) ? { ar: name } : { ar: name, de: name, en: name, fr: name },
     desc: {
       ar: description,
@@ -1314,15 +1439,16 @@ async function addProduct(event) {
       en: description,
       fr: description,
     },
-    variants: [
-      { id: "100g", label: "100 g", grams: 100, price: Number(form.elements.price100.value), stock: Math.floor(startingStock / 100) },
-      { id: "200g", label: "200 g", grams: 200, price: Number(form.elements.price200.value), stock: Math.floor(startingStock / 200) },
-      { id: "500g", label: "500 g", grams: 500, price: Number(form.elements.price500.value), stock: Math.floor(startingStock / 500) },
-      { id: "1kg", label: "1 kg", grams: 1000, price: Number(form.elements.price1000.value), stock: Math.floor(startingStock / 1000) },
-    ],
+    variants,
   };
   saveProduct(product);
+  if (product.hidden) {
+    const hidden = hiddenProducts();
+    hidden.add(product.id);
+    saveHiddenProducts(hidden);
+  }
   form.reset();
+  resetVariantRows();
   render();
 }
 
@@ -1332,17 +1458,18 @@ function render() {
   renderStock();
   renderNotifications();
   renderCustomers();
+  renderCatalogVisibility();
   renderNameProductOptions();
   renderDescriptionProductOptions();
   renderImageProductOptions();
-  renderIntegrationSettings();
 }
 
 document.querySelector("#seedOrder").addEventListener("click", addSampleOrder);
 document.querySelector("#downloadCustomers").addEventListener("click", downloadCustomers);
+document.querySelector("#addVariantRow").addEventListener("click", () => addVariantRow());
 document.querySelector("#productForm").addEventListener("submit", addProduct);
 document.querySelector("#nameForm").addEventListener("submit", updateProductName);
 document.querySelector("#descriptionForm").addEventListener("submit", updateProductDescription);
 document.querySelector("#imageForm").addEventListener("submit", updateProductImage);
-document.querySelector("#integrationForm").addEventListener("submit", saveIntegrationSettings);
+resetVariantRows();
 render();

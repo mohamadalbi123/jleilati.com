@@ -55,6 +55,7 @@ textarea {
 .admin-header a,
 .panel-head button,
 .stock-row button,
+.catalog-row button,
 .product-form button,
 .status-row button {
   border: 0;
@@ -221,6 +222,7 @@ textarea {
 
 .stock-actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.4rem;
   align-items: center;
 }
@@ -249,6 +251,86 @@ textarea {
 .product-form textarea {
   min-height: 6rem;
   resize: vertical;
+}
+
+.inline-check {
+  display: flex !important;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.inline-check input {
+  width: auto;
+}
+
+.variant-editor {
+  display: grid;
+  gap: 0.65rem;
+  border: 1px solid rgba(31, 59, 44, 0.12);
+  border-radius: 0.7rem;
+  background: #fffdf8;
+  padding: 0.75rem;
+}
+
+.variant-editor-head,
+.variant-row,
+.catalog-row {
+  display: grid;
+  gap: 0.65rem;
+  align-items: end;
+}
+
+.variant-editor-head {
+  grid-template-columns: 1fr auto;
+}
+
+.variant-rows {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.variant-row {
+  grid-template-columns: 1.2fr 0.8fr 0.8fr 0.7fr auto;
+}
+
+.variant-row button[data-remove-variant] {
+  background: rgba(143, 38, 52, 0.12);
+  color: var(--burgundy);
+}
+
+.catalog-list {
+  display: grid;
+  gap: 0.65rem;
+  max-height: 32rem;
+  overflow: auto;
+  padding-right: 0.25rem;
+}
+
+.catalog-row {
+  grid-template-columns: 1fr auto;
+  border: 1px solid rgba(31, 59, 44, 0.12);
+  border-radius: 0.7rem;
+  background: #fffdf8;
+  padding: 0.85rem;
+}
+
+.catalog-row small {
+  display: block;
+  margin-top: 0.2rem;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.catalog-row.is-hidden {
+  background: rgba(143, 38, 52, 0.06);
+}
+
+.catalog-row.is-hidden button,
+.stock-row button[data-remove],
+.stock-row button[data-set] {
+  background: var(--green);
+  color: #fff8e8;
 }
 
 .panel-divider {
@@ -294,6 +376,7 @@ textarea {
   .stock-row,
   .order-meta,
   .customer-row,
+  .variant-row,
   .price-grid {
     grid-template-columns: 1fr;
   }

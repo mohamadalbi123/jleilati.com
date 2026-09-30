@@ -10295,6 +10295,15 @@ const products = [
 
 const savedProducts = JSON.parse(localStorage.getItem("jleilatiCustomProducts") || "[]");
 savedProducts.forEach((product) => products.push(product));
+let hiddenProductIds = new Set();
+try {
+  hiddenProductIds = new Set(JSON.parse(localStorage.getItem("jleilatiHiddenProducts") || "[]"));
+} catch (error) {
+  hiddenProductIds = new Set();
+}
+for (let index = products.length - 1; index >= 0; index -= 1) {
+  if (hiddenProductIds.has(products[index].id) || products[index].hidden) products.splice(index, 1);
+}
 const productImageOverrides = JSON.parse(localStorage.getItem("jleilatiProductImages") || "{}");
 const productNameOverrides = JSON.parse(localStorage.getItem("jleilatiProductNames") || "{}");
 const productDescriptionOverrides = JSON.parse(localStorage.getItem("jleilatiProductDescriptions") || "{}");
