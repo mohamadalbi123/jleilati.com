@@ -1037,29 +1037,6 @@ function soldByProduct() {
   }, {});
 }
 
-function addSampleOrder() {
-  const sample = {
-    id: Math.floor(1200 + Math.random() * 700),
-    createdAt: new Date().toISOString(),
-    status: "in_progress",
-    notification: "Admin email queued: saeedjleilati@gmail.com",
-    customer: {
-      firstName: "Mariam",
-      secondName: "Haddad",
-      email: "mariam@example.com",
-      phone: "+49 176 63719858",
-      address: "Breite Str. 14, 66115 Saarbrücken, Germany",
-    },
-    totals: { subtotal: 35.2, shipping: 0, total: 35.2 },
-    lines: [
-      { productId: "seven-spice", productName: "Seven Spice Blend", weight: "500 g", grams: 500, quantity: 1, lineTotal: 12.02 },
-      { productId: "spice-04", productName: "فلفل اسود حب", weight: "200 g", grams: 200, quantity: 1, lineTotal: 6 },
-    ],
-  };
-  localStorage.setItem("jleilatiOrders", JSON.stringify([sample, ...orders()].slice(0, 25)));
-  render();
-}
-
 function renderOrders() {
   const list = document.querySelector("#ordersList");
   const current = orders();
@@ -1123,15 +1100,12 @@ function renderStock() {
   }));
   list.innerHTML = grouped
     .map(
-      (category, index) => `
-        <details class="category-stock" ${index === 0 ? "open" : ""}>
+      (category) => `
+        <details class="category-stock">
           <summary>
             <span>${category.label}</span>
             <small>${category.products.length} products</small>
           </summary>
-          <div class="category-tools">
-            <button type="button" data-add-category="${category.id}">Add new product under ${category.label}</button>
-          </div>
           <div class="admin-table-wrap">
             <table class="admin-table inventory-table">
               <thead>
@@ -1164,6 +1138,8 @@ function renderStock() {
                           <button type="button" data-add="${product.id}">Add</button>
                           <button type="button" data-remove="${product.id}">Reduce</button>
                           <button type="button" data-set="${product.id}">Set</button>
+                          <button type="button" data-edit-product="${product.id}">Edit</button>
+                          <button type="button" data-toggle-product="${product.id}">${product.hidden ? "Publish" : "Hide"}</button>
                         </td>
                       </tr>
                     `;
@@ -1171,6 +1147,9 @@ function renderStock() {
                   .join("")}
               </tbody>
             </table>
+          </div>
+          <div class="category-tools">
+            <button type="button" data-add-category="${category.id}">Add new product under ${category.label}</button>
           </div>
         </details>
       `
@@ -1207,9 +1186,32 @@ function renderStock() {
   list.querySelectorAll("[data-add-category]").forEach((button) => {
     button.addEventListener("click", () => {
       const form = document.querySelector("#productForm");
+      document.querySelector("#addProductPanel").classList.remove("hidden");
+      document.querySelector("#editProductPanel").classList.add("hidden");
       form.elements.category.value = button.dataset.addCategory;
       document.querySelector("#addProductPanel").scrollIntoView({ behavior: "smooth", block: "start" });
       form.elements.name.focus();
+    });
+  });
+  list.querySelectorAll("[data-edit-product]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const productId = button.dataset.editProduct;
+      document.querySelector("#editProductPanel").classList.remove("hidden");
+      document.querySelector("#addProductPanel").classList.add("hidden");
+      document.querySelector("#nameProductSelect").value = productId;
+      document.querySelector("#descriptionProductSelect").value = productId;
+      document.querySelector("#imageProductSelect").value = productId;
+      document.querySelector("#editProductPanel").scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+  list.querySelectorAll("[data-toggle-product]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const hidden = hiddenProducts();
+      const productId = button.dataset.toggleProduct;
+      if (hidden.has(productId)) hidden.delete(productId);
+      else hidden.add(productId);
+      saveHiddenProducts(hidden);
+      render();
     });
   });
 }
@@ -1230,35 +1232,6 @@ function renderNotifications() {
   area.innerHTML = notices.join("") || '<div class="notice"><p>No urgent stock notifications.</p></div>';
   document.querySelector("#noticeCount").textContent = notices.length + newOrders;
   document.querySelector("#lowStockCount").textContent = notices.length;
-}
-
-function renderCatalogVisibility() {
-  const list = document.querySelector("#catalogVisibilityList");
-  if (!list) return;
-  list.innerHTML = allProducts()
-    .map(
-      (product) => `
-        <article class="catalog-row ${product.hidden ? "is-hidden" : ""}">
-          <div>
-            <strong>${product.name}</strong>
-            <small>${product.hidden ? "Hidden from customers" : "Published on website"}</small>
-          </div>
-          <button type="button" data-toggle-product="${product.id}">${product.hidden ? "Publish" : "Hide"}</button>
-        </article>
-      `
-    )
-    .join("");
-
-  list.querySelectorAll("[data-toggle-product]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const hidden = hiddenProducts();
-      const productId = button.dataset.toggleProduct;
-      if (hidden.has(productId)) hidden.delete(productId);
-      else hidden.add(productId);
-      saveHiddenProducts(hidden);
-      render();
-    });
-  });
 }
 
 function renderStats() {
@@ -1434,7 +1407,7 @@ function updateProductName(event) {
     })
   );
   form.reset();
-  document.querySelector("#nameUpdateNotice").textContent = "Product name saved. Refresh the shop page to see the updated name.";
+  document.querySelector("#nameUpdateNotice").textContent = "Saved.";
   render();
 }
 
@@ -1453,7 +1426,7 @@ function updateProductDescription(event) {
     })
   );
   form.reset();
-  document.querySelector("#descriptionUpdateNotice").textContent = "Description saved. Refresh the shop page to see the updated text.";
+  document.querySelector("#descriptionUpdateNotice").textContent = "Saved.";
   render();
 }
 
@@ -1466,7 +1439,7 @@ async function updateProductImage(event) {
   localStorage.setItem("jleilatiProductImages", JSON.stringify({ ...current, [productId]: image }));
   form.reset();
   renderImageProductOptions();
-  document.querySelector("#imageUpdateNotice").textContent = "Photo saved. Refresh the shop page to see the updated product image.";
+  document.querySelector("#imageUpdateNotice").textContent = "Saved.";
 }
 
 function addVariantRow(values = {}) {
@@ -1558,13 +1531,11 @@ function render() {
   renderStock();
   renderNotifications();
   renderCustomers();
-  renderCatalogVisibility();
   renderNameProductOptions();
   renderDescriptionProductOptions();
   renderImageProductOptions();
 }
 
-document.querySelector("#seedOrder").addEventListener("click", addSampleOrder);
 document.querySelector("#notificationShortcut").addEventListener("click", () => {
   document.querySelector("#notificationsPanel").scrollIntoView({ behavior: "smooth", block: "start" });
 });

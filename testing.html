@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bzourieh Jleilati | Syrian Spices and Fine Foods</title>
+    <meta
+      name="description"
+      content="Bzourieh Jleilati is a Syrian family spice and fine food store in Germany, shipping across Europe."
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23050604'/%3E%3Cpath d='M17 41c9-19 21-19 30 0H17Z' fill='%23d4a642'/%3E%3Cpath d='M17 44h30' stroke='%23f5ead1' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='27' r='5' fill='%238f2634'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+  </head>
+  <body>
+    <div class="topline" data-i18n="topline">Shipping across Europe · free over €51 · €10 below €51</div>
+
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Bzourieh Jleilati">
+        <span>
+          <strong data-i18n="brandName">Bzourieh Jleilati</strong>
+          <small data-i18n="brandLine">Finest spices and specialties</small>
+        </span>
+      </a>
+
+        <nav class="main-nav" aria-label="Primary navigation">
+          <a href="#shop" data-i18n="navShop">Shop</a>
+          <a href="#shop" data-nav-category="spices" data-i18n="navSpices">Spices</a>
+          <a href="#shop" data-nav-category="mixes" data-i18n="navMixes">Spice blends</a>
+          <a href="#shop" data-nav-category="herbs" data-i18n="navHerbs">Herbs</a>
+          <a href="#shop" data-nav-category="food" data-i18n="navFood">Food goods</a>
+          <a href="#shop" data-nav-category="nuts" data-i18n="navNuts">Nuts</a>
+          <a href="#shop" data-nav-category="special-offers" data-i18n="navSpecialOffers">Special offers</a>
+        </nav>
+
+      <div class="header-actions">
+        <div class="header-search">
+          <input id="headerSearch" type="search" data-i18n-placeholder="searchPlaceholder" placeholder="Search products..." list="productSuggestions" />
+          <div class="suggestion-menu" id="searchSuggestions"></div>
+        </div>
+        <button class="icon-button" id="accountButton" type="button" data-i18n-title="accountTitle" aria-label="Customer account">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M20 21a8 8 0 0 0-16 0" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+        </button>
+        <button class="cart-button" id="cartButton" type="button">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M6 9h12l-1 10H7L6 9Z" />
+            <path d="M9 9a3 3 0 0 1 6 0" />
+          </svg>
+          <span data-i18n="cart">Cart</span>
+          <strong id="cartCount">0</strong>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <img src="assets/hero-damascus-premium.png" alt="" />
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow" data-i18n="heroEyebrow">From the spirit of Damascus markets to your home</p>
+          <h1 class="hero-logo" aria-label="Bzourieh Jleilati">
+            <span class="hero-logo-top" data-i18n="heroTitleTop">Bzourieh</span>
+            <span class="hero-logo-bottom" data-i18n="heroTitleBottom">Jleilati</span>
+          </h1>
+          <strong class="hero-line" data-i18n="heroLine">Finest spices and seasonings</strong>
+          <p data-i18n="heroText">Spices, herbs, nuts, and pantry goods selected for Syrian and Arab families across Europe.</p>
+          <div class="hero-actions">
+            <a class="primary-link" href="#shop" data-i18n="heroCta">Shop now</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust-strip" aria-label="Store promises">
+        <div>
+          <span class="trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M8 38c16-1 27-12 30-28-16 2-27 12-30 28Z" /><path d="M14 33c7-8 14-14 24-23" /><path d="M20 38c12-2 20-10 22-22" /></svg>
+          </span>
+          <strong data-i18n="trustNatural">100% natural products</strong><small data-i18n="trustNaturalSub">No artificial additives</small>
+        </div>
+        <div>
+          <span class="trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M8 17h32L24 40 8 17Z" /><path d="m14 17 5-8h10l5 8" /><path d="M19 9 24 40 29 9" /></svg>
+          </span>
+          <strong data-i18n="trustQuality">Highest quality</strong><small data-i18n="trustQualitySub">Carefully selected</small>
+        </div>
+        <div>
+          <span class="trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M7 29h24V13H7v16Z" /><path d="M31 20h7l5 6v3H31" /><path d="M14 35a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" /><path d="M36 35a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" /><path d="M3 18h12M1 24h10" /></svg>
+          </span>
+          <strong data-i18n="trustShipping">Shipping to Europe</strong><small data-i18n="trustShippingSub">Free over €51</small>
+        </div>
+        <div>
+          <span class="trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M24 40S8 30 8 18a8 8 0 0 1 14-5 8 8 0 0 1 14 5c0 12-12 19-12 22Z" /></svg>
+          </span>
+          <strong data-i18n="trustCare">Packed with care</strong><small data-i18n="trustCareSub">For your table</small>
+        </div>
+      </section>
+
+      <section class="category-band" aria-labelledby="categoriesTitle">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="categoryEyebrow">Main categories</p>
+          <h2 id="categoriesTitle" data-i18n="categoryTitle">Browse by category</h2>
+        </div>
+        <div class="category-grid" id="categoryGrid"></div>
+      </section>
+
+      <section class="shop-shell" id="shop" aria-labelledby="shopTitle">
+        <div class="shop-sidebar">
+          <div class="section-heading compact">
+            <h2 id="shopTitle" data-i18n="shopTitle">Choose your products</h2>
+          </div>
+          <div class="search-box">
+            <input id="searchInput" type="search" data-i18n-placeholder="searchPlaceholder" placeholder="Search products" />
+          </div>
+          <div class="filters" id="filters"></div>
+        </div>
+
+        <div class="product-area">
+          <div class="product-toolbar">
+            <p id="productCount"></p>
+            <select id="sortSelect" aria-label="Sort products">
+              <option value="featured" data-i18n="sortFeatured">Featured</option>
+              <option value="priceAsc" data-i18n="sortPriceAsc">Price: low first</option>
+              <option value="stock" data-i18n="sortStock">Highest stock</option>
+            </select>
+          </div>
+          <div class="product-grid" id="productGrid"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="footer">
+      <div class="footer-shell">
+        <nav class="footer-about-cta footer-column" aria-label="Footer policies">
+          <h3 data-i18n="footerLearnMore">Learn more</h3>
+          <button class="footer-text-link" id="footerAboutButton" type="button" data-i18n="storyTitle">Our Story</button>
+          <button class="footer-text-link" type="button" data-legal="termsUse" data-i18n="termsUse">Terms of use</button>
+          <button class="footer-text-link" type="button" data-legal="termsConditions" data-i18n="termsConditions">Terms & conditions</button>
+          <button class="footer-text-link" type="button" data-legal="cookiePolicy" data-i18n="cookiePolicy">Cookie policy</button>
+          <button class="footer-text-link" type="button" data-legal="privacyPolicy" data-i18n="privacyPolicy">Privacy policy</button>
+        </nav>
+
+        <nav class="footer-shop footer-column" aria-label="Footer shop links">
+          <h3 data-i18n="footerShopWithUs">Shop with us</h3>
+          <a href="#shop" data-nav-category="spices" data-i18n="navSpices">Spices</a>
+          <a href="#shop" data-nav-category="mixes" data-i18n="navMixes">Spice blends</a>
+          <a href="#shop" data-nav-category="flavors" data-i18n="navFlavors">Flavourings</a>
+          <a href="#shop" data-nav-category="zaatar" data-i18n="navZaatar">Za’atar</a>
+          <a href="#shop" data-nav-category="herbs" data-i18n="navHerbs">Herbs</a>
+          <a href="#shop" data-nav-category="attara" data-i18n="navAttara">Herbal goods</a>
+          <a href="#shop" data-nav-category="food" data-i18n="navFood">Food goods</a>
+          <a href="#shop" data-nav-category="body-care" data-i18n="navBodyCare">Body care</a>
+          <a href="#shop" data-nav-category="nuts" data-i18n="navNuts">Nuts</a>
+          <a href="#shop" data-nav-category="special-offers" data-i18n="navSpecialOffers">Special offers</a>
+        </nav>
+
+        <div class="footer-service footer-column">
+          <h3 data-i18n="footerHelp">Let us help you</h3>
+          <span data-i18n="footerShippingEurope">Shipping across Europe</span>
+          <span data-i18n="footerFreeShipping">Free shipping above 51€</span>
+          <span data-i18n="footerPaidShippingShort">10€ shipping below 51€</span>
+          <div class="footer-social">
+            <h3 data-i18n="followUs">Follow us</h3>
+            <div>
+              <a href="https://www.instagram.com/jleilati_gewurze" target="_blank" rel="noreferrer" aria-label="Instagram">
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                  <rect x="4" y="4" width="16" height="16" rx="5" />
+                  <circle cx="12" cy="12" r="3.4" />
+                  <circle cx="16.5" cy="7.5" r="0.7" />
+                </svg>
+              </a>
+              <a href="https://www.facebook.com/p/Jleilati-für-Gewürze-بزورية-جليلاتي-61594869990283/" target="_blank" rel="noreferrer" aria-label="Facebook">
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M14 8h2V4h-2.6C10.4 4 9 5.8 9 8.4V11H7v4h2v5h4v-5h2.8l0.6-4H13V8.9c0-.6.3-.9 1-.9Z" />
+                </svg>
+              </a>
+              <a href="https://www.tiktok.com/@jleilati_22" target="_blank" rel="noreferrer" aria-label="TikTok">
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M14 4c.5 3.1 2.3 4.9 5 5.2v3.6a8.2 8.2 0 0 1-4.8-1.5v4.6A5.1 5.1 0 1 1 9.1 11c.3 0 .7 0 1 .1v3.8a1.7 1.7 0 1 0 1.1 1.6V4h2.8Z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <address class="footer-contact footer-column">
+          <h3 data-i18n="footerTitle">Contact us</h3>
+          <a href="https://wa.me/4917663719858" target="_blank" rel="noreferrer" data-i18n="whatsappUs">WhatsApp</a>
+          <a href="mailto:saeedjleilati@gmail.com" data-i18n="emailUs">Email</a>
+          <a href="tel:+4917663719858" data-i18n="callUs">Call</a>
+          <div class="footer-address-block">
+            <span data-i18n="footerAddressLabel">Address</span>
+            <a class="footer-address-link" href="https://www.google.com/maps/search/?api=1&query=Breite%20Str.%2014%2C%2066115%20Saarbr%C3%BCcken%2C%20Germany" target="_blank" rel="noreferrer">Breite Str. 14, 66115 Saarbrücken</a>
+          </div>
+        </address>
+      </div>
+      <div class="footer-brand-row">
+        <strong data-i18n="brandName">Bzourieh Jleilati</strong>
+        <label>
+          <span data-i18n="footerLanguage">Language</span>
+          <select id="languageSelect" aria-label="Language">
+            <option value="en">🇬🇧 EN</option>
+            <option value="de">🇩🇪 DE</option>
+            <option value="fr">🇫🇷 FR</option>
+            <option value="ar">🇸🇾 AR</option>
+          </select>
+        </label>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Jleilati</span>
+      </div>
+    </footer>
+
+    <aside class="drawer" id="drawer" aria-hidden="true">
+      <div class="drawer-panel">
+        <div class="drawer-head">
+          <h2 data-i18n="cart">Cart</h2>
+          <button id="closeDrawer" type="button" aria-label="Close">×</button>
+        </div>
+        <div id="cartItems" class="cart-items"></div>
+        <div class="cart-summary" id="cartSummary">
+          <div><span data-i18n="subtotal">Subtotal</span><strong id="subtotal">€0.00</strong></div>
+          <div><span data-i18n="shipping">Shipping</span><strong id="shipping">€0.00</strong></div>
+          <div class="shipping-note" id="shippingNote"></div>
+          <div class="total"><span data-i18n="total">Total</span><strong id="total">€0.00</strong></div>
+        </div>
+        <div class="cart-auth-gate hidden" id="cartAuthGate">
+          <p data-i18n="cartSignInPrompt">Sign in or create an account to continue to checkout.</p>
+          <div>
+            <button type="button" id="cartSignInButton" data-i18n="signIn">Sign in</button>
+            <button type="button" id="cartSignUpButton" class="ghost-action" data-i18n="createAccount">Create account</button>
+          </div>
+        </div>
+        <form class="checkout" id="checkoutForm">
+          <div class="checkout-mode">
+            <button type="button" id="autofillButton" data-i18n="autofillAccount">Use my account details</button>
+            <button type="button" id="guestButton" class="ghost-action" data-i18n="guestCheckout">Continue as guest</button>
+          </div>
+          <input required name="firstName" data-i18n-placeholder="firstName" placeholder="First name" />
+          <input required name="secondName" data-i18n-placeholder="secondName" placeholder="Second name" />
+          <input required type="email" name="email" data-i18n-placeholder="email" placeholder="Email" />
+          <input required name="phone" data-i18n-placeholder="phone" placeholder="Phone number" />
+          <select required name="country" data-country-select aria-label="Country"></select>
+          <input required name="addressSearch" id="addressSearch" data-i18n-placeholder="addressSearch" placeholder="Start typing your delivery address" list="addressSuggestions" />
+          <datalist id="addressSuggestions"></datalist>
+          <input required name="street" data-i18n-placeholder="street" placeholder="Street and building number" />
+          <input required name="city" data-i18n-placeholder="city" placeholder="City" />
+          <input required name="postalCode" data-i18n-placeholder="postalCode" placeholder="Postal code" />
+          <div class="payment-box">
+            <strong data-i18n="stripeReady">Stripe payment</strong>
+            <p data-i18n="stripeText">We will accept cards and payment methods supported by Stripe once the real account is connected.</p>
+          </div>
+          <label class="accept-line checkout-accept"><input required name="acceptPolicies" type="checkbox" /><span data-i18n="acceptPolicies">I accept the terms, conditions and cookie policy.</span></label>
+          <button type="submit" data-i18n="payNow">Pay by card and confirm order</button>
+        </form>
+        <div class="confirmation hidden" id="confirmation"></div>
+      </div>
+    </aside>
+
+    <aside class="account-modal" id="accountModal" aria-hidden="true">
+      <div class="account-panel">
+        <div class="drawer-head">
+          <h2 data-i18n="accountTitle">Customer account</h2>
+          <button id="closeAccount" type="button" aria-label="Close">×</button>
+        </div>
+        <p class="account-intro" data-i18n="accountSubtitle">Sign in or create an account to save delivery details and review purchase history.</p>
+        <div class="auth-tabs" role="tablist" aria-label="Account options">
+          <button class="active" type="button" data-auth-tab="signin" data-i18n="signIn">Sign in</button>
+          <button type="button" data-auth-tab="signup" data-i18n="createAccount">Create account</button>
+        </div>
+        <div class="auth-actions">
+          <form class="auth-card" data-auth-panel="signin">
+            <h3 data-i18n="loginDetails">Sign in with email</h3>
+            <input required type="email" name="email" autocomplete="email" data-i18n-placeholder="email" placeholder="Email" />
+            <input required type="password" name="password" autocomplete="current-password" data-i18n-placeholder="password" placeholder="Password" />
+            <label class="accept-line"><input required type="checkbox" name="acceptPolicies" /><span data-i18n="acceptPolicies">I accept the terms, conditions and cookie policy.</span></label>
+            <button type="submit" data-account-action="dashboard" data-i18n="signIn">Sign in</button>
+            <a href="#" data-i18n="forgotPassword">Forgot password?</a>
+          </form>
+          <form class="auth-card hidden" data-auth-panel="signup">
+            <h3 data-i18n="signupDetails">Create an account</h3>
+            <div class="two-fields">
+              <input required name="firstName" autocomplete="given-name" data-i18n-placeholder="firstName" placeholder="First name" />
+              <input required name="secondName" autocomplete="family-name" data-i18n-placeholder="secondName" placeholder="Second name" />
+            </div>
+            <input required type="email" name="email" autocomplete="email" data-i18n-placeholder="email" placeholder="Email" />
+            <input required type="password" name="password" autocomplete="new-password" data-i18n-placeholder="password" placeholder="Password" />
+            <input required type="password" name="confirmPassword" autocomplete="new-password" data-i18n-placeholder="confirmPassword" placeholder="Confirm password" />
+            <label class="accept-line"><input required type="checkbox" name="acceptPolicies" /><span data-i18n="acceptPolicies">I accept the terms, conditions and cookie policy.</span></label>
+            <button type="submit" data-account-action="dashboard" data-i18n="createAccount">Create account</button>
+          </form>
+          <div class="auth-divider"><span data-i18n="orUseGoogle">Or use Google</span></div>
+          <button class="google-auth" id="googleAuthButton" type="button">
+            <svg class="google-mark" aria-hidden="true" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09Z" />
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A10.99 10.99 0 0 0 12 23Z" />
+              <path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a10.99 10.99 0 0 0 0 9.88l3.66-2.84Z" />
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1A10.99 10.99 0 0 0 2.18 7.06L5.84 9.9C6.71 7.31 9.14 5.38 12 5.38Z" />
+            </svg>
+            <span data-i18n="loginGoogle">Login with Google</span>
+          </button>
+        </div>
+        <div class="account-dashboard hidden" id="accountDashboard">
+          <div class="dashboard-head">
+            <div class="dashboard-title-row">
+              <h3 data-i18n="myAccount">My account</h3>
+              <button class="ghost-account-button" id="signOutButton" type="button" data-i18n="signOut">Sign out</button>
+            </div>
+            <p id="accountWelcome"></p>
+          </div>
+          <form id="accountProfileForm" class="account-profile-form">
+            <label>
+              <span data-i18n="email">Email</span>
+              <input name="email" disabled />
+            </label>
+            <div class="two-fields">
+              <label>
+                <span data-i18n="firstName">First name</span>
+                <input name="firstName" data-i18n-placeholder="firstName" placeholder="First name" />
+              </label>
+              <label>
+                <span data-i18n="secondName">Second name</span>
+                <input name="secondName" data-i18n-placeholder="secondName" placeholder="Second name" />
+              </label>
+            </div>
+            <label>
+              <span data-i18n="phone">Phone number</span>
+              <input name="phone" data-i18n-placeholder="phone" placeholder="Phone number" />
+            </label>
+            <label>
+              <span data-i18n="addressSearch">Start typing your delivery address</span>
+              <select name="country" data-country-select aria-label="Country"></select>
+              <input name="addressSearch" data-i18n-placeholder="addressSearch" placeholder="Start typing your delivery address" list="addressSuggestions" />
+            </label>
+            <input name="street" data-i18n-placeholder="street" placeholder="Street and building number" />
+            <div class="three-fields">
+              <input name="postalCode" data-i18n-placeholder="postalCode" placeholder="Postal code" />
+              <input name="city" data-i18n-placeholder="city" placeholder="City" />
+            </div>
+            <label>
+              <span data-i18n="password">Password</span>
+              <input name="password" type="password" data-i18n-placeholder="changePassword" placeholder="Change password" />
+            </label>
+            <button type="submit" data-i18n="saveAccount">Save details</button>
+            <p class="account-save-notice" id="accountSaveNotice" aria-live="polite"></p>
+          </form>
+          <div class="order-history">
+            <h3 data-i18n="orderHistory">Purchase history</h3>
+            <div id="accountOrders"></div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <aside class="about-modal" id="aboutModal" aria-hidden="true">
+      <div class="about-panel">
+        <div class="drawer-head">
+          <h2 data-i18n="footerAbout">About us</h2>
+          <button id="closeAbout" type="button" aria-label="Close">×</button>
+        </div>
+        <div class="about-story">
+          <h3 data-i18n="storyTitle">A family spice store with a Damascus character</h3>
+          <p data-i18n="storyText">
+            Since the 1960s in Damascus’ iconic Al-Bzouriyah market, the Jleilati family has been at the heart of the spice world.
+          </p>
+        </div>
+      </div>
+    </aside>
+
+    <aside class="legal-modal" id="legalModal" aria-hidden="true">
+      <div class="about-panel legal-panel">
+        <div class="drawer-head">
+          <h2 id="legalTitle">Terms</h2>
+          <button id="closeLegal" type="button" aria-label="Close">×</button>
+        </div>
+        <div class="about-story" id="legalBody"></div>
+      </div>
+    </aside>
+
+    <template id="productTemplate">
+      <article class="product-card">
+        <div class="product-media">
+          <img alt="" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <p class="product-category"></p>
+          <h3></h3>
+          <p class="product-desc"></p>
+          <select class="variant-select" aria-label="Weight"></select>
+          <div class="product-price">
+            <span data-i18n="price">Price</span>
+            <strong></strong>
+          </div>
+          <div class="buy-row">
+            <div class="stepper">
+              <button type="button" class="minus">−</button>
+              <span class="qty">1</span>
+              <button type="button" class="plus">+</button>
+            </div>
+            <button type="button" class="add"></button>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <datalist id="productSuggestions"></datalist>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
