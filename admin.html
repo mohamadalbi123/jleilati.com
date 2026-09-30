@@ -41,6 +41,9 @@
             <p>Notifications</p>
             <h2>New orders</h2>
           </div>
+          <div class="panel-actions">
+            <button id="toggleOrdersWrap" type="button">No wrap</button>
+          </div>
         </div>
         <div id="ordersList" class="orders-list"></div>
         <hr class="panel-divider" />
@@ -130,13 +133,16 @@
           </form>
         </article>
 
-        <article class="panel">
+        <article class="panel full-width-panel">
           <div class="panel-head">
             <div>
               <p>Customers</p>
               <h2>Customer list</h2>
             </div>
-            <button id="downloadCustomers" type="button">Download CSV</button>
+            <div class="panel-actions">
+              <button id="toggleCustomersWrap" type="button">No wrap</button>
+              <button id="downloadCustomers" type="button">Download CSV</button>
+            </div>
           </div>
           <div id="customersList" class="customers-list"></div>
         </article>

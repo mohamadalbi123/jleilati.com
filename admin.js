@@ -1,5 +1,9 @@
 const money = new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" });
 const dateTime = new Intl.DateTimeFormat("de-DE", { dateStyle: "short", timeStyle: "short" });
+const tableNoWrap = {
+  orders: false,
+  customers: false,
+};
 
 const categoryMeta = [
   { id: "spices", label: "Spices", prefix: "spices" },
@@ -1066,7 +1070,7 @@ function renderOrders() {
     return;
   }
   list.innerHTML = `
-    <div class="admin-table-wrap">
+    <div class="admin-table-wrap ${tableNoWrap.orders ? "no-wrap" : ""}">
       <table class="admin-table excel-table orders-table">
         <thead>
           <tr>
@@ -1164,7 +1168,7 @@ function renderStock() {
                         <td>${start} g</td>
                         <td><input type="number" min="100" step="100" value="1000" aria-label="grams to adjust for ${product.name}" /></td>
                         <td class="stock-actions">
-                          <button type="button" data-add="${product.id}">Add</button>
+                          <button type="button" data-add="${product.id}">Add qty</button>
                           <button type="button" data-remove="${product.id}">Reduce</button>
                           <button type="button" data-set="${product.id}">Set</button>
                           <button type="button" data-edit-product="${product.id}">Edit</button>
@@ -1178,7 +1182,7 @@ function renderStock() {
             </table>
           </div>
           <div class="category-tools">
-            <button type="button" data-add-category="${category.id}">Add new product under ${category.label}</button>
+            <button type="button" data-add-category="${category.id}">Create new product under ${category.label}</button>
           </div>
         </details>
       `
@@ -1186,7 +1190,9 @@ function renderStock() {
     .join("");
 
   list.querySelectorAll("[data-add]").forEach((button) => {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
       const next = inventory();
       const value = Number(button.closest("tr").querySelector("input").value || 0);
       next[button.dataset.add] = (next[button.dataset.add] || 0) + value;
@@ -1195,7 +1201,9 @@ function renderStock() {
     });
   });
   list.querySelectorAll("[data-remove]").forEach((button) => {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
       const next = inventory();
       const value = Number(button.closest("tr").querySelector("input").value || 0);
       next[button.dataset.remove] = Math.max(0, (next[button.dataset.remove] || 0) - value);
@@ -1204,7 +1212,9 @@ function renderStock() {
     });
   });
   list.querySelectorAll("[data-set]").forEach((button) => {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
       const next = inventory();
       const value = Number(button.closest("tr").querySelector("input").value || 0);
       next[button.dataset.set] = Math.max(0, value);
@@ -1278,7 +1288,7 @@ function renderCustomers() {
     return;
   }
   area.innerHTML = `
-    <div class="admin-table-wrap">
+    <div class="admin-table-wrap ${tableNoWrap.customers ? "no-wrap" : ""}">
       <table class="admin-table excel-table customers-table">
         <thead>
           <tr>
@@ -1369,6 +1379,14 @@ function downloadCustomers() {
   link.download = "jleilati-customers.csv";
   link.click();
   URL.revokeObjectURL(url);
+}
+
+function toggleTableWrap(kind, listSelector, button) {
+  tableNoWrap[kind] = !tableNoWrap[kind];
+  const wrapper = document.querySelector(`${listSelector} .admin-table-wrap`);
+  if (!wrapper) return;
+  wrapper.classList.toggle("no-wrap", tableNoWrap[kind]);
+  button.textContent = tableNoWrap[kind] ? "Wrap text" : "No wrap";
 }
 
 function saveProduct(product) {
@@ -1581,6 +1599,8 @@ document.querySelector("#notificationShortcut").addEventListener("keydown", (eve
   document.querySelector("#notificationsPanel").scrollIntoView({ behavior: "smooth", block: "start" });
 });
 document.querySelector("#downloadCustomers").addEventListener("click", downloadCustomers);
+document.querySelector("#toggleOrdersWrap").addEventListener("click", (event) => toggleTableWrap("orders", "#ordersList", event.currentTarget));
+document.querySelector("#toggleCustomersWrap").addEventListener("click", (event) => toggleTableWrap("customers", "#customersList", event.currentTarget));
 document.querySelector("#addVariantRow").addEventListener("click", () => addVariantRow());
 document.querySelector("#productForm").addEventListener("submit", addProduct);
 document.querySelector("#nameForm").addEventListener("submit", updateProductName);
