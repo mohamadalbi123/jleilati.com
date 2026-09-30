@@ -5,11 +5,17 @@ export default function handler(request, response) {
       process.env.GOOGLE_CLIENT_ID ||
       process.env.VITE_GOOGLE_CLIENT_ID ||
       process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID ||
+      process.env.GOOGLE_CLIENT ||
+      process.env.GOOGLE_OAUTH_CLIENT_ID ||
       "",
     stripePublishableKey:
       process.env.STRIPE_PUBLISHABLE_KEY ||
+      process.env.STRIPE_PUBLIC_KEY ||
+      process.env.STRIPE_PUBLISHABLE ||
       process.env.VITE_STRIPE_PUBLISHABLE_KEY ||
+      process.env.VITE_STRIPE_PUBLIC_KEY ||
       process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY ||
+      process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY ||
       "",
   });
 }
