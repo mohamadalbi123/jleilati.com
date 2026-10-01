@@ -2106,15 +2106,9 @@ body[dir="ltr"] .footer-shell {
   }
 
   .icon-button svg {
-    display: none;
-  }
-
-  .icon-button::before {
-    content: "⋯";
-    color: #f6d987;
-    font-size: 1.55rem;
-    font-weight: 900;
-    line-height: 1;
+    display: block;
+    width: 1.18rem;
+    height: 1.18rem;
   }
 
   .cart-button {
@@ -2138,20 +2132,21 @@ body[dir="ltr"] .footer-shell {
 
   .hero {
     display: grid;
-    min-height: 8.8rem;
+    min-height: 12rem;
     place-items: end center;
-    padding: 0.7rem;
+    padding: 0.9rem;
     border-bottom: 1px solid rgba(212, 166, 66, 0.28);
   }
 
   .hero img {
+    content: url("assets/hero-spice-market.png");
     object-position: center center;
   }
 
   .hero-overlay {
     background:
-      linear-gradient(90deg, rgba(5, 6, 4, 0.86), rgba(5, 6, 4, 0.48)),
-      linear-gradient(180deg, rgba(5, 6, 4, 0.2), rgba(5, 6, 4, 0.68));
+      linear-gradient(90deg, rgba(5, 6, 4, 0.52), rgba(5, 6, 4, 0.22), rgba(5, 6, 4, 0.55)),
+      linear-gradient(180deg, rgba(5, 6, 4, 0.1), rgba(5, 6, 4, 0.72));
   }
 
   .hero-content {
@@ -2167,12 +2162,28 @@ body[dir="ltr"] .footer-shell {
   }
 
   .hero-logo {
-    display: none;
+    display: grid;
+    max-width: min(100%, 18rem);
+    line-height: 0.95;
+  }
+
+  body[dir="rtl"] .hero-logo,
+  body:not([dir="rtl"]) .hero-logo {
+    transform: none;
+    max-width: min(100%, 18rem);
+  }
+
+  .hero-logo-bottom,
+  body:not([dir="rtl"]) .hero-logo-bottom {
+    white-space: normal;
+    font-size: clamp(2rem, 10vw, 3.1rem);
+    text-align: center;
+    -webkit-text-stroke: 0.7px rgba(255, 246, 202, 0.88);
   }
 
   .hero-line {
     display: inline-block;
-    margin: 0;
+    margin-top: 0.45rem;
     padding: 0.42rem 0.68rem;
     border: 1px solid rgba(212, 166, 66, 0.38);
     border-radius: 999px;
