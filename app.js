@@ -153,6 +153,7 @@ const i18n = {
     saveAccount: "حفظ البيانات",
     loginGoogle: "تسجيل الدخول عبر Google",
     signupGoogle: "إنشاء حساب عبر Google",
+    checkoutGoogle: "المتابعة عبر Google",
     forgotPassword: "نسيت كلمة المرور؟",
     existingAccount: "هل لديك حساب؟",
     myAccount: "حسابي",
@@ -298,6 +299,7 @@ const i18n = {
     saveAccount: "Daten speichern",
     loginGoogle: "Mit Google anmelden",
     signupGoogle: "Mit Google registrieren",
+    checkoutGoogle: "Mit Google fortfahren",
     forgotPassword: "Passwort vergessen?",
     existingAccount: "Schon ein Konto?",
     myAccount: "Mein Konto",
@@ -443,6 +445,7 @@ const i18n = {
     saveAccount: "Save details",
     loginGoogle: "Login with Google",
     signupGoogle: "Sign up with Google",
+    checkoutGoogle: "Continue with Google",
     forgotPassword: "Forgot password?",
     existingAccount: "Already have an account?",
     myAccount: "My account",
@@ -588,6 +591,7 @@ const i18n = {
     saveAccount: "Enregistrer",
     loginGoogle: "Connexion avec Google",
     signupGoogle: "Créer un compte avec Google",
+    checkoutGoogle: "Continuer avec Google",
     forgotPassword: "Mot de passe oublié ?",
     existingAccount: "Vous avez déjà un compte ?",
     myAccount: "Mon compte",
@@ -11342,6 +11346,8 @@ function renderCart() {
   const subtotal = lines.reduce((sum, line) => sum + line.lineTotal, 0);
   const shipping = subtotal === 0 || subtotal >= 51 ? 0 : 10;
   const remaining = Math.max(0, 51 - subtotal).toFixed(2);
+  const cartButton = document.querySelector("#cartButton");
+  cartButton.classList.toggle("has-items", count > 0);
   document.querySelector("#cartCount").textContent = count;
   document.querySelector("#subtotal").textContent = money.format(subtotal);
   document.querySelector("#shipping").textContent = money.format(shipping);
@@ -12088,6 +12094,10 @@ document.querySelector("#cartButton").addEventListener("click", openDrawer);
 document.querySelector("#closeDrawer").addEventListener("click", closeDrawer);
 document.querySelector("#cartSignInButton").addEventListener("click", () => openAccountForCheckout("signin"));
 document.querySelector("#cartSignUpButton").addEventListener("click", () => openAccountForCheckout("signup"));
+document.querySelector("#cartGoogleButton").addEventListener("click", () => {
+  state.pendingCheckout = true;
+  handleGoogleAuth();
+});
 document.querySelector("#accountButton").addEventListener("click", openAccount);
 document.querySelector("#closeAccount").addEventListener("click", closeAccount);
 document.querySelector("#signOutButton").addEventListener("click", signOut);

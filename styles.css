@@ -216,6 +216,7 @@ textarea:focus {
 }
 
 .cart-button {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -237,14 +238,22 @@ textarea:focus {
 }
 
 .cart-button strong {
-  display: grid;
-  min-width: 1.55rem;
-  height: 1.55rem;
+  display: none;
+  position: absolute;
+  inset: 50% auto auto 50%;
+  min-width: 1.42rem;
+  height: 1.42rem;
+  transform: translate(-50%, -50%);
   place-items: center;
   border-radius: 50%;
   background: #fff5df;
   color: #050604;
+  font-size: 0.78rem;
   line-height: 1;
+}
+
+.cart-button.has-items strong {
+  display: grid;
 }
 
 .icon-button {
@@ -1872,6 +1881,17 @@ body[dir="ltr"] .footer-shell {
   color: var(--green);
 }
 
+.cart-google-auth {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.6rem;
+  align-items: center;
+  border: 1px solid rgba(31, 59, 44, 0.14);
+  background: #fffdf8 !important;
+  color: var(--ink) !important;
+  text-align: start;
+}
+
 .checkout-mode {
   display: none;
   grid-template-columns: 1fr;
@@ -2118,14 +2138,14 @@ body[dir="ltr"] .footer-shell {
 
   .hero {
     display: grid;
-    min-height: 11rem;
-    place-items: end start;
-    padding: 0.85rem 0.72rem;
+    min-height: 8.8rem;
+    place-items: end center;
+    padding: 0.7rem;
     border-bottom: 1px solid rgba(212, 166, 66, 0.28);
   }
 
   .hero img {
-    object-position: center bottom;
+    object-position: center center;
   }
 
   .hero-overlay {
@@ -2135,15 +2155,15 @@ body[dir="ltr"] .footer-shell {
   }
 
   .hero-content {
-    width: min(100%, 22rem);
+    width: min(100%, 24rem);
     margin: 0;
-    justify-items: start;
-    text-align: start;
+    justify-items: center;
+    text-align: center;
   }
 
   body[dir="rtl"] .hero-content {
-    justify-items: end;
-    text-align: end;
+    justify-items: center;
+    text-align: center;
   }
 
   .hero-logo {
@@ -2151,7 +2171,12 @@ body[dir="ltr"] .footer-shell {
   }
 
   .hero-line {
+    display: inline-block;
     margin: 0;
+    padding: 0.42rem 0.68rem;
+    border: 1px solid rgba(212, 166, 66, 0.38);
+    border-radius: 999px;
+    background: rgba(5, 6, 4, 0.72);
     font-size: 1.02rem;
     line-height: 1.2;
   }

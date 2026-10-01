@@ -1,6 +1,6 @@
 const money = new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" });
 const dateTime = new Intl.DateTimeFormat("de-DE", { dateStyle: "short", timeStyle: "short" });
-const tableNoWrap = {
+const collapsedPanels = {
   orders: false,
   customers: false,
 };
@@ -1070,7 +1070,7 @@ function renderOrders() {
     return;
   }
   list.innerHTML = `
-    <div class="admin-table-wrap ${tableNoWrap.orders ? "no-wrap" : ""}">
+    <div class="admin-table-wrap">
       <table class="admin-table excel-table orders-table">
         <thead>
           <tr>
@@ -1288,7 +1288,7 @@ function renderCustomers() {
     return;
   }
   area.innerHTML = `
-    <div class="admin-table-wrap ${tableNoWrap.customers ? "no-wrap" : ""}">
+    <div class="admin-table-wrap">
       <table class="admin-table excel-table customers-table">
         <thead>
           <tr>
@@ -1381,12 +1381,12 @@ function downloadCustomers() {
   URL.revokeObjectURL(url);
 }
 
-function toggleTableWrap(kind, listSelector, button) {
-  tableNoWrap[kind] = !tableNoWrap[kind];
-  const wrapper = document.querySelector(`${listSelector} .admin-table-wrap`);
-  if (!wrapper) return;
-  wrapper.classList.toggle("no-wrap", tableNoWrap[kind]);
-  button.textContent = tableNoWrap[kind] ? "Wrap text" : "No wrap";
+function togglePanelBody(kind, bodySelector, button) {
+  collapsedPanels[kind] = !collapsedPanels[kind];
+  const body = document.querySelector(bodySelector);
+  if (!body) return;
+  body.classList.toggle("hidden", collapsedPanels[kind]);
+  button.textContent = collapsedPanels[kind] ? "Show list" : "Hide list";
 }
 
 function saveProduct(product) {
@@ -1541,6 +1541,8 @@ function productVariantsFromForm() {
 async function addProduct(event) {
   event.preventDefault();
   const form = event.target;
+  const notice = document.querySelector("#productCreateNotice");
+  if (notice) notice.textContent = "";
   const name = form.elements.name.value.trim();
   const description = form.elements.desc.value.trim() || "Product added from the admin dashboard.";
   const variants = productVariantsFromForm();
@@ -1576,6 +1578,7 @@ async function addProduct(event) {
   }
   form.reset();
   resetVariantRows();
+  if (notice) notice.textContent = `Created ${name}.`;
   render();
 }
 
@@ -1599,10 +1602,18 @@ document.querySelector("#notificationShortcut").addEventListener("keydown", (eve
   document.querySelector("#notificationsPanel").scrollIntoView({ behavior: "smooth", block: "start" });
 });
 document.querySelector("#downloadCustomers").addEventListener("click", downloadCustomers);
-document.querySelector("#toggleOrdersWrap").addEventListener("click", (event) => toggleTableWrap("orders", "#ordersList", event.currentTarget));
-document.querySelector("#toggleCustomersWrap").addEventListener("click", (event) => toggleTableWrap("customers", "#customersList", event.currentTarget));
+document.querySelector("#toggleOrdersList").addEventListener("click", (event) => togglePanelBody("orders", "#ordersPanelBody", event.currentTarget));
+document.querySelector("#toggleCustomersList").addEventListener("click", (event) => togglePanelBody("customers", "#customersPanelBody", event.currentTarget));
 document.querySelector("#addVariantRow").addEventListener("click", () => addVariantRow());
 document.querySelector("#productForm").addEventListener("submit", addProduct);
+document.querySelector("#productForm").addEventListener(
+  "invalid",
+  () => {
+    const notice = document.querySelector("#productCreateNotice");
+    if (notice) notice.textContent = "Please fill product name, category, and every selling unit label, grams, price, and qty.";
+  },
+  true
+);
 document.querySelector("#nameForm").addEventListener("submit", updateProductName);
 document.querySelector("#descriptionForm").addEventListener("submit", updateProductDescription);
 document.querySelector("#imageForm").addEventListener("submit", updateProductImage);
