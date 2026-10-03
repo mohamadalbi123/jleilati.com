@@ -168,6 +168,18 @@
         fill: currentColor;
       }
 
+      .builder-credit {
+        position: fixed;
+        left: 1rem;
+        bottom: 1rem;
+        z-index: 1;
+        color: rgba(255, 247, 232, 0.78);
+        font-size: 0.86rem;
+        font-weight: 800;
+        letter-spacing: 0;
+        text-shadow: 0 0.15rem 0.7rem rgba(0, 0, 0, 0.5);
+      }
+
       @media (max-width: 640px) {
         body {
           overflow: auto;
@@ -180,6 +192,12 @@
         .socials a {
           width: 2.9rem;
           height: 2.9rem;
+        }
+
+        .builder-credit {
+          left: 0.85rem;
+          bottom: 0.85rem;
+          font-size: 0.78rem;
         }
       }
     </style>
@@ -216,6 +234,7 @@
           </a>
         </nav>
       </main>
+      <span class="builder-credit">Built by Chambre 17</span>
     </div>
   </body>
 </html>

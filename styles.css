@@ -1162,6 +1162,11 @@ body[dir="rtl"] .trust-strip small {
   color: #9f947a;
   font-size: 0.86rem;
   font-weight: 800;
+  direction: ltr;
+}
+
+.builder-credit {
+  color: #d8caa8;
 }
 
 body[dir="rtl"] .footer-shell {
@@ -1220,7 +1225,7 @@ body[dir="rtl"] .footer-address-link {
 }
 
 body[dir="rtl"] .footer-bottom {
-  direction: rtl;
+  direction: ltr;
 }
 
 body[dir="ltr"] .footer-shell {
@@ -2507,9 +2512,9 @@ body[dir="ltr"] .footer-shell {
 
   .footer-bottom {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     padding: 1rem 0 1.2rem;
-    text-align: center;
+    text-align: left;
   }
 
   .footer-brand-row {
@@ -2782,8 +2787,8 @@ body[dir="ltr"] .footer-shell {
   }
 
   .footer-bottom {
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-start;
+    text-align: left;
   }
 }
 
