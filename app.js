@@ -10469,7 +10469,7 @@ const savedAccount = users.find((user) => user.email === savedAccountEmail) || n
 const state = {
   lang: localStorage.getItem("jleilatiLang") || "en",
   category: "all",
-  searchQuery: "",
+  searchQuery: new URLSearchParams(window.location.search).get("search") || "",
   activeSearchInput: "headerSearch",
   authTab: "signin",
   cart: loadCart(),
