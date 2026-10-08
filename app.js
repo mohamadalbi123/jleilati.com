@@ -11829,6 +11829,8 @@ async function handleCheckout(event) {
     lines: lines.map((line) => ({
       productId: line.product.id,
       productName: localizedProductName(line.product),
+      productNameEn: productNameObject(line.product).en || localizedProductName(line.product),
+      productNameAr: productNameObject(line.product).ar || localizedProductName(line.product),
       weight: line.variant.label,
       grams: (line.variant.grams || 0) * line.quantity,
       quantity: line.quantity,
@@ -12026,23 +12028,69 @@ function rerender() {
   renderCart();
 }
 
-function handlePaymentReturn() {
+async function notifyOrderEmails(order, sessionId) {
+  if (!order?.id || !sessionId) return;
+  const marker = `jleilatiOrderEmailSent_${order.id}`;
+  if (localStorage.getItem(marker) === sessionId) return;
+  try {
+    const response = await fetch("/api/complete-order", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        sessionId,
+        order: {
+          ...order,
+          payment: { ...(order.payment || {}), checkoutSession: sessionId, status: "paid" },
+        },
+      }),
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok || !data.ok) throw new Error(data.message || "Order email failed.");
+    localStorage.setItem(marker, sessionId);
+    const orders = JSON.parse(localStorage.getItem("jleilatiOrders") || "[]").map((savedOrder) =>
+      String(savedOrder.id) === String(order.id)
+        ? {
+            ...savedOrder,
+            notification: "Customer and admin order emails sent. Admin PDF attached.",
+            emailStatus: "sent",
+          }
+        : savedOrder
+    );
+    localStorage.setItem("jleilatiOrders", JSON.stringify(orders));
+  } catch (error) {
+    const orders = JSON.parse(localStorage.getItem("jleilatiOrders") || "[]").map((savedOrder) =>
+      String(savedOrder.id) === String(order.id)
+        ? {
+            ...savedOrder,
+            notification: `Order paid. Email sending needs attention: ${error.message || "unknown error"}`,
+            emailStatus: "failed",
+          }
+        : savedOrder
+    );
+    localStorage.setItem("jleilatiOrders", JSON.stringify(orders));
+  }
+}
+
+async function handlePaymentReturn() {
   const params = new URLSearchParams(window.location.search);
   if (params.get("payment") !== "success") return;
   const paidOrderId = params.get("order") || localStorage.getItem("jleilatiPendingOrder") || "";
+  const sessionId = params.get("session_id") || "";
+  let paidOrder = null;
   if (paidOrderId) {
     const orders = JSON.parse(localStorage.getItem("jleilatiOrders") || "[]").map((order) =>
       String(order.id) === String(paidOrderId)
-        ? {
+        ? (paidOrder = {
             ...order,
             status: "in_progress",
-            notification: "Stripe payment received. Prepare order for shipping.",
-            payment: { ...(order.payment || {}), provider: "stripe", status: "paid" },
-          }
+            notification: "Stripe payment received. Prepare order manually.",
+            payment: { ...(order.payment || {}), provider: "stripe", status: "paid", checkoutSession: sessionId || order.payment?.checkoutSession || "" },
+          })
         : order
     );
     localStorage.setItem("jleilatiOrders", JSON.stringify(orders));
   }
+  if (paidOrder && sessionId) await notifyOrderEmails(paidOrder, sessionId);
   state.cart = [];
   saveCart();
   localStorage.removeItem("jleilatiPendingOrder");
@@ -12064,6 +12112,7 @@ function handlePaymentReturn() {
   }, 7000);
   params.delete("payment");
   params.delete("order");
+  params.delete("session_id");
   const query = params.toString();
   window.history.replaceState(null, "", `${window.location.pathname}${query ? `?${query}` : ""}`);
 }

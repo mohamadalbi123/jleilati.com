@@ -53,7 +53,7 @@ export default async function handler(request, response) {
   const separator = returnPath.includes("?") ? "&" : "?";
   const params = new URLSearchParams();
   params.append("mode", "payment");
-  params.append("success_url", `${origin}${returnPath}${separator}payment=success&order=${encodeURIComponent(orderId)}`);
+  params.append("success_url", `${origin}${returnPath}${separator}payment=success&order=${encodeURIComponent(orderId)}&session_id={CHECKOUT_SESSION_ID}`);
   params.append("cancel_url", `${origin}${returnPath}${separator}payment=cancelled`);
   if (body.customer?.email) params.append("customer_email", String(body.customer.email));
   params.append("metadata[order_id]", orderId);
