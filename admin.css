@@ -79,6 +79,11 @@ textarea {
   opacity: 0.55;
 }
 
+.admin-table button.secondary-action {
+  background: rgba(31, 59, 44, 0.1);
+  color: var(--green);
+}
+
 .admin-shell {
   display: grid;
   gap: 1rem;
@@ -252,6 +257,12 @@ textarea {
   min-width: 96rem;
 }
 
+.order-actions {
+  display: grid;
+  gap: 0.4rem;
+  min-width: 9.5rem;
+}
+
 .customers-table {
   min-width: 82rem;
 }
@@ -340,6 +351,11 @@ textarea {
 .status-pill.sent {
   background: rgba(31, 59, 44, 0.14);
   color: var(--green);
+}
+
+.status-pill.prepared {
+  background: rgba(212, 166, 66, 0.28);
+  color: #6a4b00;
 }
 
 .order-meta,

@@ -1032,6 +1032,7 @@ function formatOrderDate(value) {
 }
 
 function statusLabel(status) {
+  if (status === "prepared") return "Prepared";
   if (status === "sent") return "Sent";
   if (status === "pending_payment") return "Pending payment";
   return "In progress";
@@ -1051,6 +1052,17 @@ function inventory() {
 
 function saveInventory(next) {
   localStorage.setItem("jleilatiInventory", JSON.stringify(next));
+}
+
+async function sendPreparedEmail(order) {
+  const response = await fetch("/api/order-prepared", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ order }),
+  });
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok || !data.ok) throw new Error(data.message || "Prepared email failed.");
+  return data;
 }
 
 function soldByProduct() {
@@ -1101,10 +1113,15 @@ function renderOrders() {
                   <td class="wide-cell">${order.customer.address || "-"}</td>
                   <td class="wide-cell">${(order.lines || []).map((line) => `${line.productName} · ${line.weight} × ${line.quantity || 1}`).join("<br />") || "-"}</td>
                   <td>${paymentLabel(order)}</td>
-                  <td>${order.shippingWorkflow?.labelStatus === "created" ? "Label created" : "Ready for label"}</td>
+                  <td>${order.shippingWorkflow?.labelStatus === "created" ? "Manual label ready" : "Manual shipping"}</td>
                   <td class="strong-cell">${money.format(order.totals?.total || 0)}</td>
-                  <td><span class="status-pill ${order.status === "sent" ? "sent" : ""}">${statusLabel(order.status)}</span></td>
-                  <td><button type="button" data-sent="${order.id}" ${order.status === "sent" ? "disabled" : ""}>Mark sent</button></td>
+                  <td><span class="status-pill ${order.status === "prepared" ? "prepared" : order.status === "sent" ? "sent" : ""}">${statusLabel(order.status)}</span></td>
+                  <td>
+                    <div class="order-actions">
+                      <button type="button" data-prepared="${order.id}" ${order.status === "prepared" || order.status === "sent" || order.payment?.status !== "paid" ? "disabled" : ""}>Order prepared</button>
+                      <button type="button" data-sent="${order.id}" class="secondary-action" ${order.status === "sent" ? "disabled" : ""}>Mark sent</button>
+                    </div>
+                  </td>
                 </tr>
               `
             )
@@ -1113,6 +1130,34 @@ function renderOrders() {
       </table>
     </div>
   `;
+
+  list.querySelectorAll("[data-prepared]").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const order = orders().find((savedOrder) => String(savedOrder.id) === String(button.dataset.prepared));
+      if (!order) return;
+      button.disabled = true;
+      button.textContent = "Sending...";
+      try {
+        await sendPreparedEmail(order);
+        const next = orders().map((savedOrder) =>
+          String(savedOrder.id) === String(order.id)
+            ? {
+                ...savedOrder,
+                status: "prepared",
+                preparedAt: new Date().toISOString(),
+                notification: "Customer prepared email sent.",
+              }
+            : savedOrder
+        );
+        localStorage.setItem("jleilatiOrders", JSON.stringify(next));
+        render();
+      } catch (error) {
+        button.disabled = false;
+        button.textContent = "Order prepared";
+        alert(error.message || "Prepared email failed.");
+      }
+    });
+  });
 
   list.querySelectorAll("[data-sent]").forEach((button) => {
     button.addEventListener("click", () => {

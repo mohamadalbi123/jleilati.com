@@ -50,6 +50,43 @@ function lineName(line) {
   return clean(line.productNameEn || line.productName || line.productId || "Product", 180);
 }
 
+function orderLanguage(order) {
+  const lang = clean(order?.language, 8).toLowerCase();
+  return ["ar", "de", "fr", "en"].includes(lang) ? lang : "en";
+}
+
+function paidCopy(order) {
+  const orderId = orderNumber(order);
+  const name = customerName(order);
+  const copies = {
+    ar: {
+      subject: `شكراً لطلبك #${orderId}`,
+      lead: `مرحباً ${name}،`,
+      body: `شكراً لطلبك من بزورية جليلاتي. تم استلام الدفع وبدأنا تجهيز طلبك.`,
+      footer: `سنخبرك عندما يصبح الطلب جاهزاً للشحن.`,
+    },
+    de: {
+      subject: `Danke fuer deine Bestellung #${orderId}`,
+      lead: `Hallo ${name},`,
+      body: `vielen Dank fuer deine Bestellung bei Jleilati. Wir haben deine Zahlung erhalten und bereiten deine Bestellung jetzt vor.`,
+      footer: `Wir melden uns wieder, sobald deine Bestellung vorbereitet ist.`,
+    },
+    fr: {
+      subject: `Merci pour votre commande #${orderId}`,
+      lead: `Bonjour ${name},`,
+      body: `merci pour votre commande chez Jleilati. Nous avons bien recu votre paiement et nous preparons votre commande.`,
+      footer: `Nous vous previendrons des que votre commande sera preparee.`,
+    },
+    en: {
+      subject: `Thank you for your order #${orderId}`,
+      lead: `Hello ${name},`,
+      body: `Thank you for ordering from Jleilati. We received your payment and started preparing your order.`,
+      footer: `We will let you know when your order has been prepared.`,
+    },
+  };
+  return copies[orderLanguage(order)] || copies.en;
+}
+
 function orderText(order) {
   const customer = order.customer || {};
   const totals = order.totals || {};
@@ -137,6 +174,18 @@ function orderHtml(order, { admin = false } = {}) {
   `;
 }
 
+function customerPaidHtml(order) {
+  const copy = paidCopy(order);
+  return `
+    <div style="font-family:Arial,sans-serif;line-height:1.55;color:#111;max-width:640px">
+      <h2 style="margin:0 0 12px">Jleilati order #${htmlEscape(orderNumber(order))}</h2>
+      <p style="margin:0 0 12px">${htmlEscape(copy.lead)}</p>
+      <p style="margin:0 0 12px">${htmlEscape(copy.body)}</p>
+      <p style="margin:0">${htmlEscape(copy.footer)}</p>
+    </div>
+  `;
+}
+
 function pdfSafe(value) {
   return String(value || "")
     .normalize("NFKD")
@@ -164,19 +213,106 @@ function wrapLine(value, maxLength = 92) {
 }
 
 function createOrderPdf(order) {
-  const textLines = orderText(order).flatMap((line) => wrapLine(line));
-  const content = ["BT", "/F1 10 Tf", "50 790 Td", "14 TL"];
-  textLines.slice(0, 52).forEach((line, index) => {
-    if (index > 0) content.push("T*");
-    content.push(`(${pdfSafe(line)}) Tj`);
+  const customer = order.customer || {};
+  const totals = order.totals || {};
+  const lines = orderLines(order);
+  const orderId = orderNumber(order);
+  const content = [];
+  const pageWidth = 595;
+  const margin = 42;
+  const width = pageWidth - margin * 2;
+  const green = "0.12 0.23 0.17";
+  const gold = "0.83 0.65 0.26";
+  const light = "0.96 0.93 0.86";
+  const lineColor = "0.75 0.70 0.62";
+
+  const rect = (x, y, w, h, mode = "S") => content.push(`${x} ${y} ${w} ${h} re ${mode}`);
+  const strokeColor = (color) => content.push(`${color} RG`);
+  const fillColor = (color) => content.push(`${color} rg`);
+  const text = (value, x, y, size = 10, font = "F1") => {
+    content.push(`BT /${font} ${size} Tf ${x} ${y} Td (${pdfSafe(value)}) Tj ET`);
+  };
+  const wrappedText = (value, x, y, maxLength, options = {}) => {
+    const size = options.size || 10;
+    const leading = options.leading || size + 4;
+    const font = options.font || "F1";
+    wrapLine(value, maxLength).slice(0, options.maxLines || 4).forEach((line, index) => {
+      text(line, x, y - index * leading, size, font);
+    });
+  };
+  const box = (title, x, y, w, h) => {
+    strokeColor(lineColor);
+    fillColor("1 0.99 0.96");
+    rect(x, y, w, h, "B");
+    fillColor(light);
+    rect(x, y + h - 24, w, 24, "f");
+    fillColor(green);
+    text(title, x + 12, y + h - 17, 11, "F2");
+  };
+
+  fillColor("1 0.98 0.93");
+  rect(0, 0, 595, 842, "f");
+  fillColor(green);
+  text("Jleilati Spices", margin, 798, 24, "F2");
+  fillColor(gold);
+  text("Admin order preparation sheet", margin, 776, 11, "F2");
+  fillColor("0 0 0");
+  text(`Order #${orderId}`, margin, 746, 16, "F2");
+  text(`Paid by Stripe`, margin + 170, 746, 11, "F2");
+  text(`Total paid: ${money(totals.total)}`, margin + 320, 746, 11, "F2");
+
+  box("Customer details", margin, 634, width, 86);
+  fillColor("0 0 0");
+  text(`Name: ${customerName(order)}`, margin + 14, 690, 10, "F2");
+  text(`Email: ${clean(customer.email, 180) || "-"}`, margin + 14, 674, 10);
+  text(`Phone: ${clean(customer.phone, 80) || "-"}`, margin + 270, 674, 10);
+  wrappedText(`Address: ${clean(customer.address, 500) || "-"}`, margin + 14, 656, 86, { size: 10, maxLines: 2 });
+
+  box("Order items", margin, 384, width, 226);
+  fillColor(green);
+  rect(margin + 12, 564, width - 24, 24, "f");
+  fillColor("1 1 1");
+  text("Product", margin + 22, 571, 9, "F2");
+  text("Size", margin + 282, 571, 9, "F2");
+  text("Qty", margin + 354, 571, 9, "F2");
+  text("Line total", margin + 410, 571, 9, "F2");
+  strokeColor(lineColor);
+  lines.slice(0, 9).forEach((line, index) => {
+    const y = 540 - index * 18;
+    fillColor("0 0 0");
+    wrappedText(lineName(line), margin + 22, y, 38, { size: 9, maxLines: 1 });
+    text(clean(line.weight, 80) || "-", margin + 282, y, 9);
+    text(String(Math.max(1, Number(line.quantity) || 1)), margin + 354, y, 9);
+    text(money(line.lineTotal), margin + 410, y, 9);
+    strokeColor(lineColor);
+    content.push(`${margin + 12} ${y - 7} m ${margin + width - 12} ${y - 7} l S`);
   });
-  content.push("ET");
+  if (lines.length > 9) {
+    fillColor("0 0 0");
+    text(`+ ${lines.length - 9} more items`, margin + 22, 392, 9, "F2");
+  }
+
+  const smallW = (width - 24) / 3;
+  box("Payment", margin, 286, smallW, 74);
+  box("Totals", margin + smallW + 12, 286, smallW, 74);
+  box("Preparation note", margin + smallW * 2 + 24, 286, smallW, 74);
+  fillColor("0 0 0");
+  text("Status: paid", margin + 12, 326, 10, "F2");
+  wrappedText(`Stripe session: ${clean(order.payment?.checkoutSession, 120) || "-"}`, margin + 12, 310, 24, { size: 8, maxLines: 2 });
+  text(`Subtotal: ${money(totals.subtotal)}`, margin + smallW + 24, 328, 10);
+  text(`Shipping: ${money(totals.shipping)}`, margin + smallW + 24, 312, 10);
+  text(`Total: ${money(totals.total)}`, margin + smallW + 24, 296, 10, "F2");
+  wrappedText("Prepare, print if needed, then deposit the parcel manually at the shipping center.", margin + smallW * 2 + 36, 328, 24, { size: 9, maxLines: 4 });
+
+  fillColor(gold);
+  text("Subject includes the order number. This PDF contains customer, payment, and item details.", margin, 244, 9, "F2");
   const stream = content.join("\n");
   const objects = [
     "<< /Type /Catalog /Pages 2 0 R >>",
     "<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
-    "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>",
+    "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>",
     "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>",
+    "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>",
     `<< /Length ${Buffer.byteLength(stream, "binary")} >>\nstream\n${stream}\nendstream`,
   ];
   let pdf = "%PDF-1.4\n";
@@ -258,12 +394,13 @@ export default async function handler(request, response) {
     };
 
     if (customerEmail) {
+      const copy = paidCopy(order);
       await sendEmail({
         from: FROM_EMAIL,
         to: customerEmail,
-        subject: `Thank you for your order #${orderId}`,
-        text: `Thank you for your order #${orderId}.\n\nWe have received your payment and started preparing your order.\n\n${orderText(order)}`,
-        html: orderHtml(order),
+        subject: copy.subject,
+        text: `${copy.lead}\n\n${copy.body}\n\n${copy.footer}`,
+        html: customerPaidHtml(order),
       });
     }
 

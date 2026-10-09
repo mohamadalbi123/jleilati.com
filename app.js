@@ -11799,6 +11799,7 @@ async function handleCheckout(event) {
   const order = {
     id: orderId,
     createdAt: new Date().toISOString(),
+    language: state.lang,
     status: "in_progress",
     notification: "Admin email queued: saeedjleilati@gmail.com",
     customer: {
