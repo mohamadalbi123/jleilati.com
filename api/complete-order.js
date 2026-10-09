@@ -1,5 +1,14 @@
 const ADMIN_EMAIL = process.env.ORDER_ADMIN_EMAIL || process.env.ADMIN_EMAIL || "saeedjleilati@gmail.com";
 const FROM_EMAIL = process.env.ORDER_FROM_EMAIL || process.env.RESEND_FROM_EMAIL || "Jleilati <orders@jleilati.com>";
+const EMAIL_COLORS = {
+  green: "#0b1b12",
+  gold: "#d4a642",
+  paper: "#fff8eb",
+  cream: "#fffdf8",
+  ink: "#17130d",
+  muted: "#766b58",
+  line: "#e6ddcb",
+};
 
 function readJsonBody(request) {
   if (!request.body) return {};
@@ -61,24 +70,36 @@ function paidCopy(order) {
   const copies = {
     ar: {
       subject: `شكراً لطلبك #${orderId}`,
+      title: "شكراً لطلبك",
+      status: "تم استلام الدفع",
+      totalLabel: "المجموع المدفوع",
       lead: `مرحباً ${name}،`,
       body: `شكراً لطلبك من بزورية جليلاتي. تم استلام الدفع وبدأنا تجهيز طلبك.`,
       footer: `سنخبرك عندما يصبح الطلب جاهزاً للشحن.`,
     },
     de: {
       subject: `Danke fuer deine Bestellung #${orderId}`,
+      title: "Danke fuer deine Bestellung",
+      status: "Zahlung erhalten",
+      totalLabel: "Bezahlt",
       lead: `Hallo ${name},`,
       body: `vielen Dank fuer deine Bestellung bei Jleilati. Wir haben deine Zahlung erhalten und bereiten deine Bestellung jetzt vor.`,
       footer: `Wir melden uns wieder, sobald deine Bestellung vorbereitet ist.`,
     },
     fr: {
       subject: `Merci pour votre commande #${orderId}`,
+      title: "Merci pour votre commande",
+      status: "Paiement recu",
+      totalLabel: "Total paye",
       lead: `Bonjour ${name},`,
       body: `merci pour votre commande chez Jleilati. Nous avons bien recu votre paiement et nous preparons votre commande.`,
       footer: `Nous vous previendrons des que votre commande sera preparee.`,
     },
     en: {
       subject: `Thank you for your order #${orderId}`,
+      title: "Thank you for your order",
+      status: "Payment received",
+      totalLabel: "Total paid",
       lead: `Hello ${name},`,
       body: `Thank you for ordering from Jleilati. We received your payment and started preparing your order.`,
       footer: `We will let you know when your order has been prepared.`,
@@ -127,6 +148,24 @@ function htmlEscape(value) {
     .replace(/"/g, "&quot;");
 }
 
+function emailShell({ title, subtitle, body, dir = "ltr" }) {
+  const textAlign = dir === "rtl" ? "right" : "left";
+  return `
+    <div dir="${dir}" style="margin:0;background:${EMAIL_COLORS.paper};padding:24px;font-family:Arial,sans-serif;color:${EMAIL_COLORS.ink};line-height:1.55;text-align:${textAlign}">
+      <div style="max-width:680px;margin:0 auto;background:${EMAIL_COLORS.cream};border:1px solid ${EMAIL_COLORS.line};border-radius:14px;overflow:hidden">
+        <div style="background:${EMAIL_COLORS.green};padding:22px 24px;color:${EMAIL_COLORS.paper}">
+          <div style="color:${EMAIL_COLORS.gold};font-size:22px;font-weight:800;margin-bottom:4px">Jleilati Spices</div>
+          <h1 style="font-size:24px;line-height:1.2;margin:0">${htmlEscape(title)}</h1>
+          ${subtitle ? `<p style="margin:8px 0 0;color:#efe6d5">${htmlEscape(subtitle)}</p>` : ""}
+        </div>
+        <div style="padding:24px">
+          ${body}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
 function orderHtml(order, { admin = false } = {}) {
   const customer = order.customer || {};
   const totals = order.totals || {};
@@ -146,44 +185,59 @@ function orderHtml(order, { admin = false } = {}) {
     .join("");
 
   return `
-    <div style="font-family:Arial,sans-serif;line-height:1.5;color:#111;max-width:760px">
-      <h2 style="margin:0 0 10px">Jleilati order #${htmlEscape(orderNumber(order))}</h2>
-      <p style="margin:0 0 18px">${admin ? "Paid order received. Prepare this order for manual shipping." : "Thank you for your order. We have received your payment and started preparing your order."}</p>
-      <h3 style="margin:18px 0 8px">Customer</h3>
-      <p style="margin:0">
-        <strong>${htmlEscape(customerName(order))}</strong><br>
-        ${htmlEscape(customer.email || "-")}<br>
-        ${htmlEscape(customer.phone || "-")}<br>
-        ${htmlEscape(customer.address || "-")}
-      </p>
-      <h3 style="margin:18px 0 8px">Order details</h3>
-      <table style="width:100%;border-collapse:collapse" cellpadding="8">
-        <thead>
-          <tr style="background:#f4efe4;text-align:left">
-            <th>Product</th><th>Size</th><th>Qty</th><th>Total</th>
-          </tr>
-        </thead>
-        <tbody>${rows}</tbody>
-      </table>
-      <p style="margin:18px 0 0">
-        Subtotal: ${htmlEscape(money(totals.subtotal))}<br>
-        Shipping: ${htmlEscape(money(totals.shipping))}<br>
-        <strong>Total paid: ${htmlEscape(money(totals.total))}</strong>
-      </p>
-    </div>
+    ${emailShell({
+      title: `Order #${orderNumber(order)} paid`,
+      subtitle: admin ? "Prepare this order for manual shipping. PDF is attached." : "Order confirmation",
+      body: `
+        <div style="border:1px solid ${EMAIL_COLORS.line};border-radius:12px;padding:16px;background:#ffffff;margin-bottom:18px">
+          <h2 style="font-size:16px;margin:0 0 8px;color:${EMAIL_COLORS.green}">Customer</h2>
+          <p style="margin:0">
+            <strong>${htmlEscape(customerName(order))}</strong><br>
+            ${htmlEscape(customer.email || "-")}<br>
+            ${htmlEscape(customer.phone || "-")}<br>
+            ${htmlEscape(customer.address || "-")}
+          </p>
+        </div>
+        <div style="border:1px solid ${EMAIL_COLORS.line};border-radius:12px;overflow:hidden;background:#ffffff;margin-bottom:18px">
+          <h2 style="font-size:16px;margin:0;padding:14px 16px;color:${EMAIL_COLORS.green};background:#f4efe4">Order details</h2>
+          <table style="width:100%;border-collapse:collapse" cellpadding="8">
+            <thead>
+              <tr style="background:${EMAIL_COLORS.green};color:${EMAIL_COLORS.paper};text-align:left">
+                <th>Product</th><th>Size</th><th>Qty</th><th>Total</th>
+              </tr>
+            </thead>
+            <tbody>${rows}</tbody>
+          </table>
+        </div>
+        <div style="border:1px solid ${EMAIL_COLORS.line};border-radius:12px;padding:16px;background:#ffffff">
+          <div>Subtotal: <strong>${htmlEscape(money(totals.subtotal))}</strong></div>
+          <div>Shipping: <strong>${htmlEscape(money(totals.shipping))}</strong></div>
+          <div style="font-size:18px;margin-top:8px;color:${EMAIL_COLORS.green}">Total paid: <strong>${htmlEscape(money(totals.total))}</strong></div>
+        </div>
+      `,
+    })}
   `;
 }
 
 function customerPaidHtml(order) {
   const copy = paidCopy(order);
-  return `
-    <div style="font-family:Arial,sans-serif;line-height:1.55;color:#111;max-width:640px">
-      <h2 style="margin:0 0 12px">Jleilati order #${htmlEscape(orderNumber(order))}</h2>
-      <p style="margin:0 0 12px">${htmlEscape(copy.lead)}</p>
-      <p style="margin:0 0 12px">${htmlEscape(copy.body)}</p>
-      <p style="margin:0">${htmlEscape(copy.footer)}</p>
-    </div>
-  `;
+  const dir = orderLanguage(order) === "ar" ? "rtl" : "ltr";
+  const totals = order.totals || {};
+  return emailShell({
+    title: copy.title,
+    subtitle: `#${orderNumber(order)}`,
+    dir,
+    body: `
+      <p style="margin:0 0 14px">${htmlEscape(copy.lead)}</p>
+      <p style="margin:0 0 18px">${htmlEscape(copy.body)}</p>
+      <div style="border:1px solid ${EMAIL_COLORS.line};border-radius:12px;padding:16px;background:#ffffff;margin:0 0 18px">
+        <div style="display:inline-block;background:${EMAIL_COLORS.gold};color:#050604;border-radius:999px;padding:6px 12px;font-weight:800;margin-bottom:12px">${htmlEscape(copy.status)}</div>
+        <div style="font-size:15px;color:${EMAIL_COLORS.muted}">${htmlEscape(copy.totalLabel)}</div>
+        <div style="font-size:24px;font-weight:800;color:${EMAIL_COLORS.green}">${htmlEscape(money(totals.total))}</div>
+      </div>
+      <p style="margin:0;color:${EMAIL_COLORS.muted}">${htmlEscape(copy.footer)}</p>
+    `,
+  });
 }
 
 function pdfSafe(value) {
