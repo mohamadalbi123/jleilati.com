@@ -707,7 +707,7 @@ body[dir="rtl"] .trust-strip small {
   display: grid;
   grid-template-columns: minmax(17rem, 1.1fr) minmax(14rem, 1fr) minmax(0, 2.4fr);
   gap: 0.85rem;
-  align-items: end;
+  align-items: center;
   padding: 0.85rem;
   border: 1px solid rgba(31, 59, 44, 0.12);
   border-radius: 0.9rem;
@@ -730,10 +730,15 @@ body[dir="rtl"] .trust-strip small {
 
 .filters {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.55rem;
   margin: 0;
   align-self: end;
+  justify-content: flex-start;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  padding-block: 0.05rem;
+  scrollbar-width: thin;
 }
 
 .filter-toggle {
@@ -753,7 +758,7 @@ body[dir="rtl"] .trust-strip small {
 
 .filter-btn {
   flex: 0 0 auto;
-  min-height: 2.75rem;
+  min-height: 2.55rem;
   padding-inline: 1rem;
   border-radius: 999px;
   white-space: nowrap;
@@ -994,7 +999,9 @@ body[dir="rtl"] .trust-strip small {
   gap: 0.58rem;
   width: min(100%, 18rem);
   justify-self: center;
+  justify-items: center;
   font-style: normal;
+  text-align: center;
 }
 
 .footer-contact h3 {
@@ -1108,16 +1115,20 @@ body[dir="rtl"] .trust-strip small {
   align-items: baseline;
   width: 100%;
   max-width: 18rem;
+  justify-content: center;
   padding: 0.04rem 0;
   line-height: 1.45;
+  text-align: center;
 }
 
 .footer-address-block {
   display: grid;
+  justify-items: center;
   gap: 0.22rem;
   margin-top: 0.28rem;
   padding-top: 0.58rem;
   border-top: 1px solid rgba(212, 166, 66, 0.18);
+  text-align: center;
 }
 
 .footer-address-block span {
@@ -1130,6 +1141,7 @@ body[dir="rtl"] .trust-strip small {
   display: inline-flex !important;
   width: 100%;
   max-width: 100%;
+  justify-content: center;
   margin-top: 0;
   padding-top: 0 !important;
   border-top: 0 !important;
@@ -1249,17 +1261,19 @@ body[dir="rtl"] .footer-service span::before {
 body[dir="rtl"] .footer-contact {
   width: min(100%, 18rem);
   margin-inline: auto;
-  justify-items: stretch;
+  justify-items: center;
+  text-align: center;
 }
 
 body[dir="rtl"] .footer-contact a {
-  justify-content: flex-end;
-  text-align: right;
+  justify-content: center;
+  text-align: center;
   margin-inline-start: 0;
 }
 
 body[dir="rtl"] .footer-address-link {
-  text-align: right;
+  justify-content: center;
+  text-align: center;
   margin-inline-start: 0;
 }
 
@@ -1273,7 +1287,7 @@ body[dir="rtl"] .footer-contact h3,
 body[dir="rtl"] .footer-contact a,
 body[dir="rtl"] .footer-address-block,
 body[dir="rtl"] .footer-address-link {
-  text-align: right;
+  text-align: center;
 }
 
 body[dir="rtl"] .footer-bottom {
@@ -2586,8 +2600,8 @@ body[dir="ltr"] .footer-shell {
 
   .footer-contact a,
   body[dir="rtl"] .footer-contact a {
-    justify-content: flex-start;
-    text-align: start;
+    justify-content: center;
+    text-align: center;
   }
 
   .footer-address-block {
@@ -2641,14 +2655,18 @@ body[dir="ltr"] .footer-shell {
   body[dir="rtl"] .footer-contact {
     width: 100%;
     margin-inline-start: 0;
+    justify-items: center;
+    text-align: center;
   }
 
   body[dir="rtl"] .footer-contact {
-    justify-items: stretch;
+    justify-items: center;
   }
 
   .footer-address-link {
     max-width: 100%;
+    justify-content: center;
+    text-align: center;
   }
 }
 
@@ -2715,8 +2733,8 @@ body[dir="ltr"] .footer-shell {
   body[dir="rtl"] .footer-address-link,
   .footer-contact a,
   .footer-address-link {
-    justify-content: flex-start;
-    text-align: start;
+    justify-content: center;
+    text-align: center;
   }
 
   .footer-social div {
@@ -2726,6 +2744,8 @@ body[dir="ltr"] .footer-shell {
   .footer-contact,
   body[dir="rtl"] .footer-contact {
     width: 100%;
+    justify-items: center;
+    text-align: center;
   }
 
   .footer-contact h3,
@@ -2802,6 +2822,12 @@ body[dir="ltr"] .footer-shell {
     text-align: start;
   }
 
+  .footer-contact,
+  body[dir="rtl"] .footer-contact {
+    justify-items: center;
+    text-align: center;
+  }
+
   .footer-contact {
     grid-area: contact;
   }
@@ -2848,6 +2874,12 @@ body[dir="ltr"] .footer-shell {
     overflow-wrap: anywhere;
   }
 
+  .footer-contact a,
+  body[dir="rtl"] .footer-contact a {
+    justify-content: center;
+    text-align: center;
+  }
+
   .footer-service span,
   body[dir="rtl"] .footer-service span {
     grid-template-columns: 0.75rem minmax(0, 1fr);
@@ -2867,8 +2899,8 @@ body[dir="ltr"] .footer-shell {
 
   .footer-address-link,
   body[dir="rtl"] .footer-address-link {
-    justify-content: flex-start;
-    text-align: start;
+    justify-content: center;
+    text-align: center;
   }
 
   .footer-social div {
