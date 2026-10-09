@@ -112,6 +112,7 @@ const i18n = {
     categoryTitle: "تصفح حسب القسم",
     shopTitle: "اختر منتجاتك",
     searchPlaceholder: "ابحث عن منتج",
+    filterToggle: "فلترة",
     sortFeatured: "المميزة",
     sortPriceAsc: "السعر: الأقل أولاً",
     sortStock: "المخزون الأعلى",
@@ -258,6 +259,7 @@ const i18n = {
     categoryTitle: "Nach Kategorie stöbern",
     shopTitle: "Produkte auswählen",
     searchPlaceholder: "Produkt suchen",
+    filterToggle: "Filter",
     sortFeatured: "Empfohlen",
     sortPriceAsc: "Preis: niedrig zuerst",
     sortStock: "Höchster Bestand",
@@ -404,6 +406,7 @@ const i18n = {
     categoryTitle: "Browse by category",
     shopTitle: "Choose your products",
     searchPlaceholder: "Search products",
+    filterToggle: "Filter",
     sortFeatured: "Featured",
     sortPriceAsc: "Price: low first",
     sortStock: "Highest stock",
@@ -550,6 +553,7 @@ const i18n = {
     categoryTitle: "Parcourir par catégorie",
     shopTitle: "Choisissez vos produits",
     searchPlaceholder: "Rechercher un produit",
+    filterToggle: "Filtrer",
     sortFeatured: "Sélection",
     sortPriceAsc: "Prix croissant",
     sortStock: "Stock le plus élevé",
@@ -11175,6 +11179,8 @@ function renderFilters() {
     button.addEventListener("click", () => {
       state.category = button.dataset.category;
       clearSearch();
+      document.querySelector(".shop-sidebar")?.classList.remove("filters-open");
+      document.querySelector("#filterToggle")?.setAttribute("aria-expanded", "false");
       renderFilters();
       renderProducts();
     });
@@ -12183,10 +12189,17 @@ document.querySelectorAll("[data-nav-category]").forEach((link) => {
     event.preventDefault();
     state.category = link.dataset.navCategory;
     clearSearch();
+    document.querySelector(".shop-sidebar")?.classList.remove("filters-open");
+    document.querySelector("#filterToggle")?.setAttribute("aria-expanded", "false");
     renderFilters();
     renderProducts();
     scrollToSection("#shop");
   });
+});
+document.querySelector("#filterToggle").addEventListener("click", () => {
+  const sidebar = document.querySelector(".shop-sidebar");
+  const isOpen = sidebar.classList.toggle("filters-open");
+  document.querySelector("#filterToggle").setAttribute("aria-expanded", String(isOpen));
 });
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (event) => {

@@ -736,6 +736,10 @@ body[dir="rtl"] .trust-strip small {
   align-self: end;
 }
 
+.filter-toggle {
+  display: none;
+}
+
 .filter-btn,
 .variant-select,
 .stepper button {
@@ -2371,8 +2375,33 @@ body[dir="ltr"] .footer-shell {
     border-radius: 999px;
   }
 
+  .filter-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.45rem;
+    width: 100%;
+    border: 1px solid var(--green);
+    border-radius: 999px;
+    background: var(--green);
+    color: #fff9ec;
+    padding: 0.55rem 0.85rem;
+    font-weight: 900;
+  }
+
+  .filter-toggle::before {
+    content: "";
+    width: 0.9rem;
+    height: 0.9rem;
+    margin-inline-end: 0.45rem;
+    border: 2px solid currentColor;
+    border-block-start: 0;
+    border-inline-end: 0;
+    transform: translateY(-0.12rem) rotate(-45deg);
+  }
+
   .filters {
-    display: flex;
+    display: none;
     gap: 0.42rem;
     max-width: 100%;
     margin: 0;
@@ -2380,6 +2409,14 @@ body[dir="ltr"] .footer-shell {
     overflow-x: auto;
     overscroll-behavior-inline: contain;
     scrollbar-width: none;
+  }
+
+  .shop-sidebar.filters-open .filters {
+    display: flex;
+  }
+
+  .shop-sidebar.filters-open .filter-toggle::before {
+    transform: translateY(0.12rem) rotate(135deg);
   }
 
   .filter-btn {
