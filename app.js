@@ -11140,22 +11140,24 @@ function renderCategories() {
     .filter((category) => category.home !== false)
     .map(
       (category) => `
-        <article class="category-card" style="--cat-color:${category.color}; background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.72)), url('${category.image}')">
-          <h3>${localize(category.name)}</h3>
+        <a class="category-card" href="#shop" data-category="${category.id}" aria-labelledby="category-${category.id}-title" style="--cat-color:${category.color}; background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.72)), url('${category.image}')">
+          <h3 id="category-${category.id}-title">${localize(category.name)}</h3>
           <p>${localize(category.desc)}</p>
-          <button type="button" data-category="${category.id}">${t("viewProducts")}</button>
-        </article>
+        </a>
       `
     )
     .join("");
 
-  grid.querySelectorAll("button").forEach((button) => {
-    button.addEventListener("click", () => {
-      state.category = button.dataset.category;
+  grid.querySelectorAll(".category-card").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      state.category = link.dataset.category;
       clearSearch();
-      document.querySelector("#shop").scrollIntoView({ behavior: "smooth" });
+      document.querySelector(".shop-sidebar")?.classList.remove("filters-open");
+      document.querySelector("#filterToggle")?.setAttribute("aria-expanded", "false");
       renderFilters();
       renderProducts();
+      scrollToSection("#shop");
     });
   });
 }

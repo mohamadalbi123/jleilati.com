@@ -670,6 +670,7 @@ body:not([dir="rtl"]) .hero-logo-bottom {
 }
 
 .category-card {
+  display: block;
   position: relative;
   overflow: hidden;
   min-height: 11rem;
@@ -680,6 +681,15 @@ body:not([dir="rtl"]) .hero-logo-bottom {
     url("assets/hero-damascus-premium.png");
   background-size: cover;
   background-position: center;
+}
+
+.category-card:hover {
+  border-color: var(--gold);
+}
+
+.category-card:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: -3px;
 }
 
 .category-card::before {
@@ -704,24 +714,7 @@ body:not([dir="rtl"]) .hero-logo-bottom {
 
 .category-card p {
   max-width: 22rem;
-  margin: 0.7rem 0 1.2rem;
-}
-
-.category-card button {
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  border-radius: 50%;
-  width: 2.35rem;
-  height: 2.35rem;
-  background: rgba(212, 166, 66, 0.95);
-  color: #fff9ec;
-  padding: 0;
-  font-weight: 800;
-  font-size: 0;
-}
-
-.category-card button::after {
-  content: "←";
-  font-size: 1.1rem;
+  margin: 0.7rem 0 0;
 }
 
 .shop-shell {
@@ -1079,6 +1072,12 @@ body:not([dir="rtl"]) .hero-logo-bottom {
   gap: 0.78rem;
 }
 
+.footer-service > h3 {
+  width: 100%;
+  justify-self: stretch;
+  text-align: center;
+}
+
 .footer-contact {
   grid-area: contact;
   display: grid;
@@ -1246,30 +1245,22 @@ body:not([dir="rtl"]) .hero-logo-bottom {
   color: var(--gold);
 }
 
-.footer-brand-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(1rem, 4vw, 4rem);
-  padding: 1.5rem 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.09);
-  background: #152116;
-}
-
-.footer-brand-row strong {
+.footer-name {
+  min-width: 0;
   color: #f6d987;
   font-family: "Aref Ruqaa", "Amiri", "Noto Naskh Arabic", serif;
-  font-size: clamp(1.45rem, 2vw, 2rem);
-  line-height: 1;
+  font-size: 1.6rem;
+  line-height: 1.25;
+  text-align: center;
+  overflow-wrap: anywhere;
 }
 
 .footer-bottom {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
-  gap: 0.75rem 1rem;
-  width: min(1120px, calc(100% - 2rem));
+  gap: 1rem;
+  width: min(1240px, calc(100% - 2.5rem));
   margin: 0 auto;
   padding: 1.35rem 0 1.55rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -1277,6 +1268,22 @@ body:not([dir="rtl"]) .hero-logo-bottom {
   font-size: 0.86rem;
   font-weight: 800;
   direction: ltr;
+}
+
+.footer-bottom .builder-credit {
+  display: block;
+  justify-self: start;
+}
+
+.builder-name {
+  white-space: nowrap;
+}
+
+.footer-copyright {
+  min-width: 0;
+  justify-self: end;
+  text-align: right;
+  white-space: nowrap;
 }
 
 .builder-credit {
@@ -2423,31 +2430,6 @@ body[dir="ltr"] .footer-shell {
     display: none;
   }
 
-  .category-card button {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-    border-radius: 0;
-    background: transparent;
-  }
-
-  .category-card button::after {
-    position: absolute;
-    inset-inline-end: 0.7rem;
-    bottom: 0.7rem;
-    display: grid;
-    place-items: center;
-    width: 1.75rem;
-    height: 1.75rem;
-    border-radius: 50%;
-    background: var(--gold);
-    color: #fff9ec;
-    content: "←";
-    font-size: 0.95rem;
-  }
-
   .shop-sidebar {
     top: 4.95rem;
     margin: 0 0 0.78rem;
@@ -2700,18 +2682,24 @@ body[dir="ltr"] .footer-shell {
   }
 
   .footer-bottom {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem 0 1.2rem;
-    text-align: left;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr) minmax(0, 1fr);
+    gap: 0.5rem;
+    width: calc(100% - 1.4rem);
+    padding: 0.9rem 0;
   }
 
-  .footer-brand-row {
-    align-items: center;
-    flex-direction: column;
-    gap: 0.8rem;
-    padding: 1.15rem 1rem;
-    text-align: center;
+  .footer-name {
+    font-size: 0.9375rem;
+  }
+
+  .footer-bottom .builder-credit {
+    padding: 0.3rem 0.4rem;
+    font-size: 0.625rem;
+    line-height: 1.3;
+  }
+
+  .footer-copyright {
+    font-size: 0.625rem;
   }
 
   .buy-row {
@@ -2989,14 +2977,6 @@ body[dir="ltr"] .footer-shell {
     justify-content: flex-start;
   }
 
-  .footer-brand-row {
-    padding: 1rem;
-  }
-
-  .footer-bottom {
-    justify-content: flex-start;
-    text-align: left;
-  }
 }
 
 @media (max-width: 420px) {
