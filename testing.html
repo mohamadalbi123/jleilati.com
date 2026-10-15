@@ -123,6 +123,16 @@
             <circle cx="12" cy="7" r="4" />
           </svg>
         </button>
+        <label class="header-language" for="languageSelect">
+          <span class="language-flag" id="languageFlag" aria-hidden="true">🇬🇧</span>
+          <span class="language-code" id="languageCode" aria-hidden="true">EN</span>
+          <select id="languageSelect" aria-label="Language" data-i18n-title="footerLanguage" dir="ltr">
+            <option value="en" lang="en">🇬🇧 English</option>
+            <option value="de" lang="de">🇩🇪 Deutsch</option>
+            <option value="fr" lang="fr">🇫🇷 Français</option>
+            <option value="ar" lang="ar">🇸🇾 العربية</option>
+          </select>
+        </label>
         <button class="cart-button" id="cartButton" type="button">
           <svg aria-hidden="true" viewBox="0 0 24 24">
             <path d="M6 9h12l-1 10H7L6 9Z" />
@@ -157,25 +167,25 @@
           <span class="trust-icon" aria-hidden="true">
             <svg viewBox="0 0 48 48"><path d="M8 38c16-1 27-12 30-28-16 2-27 12-30 28Z" /><path d="M14 33c7-8 14-14 24-23" /><path d="M20 38c12-2 20-10 22-22" /></svg>
           </span>
-          <strong data-i18n="trustNatural">100% natural products</strong><small data-i18n="trustNaturalSub">No artificial additives</small>
+          <span class="trust-copy"><strong data-i18n="trustNatural">100% natural products</strong><small data-i18n="trustNaturalSub">No artificial additives</small></span>
         </div>
         <div>
           <span class="trust-icon" aria-hidden="true">
             <svg viewBox="0 0 48 48"><path d="M8 17h32L24 40 8 17Z" /><path d="m14 17 5-8h10l5 8" /><path d="M19 9 24 40 29 9" /></svg>
           </span>
-          <strong data-i18n="trustQuality">Highest quality</strong><small data-i18n="trustQualitySub">Carefully selected</small>
+          <span class="trust-copy"><strong data-i18n="trustQuality">Highest quality</strong><small data-i18n="trustQualitySub">Carefully selected</small></span>
         </div>
         <div>
           <span class="trust-icon" aria-hidden="true">
             <svg viewBox="0 0 48 48"><path d="M7 29h24V13H7v16Z" /><path d="M31 20h7l5 6v3H31" /><path d="M14 35a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" /><path d="M36 35a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" /><path d="M3 18h12M1 24h10" /></svg>
           </span>
-          <strong data-i18n="trustShipping">Shipping to Europe</strong><small data-i18n="trustShippingSub">Free over €51</small>
+          <span class="trust-copy"><strong data-i18n="trustShipping">Shipping to Europe</strong><small data-i18n="trustShippingSub">Free over €51</small></span>
         </div>
         <div>
           <span class="trust-icon" aria-hidden="true">
             <svg viewBox="0 0 48 48"><path d="M24 40S8 30 8 18a8 8 0 0 1 14-5 8 8 0 0 1 14 5c0 12-12 19-12 22Z" /></svg>
           </span>
-          <strong data-i18n="trustCare">Packed with care</strong><small data-i18n="trustCareSub">For your table</small>
+          <span class="trust-copy"><strong data-i18n="trustCare">Packed with care</strong><small data-i18n="trustCareSub">For your table</small></span>
         </div>
       </section>
 
@@ -280,15 +290,6 @@
       </div>
       <div class="footer-brand-row">
         <strong data-i18n="brandName">Jleilati Spices</strong>
-        <label>
-          <span data-i18n="footerLanguage">Language</span>
-          <select id="languageSelect" aria-label="Language">
-            <option value="en">🇬🇧 EN</option>
-            <option value="de">🇩🇪 DE</option>
-            <option value="fr">🇫🇷 FR</option>
-            <option value="ar">🇸🇾 AR</option>
-          </select>
-        </label>
       </div>
       <div class="footer-bottom">
         <a class="builder-credit" href="https://www.chambre17.com" target="_blank" rel="noreferrer">Built by Chambre 17</a>

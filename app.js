@@ -11026,6 +11026,9 @@ function applyLanguage() {
   });
   const languageSelect = document.querySelector("#languageSelect");
   if (languageSelect) languageSelect.value = state.lang;
+  const languageFlags = { en: "🇬🇧", de: "🇩🇪", fr: "🇫🇷", ar: "🇸🇾" };
+  document.querySelector("#languageFlag").textContent = languageFlags[state.lang];
+  document.querySelector("#languageCode").textContent = state.lang.toUpperCase();
   renderCountryOptions();
   updateGoogleAuthLabel();
 }
