@@ -155,12 +155,11 @@ select {
   flex: 0 0 auto;
   align-items: center;
   justify-content: center;
-  gap: 0.3rem;
+  width: 2.75rem;
   height: 2.75rem;
-  min-width: 4.25rem;
-  border: 1px solid rgba(212, 166, 66, 0.28);
-  border-radius: 0.5rem;
-  background: #080a07;
+  min-width: 2.75rem;
+  border: 0;
+  background: transparent;
   color: #f5ead1;
   direction: ltr;
   cursor: pointer;
@@ -172,9 +171,7 @@ select {
 }
 
 .language-code {
-  font-family: Inter, "Segoe UI", Arial, sans-serif;
-  font-size: 0.75rem;
-  font-weight: 700;
+  display: none;
 }
 
 .header-language select {
@@ -186,12 +183,7 @@ select {
   cursor: pointer;
 }
 
-.header-language:hover,
-.header-language:focus-within {
-  border-color: var(--gold);
-}
-
-.header-language:focus-within {
+.header-language:has(select:focus-visible) {
   outline: 2px solid var(--gold);
   outline-offset: 3px;
 }
