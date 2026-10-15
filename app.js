@@ -840,9 +840,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "زنجبيل حب",
-      "en": "زنجبيل حب",
-      "de": "زنجبيل حب",
-      "fr": "زنجبيل حب"
+      "en": "Whole ginger",
+      "de": "Ingwer ganz",
+      "fr": "Gingembre entier"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -888,9 +888,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "زنجبيل مطحون",
-      "en": "زنجبيل مطحون",
-      "de": "زنجبيل مطحون",
-      "fr": "زنجبيل مطحون"
+      "en": "Ground ginger",
+      "de": "Ingwer gemahlen",
+      "fr": "Gingembre moulu"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -936,9 +936,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "فلفل أسود مطحون",
-      "en": "فلفل أسود مطحون",
-      "de": "فلفل أسود مطحون",
-      "fr": "فلفل أسود مطحون"
+      "en": "Ground black pepper",
+      "de": "Schwarzer Pfeffer gemahlen",
+      "fr": "Poivre noir moulu"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -984,9 +984,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "فلفل أسود حب",
-      "en": "فلفل أسود حب",
-      "de": "فلفل أسود حب",
-      "fr": "فلفل أسود حب"
+      "en": "Whole black peppercorns",
+      "de": "Schwarze Pfefferkörner",
+      "fr": "Poivre noir en grains"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -1032,9 +1032,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "فلفل أبيض مطحون",
-      "en": "فلفل أبيض مطحون",
-      "de": "فلفل أبيض مطحون",
-      "fr": "فلفل أبيض مطحون"
+      "en": "Ground white pepper",
+      "de": "Weißer Pfeffer gemahlen",
+      "fr": "Poivre blanc moulu"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -1080,9 +1080,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "فلفل أبيض حب",
-      "en": "فلفل أبيض حب",
-      "de": "فلفل أبيض حب",
-      "fr": "فلفل أبيض حب"
+      "en": "Whole white peppercorns",
+      "de": "Weiße Pfefferkörner",
+      "fr": "Poivre blanc en grains"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -1128,9 +1128,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "خولنجان حب",
-      "en": "خولنجان حب",
-      "de": "خولنجان حب",
-      "fr": "خولنجان حب"
+      "en": "Whole galangal",
+      "de": "Galgant ganz",
+      "fr": "Galanga entier"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -1176,9 +1176,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "خولنجان مطحون",
-      "en": "خولنجان مطحون",
-      "de": "خولنجان مطحون",
-      "fr": "خولنجان مطحون"
+      "en": "Ground galangal",
+      "de": "Galgant gemahlen",
+      "fr": "Galanga moulu"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -1224,9 +1224,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "كركم حب",
-      "en": "كركم حب",
-      "de": "كركم حب",
-      "fr": "كركم حب"
+      "en": "Whole turmeric",
+      "de": "Kurkuma ganz",
+      "fr": "Curcuma entier"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -1272,9 +1272,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "كركم مطحون",
-      "en": "كركم مطحون",
-      "de": "كركم مطحون",
-      "fr": "كركم مطحون"
+      "en": "Ground turmeric",
+      "de": "Kurkuma gemahlen",
+      "fr": "Curcuma moulu"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -1320,9 +1320,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "كمون حب",
-      "en": "كمون حب",
-      "de": "كمون حب",
-      "fr": "كمون حب"
+      "en": "Whole cumin seeds",
+      "de": "Kreuzkümmelsamen",
+      "fr": "Graines de cumin"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -1368,9 +1368,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "كمون مطحون",
-      "en": "كمون مطحون",
-      "de": "كمون مطحون",
-      "fr": "كمون مطحون"
+      "en": "Ground cumin",
+      "de": "Kreuzkümmel gemahlen",
+      "fr": "Cumin moulu"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -1416,9 +1416,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "يانسون حب",
-      "en": "يانسون حب",
-      "de": "يانسون حب",
-      "fr": "يانسون حب"
+      "en": "Whole anise seeds",
+      "de": "Anissamen",
+      "fr": "Graines d’anis"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -1464,9 +1464,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "يانسون نجمة",
-      "en": "يانسون نجمة",
-      "de": "يانسون نجمة",
-      "fr": "يانسون نجمة"
+      "en": "Star anise",
+      "de": "Sternanis",
+      "fr": "Badiane"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -1512,9 +1512,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "يانسون مطحون",
-      "en": "يانسون مطحون",
-      "de": "يانسون مطحون",
-      "fr": "يانسون مطحون"
+      "en": "Ground anise",
+      "de": "Anis gemahlen",
+      "fr": "Anis moulu"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -1560,9 +1560,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "كزبرة حب",
-      "en": "كزبرة حب",
-      "de": "كزبرة حب",
-      "fr": "كزبرة حب"
+      "en": "Whole coriander seeds",
+      "de": "Koriandersamen",
+      "fr": "Graines de coriandre"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -1608,9 +1608,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "كزبرة مطحونة",
-      "en": "كزبرة مطحونة",
-      "de": "كزبرة مطحونة",
-      "fr": "كزبرة مطحونة"
+      "en": "Ground coriander",
+      "de": "Koriander gemahlen",
+      "fr": "Coriandre moulue"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -1656,9 +1656,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "قرنفل حب",
-      "en": "قرنفل حب",
-      "de": "قرنفل حب",
-      "fr": "قرنفل حب"
+      "en": "Whole cloves",
+      "de": "Gewürznelken ganz",
+      "fr": "Clous de girofle entiers"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -1704,9 +1704,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "قرنفل مطحون",
-      "en": "قرنفل مطحون",
-      "de": "قرنفل مطحون",
-      "fr": "قرنفل مطحون"
+      "en": "Ground cloves",
+      "de": "Gewürznelken gemahlen",
+      "fr": "Clous de girofle moulus"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -1752,9 +1752,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "لومي",
-      "en": "لومي",
-      "de": "لومي",
-      "fr": "لومي"
+      "en": "Dried lime (loomi)",
+      "de": "Getrocknete Limette (Loomi)",
+      "fr": "Citron vert séché (loomi)"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -1800,9 +1800,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "شمرا حب",
-      "en": "شمرا حب",
-      "de": "شمرا حب",
-      "fr": "شمرا حب"
+      "en": "Whole fennel seeds",
+      "de": "Fenchelsamen",
+      "fr": "Graines de fenouil"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -1848,9 +1848,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "شمرا مطحونة",
-      "en": "شمرا مطحونة",
-      "de": "شمرا مطحونة",
-      "fr": "شمرا مطحونة"
+      "en": "Ground fennel",
+      "de": "Fenchel gemahlen",
+      "fr": "Fenouil moulu"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -1896,9 +1896,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "بهار حلو حب",
-      "en": "بهار حلو حب",
-      "de": "بهار حلو حب",
-      "fr": "بهار حلو حب"
+      "en": "Whole allspice berries",
+      "de": "Pimentkörner",
+      "fr": "Piment de la Jamaïque en grains"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -1944,9 +1944,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "بهار حلو مطحون",
-      "en": "بهار حلو مطحون",
-      "de": "بهار حلو مطحون",
-      "fr": "بهار حلو مطحون"
+      "en": "Ground allspice",
+      "de": "Piment gemahlen",
+      "fr": "Piment de la Jamaïque moulu"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -1992,9 +1992,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "قرفة عيدان",
-      "en": "قرفة عيدان",
-      "de": "قرفة عيدان",
-      "fr": "قرفة عيدان"
+      "en": "Cinnamon sticks",
+      "de": "Zimtstangen",
+      "fr": "Bâtons de cannelle"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -2040,9 +2040,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "قرفة سيجار",
-      "en": "قرفة سيجار",
-      "de": "قرفة سيجار",
-      "fr": "قرفة سيجار"
+      "en": "Cigar-style cinnamon sticks",
+      "de": "Zimtstangen in Zigarrenform",
+      "fr": "Bâtons de cannelle roulés"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -2088,9 +2088,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "قرفة مطحونة",
-      "en": "قرفة مطحونة",
-      "de": "قرفة مطحونة",
-      "fr": "قرفة مطحونة"
+      "en": "Ground cinnamon",
+      "de": "Zimt gemahlen",
+      "fr": "Cannelle moulue"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -2136,9 +2136,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "سمسم ني",
-      "en": "سمسم ني",
-      "de": "سمسم ني",
-      "fr": "سمسم ني"
+      "en": "Raw sesame seeds",
+      "de": "Sesamsamen roh",
+      "fr": "Graines de sésame crues"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -2184,9 +2184,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "سمسم",
-      "en": "سمسم",
-      "de": "سمسم",
-      "fr": "سمسم"
+      "en": "Sesame seeds",
+      "de": "Sesamsamen",
+      "fr": "Graines de sésame"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -2232,9 +2232,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "سمسم محمص",
-      "en": "سمسم محمص",
-      "de": "سمسم محمص",
-      "fr": "سمسم محمص"
+      "en": "Roasted sesame seeds",
+      "de": "Sesamsamen geröstet",
+      "fr": "Graines de sésame grillées"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -2280,9 +2280,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "حبة البركة",
-      "en": "حبة البركة",
-      "de": "حبة البركة",
-      "fr": "حبة البركة"
+      "en": "Nigella seeds",
+      "de": "Schwarzkümmelsamen",
+      "fr": "Graines de nigelle"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -2328,9 +2328,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "سماق حب",
-      "en": "سماق حب",
-      "de": "سماق حب",
-      "fr": "سماق حب"
+      "en": "Whole sumac berries",
+      "de": "Sumachbeeren ganz",
+      "fr": "Baies de sumac entières"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -2376,9 +2376,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "سماق مطحون",
-      "en": "سماق مطحون",
-      "de": "سماق مطحون",
-      "fr": "سماق مطحون"
+      "en": "Ground sumac",
+      "de": "Sumach gemahlen",
+      "fr": "Sumac moulu"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -2424,9 +2424,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "قشر السماق",
-      "en": "قشر السماق",
-      "de": "قشر السماق",
-      "fr": "قشر السماق"
+      "en": "Sumac husks",
+      "de": "Sumachschalen",
+      "fr": "Écorces de sumac"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -2472,9 +2472,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "هيل حب",
-      "en": "هيل حب",
-      "de": "هيل حب",
-      "fr": "هيل حب"
+      "en": "Whole cardamom pods",
+      "de": "Kardamomkapseln ganz",
+      "fr": "Cardamome en capsules"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -2520,9 +2520,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "هيل مطحون",
-      "en": "هيل مطحون",
-      "de": "هيل مطحون",
-      "fr": "هيل مطحون"
+      "en": "Ground cardamom",
+      "de": "Kardamom gemahlen",
+      "fr": "Cardamome moulue"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -2568,9 +2568,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "ملح صيني",
-      "en": "ملح صيني",
-      "de": "ملح صيني",
-      "fr": "ملح صيني"
+      "en": "Chinese salt",
+      "de": "Chinesisches Salz",
+      "fr": "Sel chinois"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -2616,9 +2616,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "ثوم بودرة",
-      "en": "ثوم بودرة",
-      "de": "ثوم بودرة",
-      "fr": "ثوم بودرة"
+      "en": "Garlic powder",
+      "de": "Knoblauchpulver",
+      "fr": "Ail en poudre"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -2664,9 +2664,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "بصل بودرة",
-      "en": "بصل بودرة",
-      "de": "بصل بودرة",
-      "fr": "بصل بودرة"
+      "en": "Onion powder",
+      "de": "Zwiebelpulver",
+      "fr": "Oignon en poudre"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -2712,9 +2712,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "محلب حب",
-      "en": "محلب حب",
-      "de": "محلب حب",
-      "fr": "محلب حب"
+      "en": "Whole mahlab kernels",
+      "de": "Mahlabkerne ganz",
+      "fr": "Graines de mahlab entières"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -2760,9 +2760,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "محلب مطحون",
-      "en": "محلب مطحون",
-      "de": "محلب مطحون",
-      "fr": "محلب مطحون"
+      "en": "Ground mahlab",
+      "de": "Mahlab gemahlen",
+      "fr": "Mahlab moulu"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -2808,9 +2808,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "فليفلة حلوة",
-      "en": "فليفلة حلوة",
-      "de": "فليفلة حلوة",
-      "fr": "فليفلة حلوة"
+      "en": "Sweet paprika",
+      "de": "Paprika edelsüß",
+      "fr": "Paprika doux"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -2856,9 +2856,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "فليفلة وسط",
-      "en": "فليفلة وسط",
-      "de": "فليفلة وسط",
-      "fr": "فليفلة وسط"
+      "en": "Medium-hot paprika",
+      "de": "Paprika mittelscharf",
+      "fr": "Paprika moyennement piquant"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -2904,9 +2904,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "شطة",
-      "en": "شطة",
-      "de": "شطة",
-      "fr": "شطة"
+      "en": "Chilli spice",
+      "de": "Chiligewürz",
+      "fr": "Piment"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -2952,9 +2952,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "أوريغانو",
-      "en": "أوريغانو",
-      "de": "أوريغانو",
-      "fr": "أوريغانو"
+      "en": "Oregano",
+      "de": "Oregano",
+      "fr": "Origan"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -3000,9 +3000,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "حلبة حب",
-      "en": "حلبة حب",
-      "de": "حلبة حب",
-      "fr": "حلبة حب"
+      "en": "Whole fenugreek seeds",
+      "de": "Bockshornkleesamen",
+      "fr": "Graines de fenugrec"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -3048,9 +3048,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "حلبة مطحونة",
-      "en": "حلبة مطحونة",
-      "de": "حلبة مطحونة",
-      "fr": "حلبة مطحونة"
+      "en": "Ground fenugreek",
+      "de": "Bockshornklee gemahlen",
+      "fr": "Fenugrec moulu"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -3096,9 +3096,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "ورق غار",
-      "en": "ورق غار",
-      "de": "ورق غار",
-      "fr": "ورق غار"
+      "en": "Bay leaves",
+      "de": "Lorbeerblätter",
+      "fr": "Feuilles de laurier"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -3144,9 +3144,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "كراوية حب",
-      "en": "كراوية حب",
-      "de": "كراوية حب",
-      "fr": "كراوية حب"
+      "en": "Whole caraway seeds",
+      "de": "Kümmelsamen",
+      "fr": "Graines de carvi"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -3192,9 +3192,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "كراوية مطحونة",
-      "en": "كراوية مطحونة",
-      "de": "كراوية مطحونة",
-      "fr": "كراوية مطحونة"
+      "en": "Ground caraway",
+      "de": "Kümmel gemahlen",
+      "fr": "Carvi moulu"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -3240,9 +3240,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "رز مطحون",
-      "en": "رز مطحون",
-      "de": "رز مطحون",
-      "fr": "رز مطحون"
+      "en": "Ground rice",
+      "de": "Reis gemahlen",
+      "fr": "Riz moulu"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -3288,9 +3288,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "كربونة",
-      "en": "كربونة",
-      "de": "كربونة",
-      "fr": "كربونة"
+      "en": "Baking soda",
+      "de": "Natron",
+      "fr": "Bicarbonate alimentaire"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -3336,9 +3336,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "قلي",
-      "en": "قلي",
-      "de": "قلي",
-      "fr": "قلي"
+      "en": "Qali",
+      "de": "Qali",
+      "fr": "Qali"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -3384,9 +3384,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "نعنع",
-      "en": "نعنع",
-      "de": "نعنع",
-      "fr": "نعنع"
+      "en": "Mint",
+      "de": "Minze",
+      "fr": "Menthe"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -3432,9 +3432,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "جوزة الطيب حب",
-      "en": "جوزة الطيب حب",
-      "de": "جوزة الطيب حب",
-      "fr": "جوزة الطيب حب"
+      "en": "Whole nutmeg",
+      "de": "Muskatnüsse ganz",
+      "fr": "Noix de muscade entières"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -3480,9 +3480,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "جوزة الطيب مطحونة",
-      "en": "جوزة الطيب مطحونة",
-      "de": "جوزة الطيب مطحونة",
-      "fr": "جوزة الطيب مطحونة"
+      "en": "Ground nutmeg",
+      "de": "Muskatnuss gemahlen",
+      "fr": "Noix de muscade moulue"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -3528,9 +3528,9 @@ const products = [
     "category": "spices",
     "name": {
       "ar": "فلفل مشكل",
-      "en": "فلفل مشكل",
-      "de": "فلفل مشكل",
-      "fr": "فلفل مشكل"
+      "en": "Mixed peppercorns",
+      "de": "Pfefferkörnermischung",
+      "fr": "Mélange de poivres en grains"
     },
     "desc": {
       "ar": "بهارات وتوابل مختارة من قائمة بزورية جليلاتي الرسمية.",
@@ -3576,9 +3576,9 @@ const products = [
     "category": "mixes",
     "name": {
       "ar": "ماجي",
-      "en": "ماجي",
-      "de": "ماجي",
-      "fr": "ماجي"
+      "en": "Maggi seasoning",
+      "de": "Maggi-Würzmischung",
+      "fr": "Assaisonnement Maggi"
     },
     "desc": {
       "ar": "خلطات جاهزة للاستخدام اليومي والطبخ الشامي.",
@@ -3624,9 +3624,9 @@ const products = [
     "category": "mixes",
     "name": {
       "ar": "ماجي أبيض",
-      "en": "ماجي أبيض",
-      "de": "ماجي أبيض",
-      "fr": "ماجي أبيض"
+      "en": "White Maggi seasoning",
+      "de": "Weiße Maggi-Würzmischung",
+      "fr": "Assaisonnement Maggi blanc"
     },
     "desc": {
       "ar": "خلطات جاهزة للاستخدام اليومي والطبخ الشامي.",
@@ -3672,9 +3672,9 @@ const products = [
     "category": "mixes",
     "name": {
       "ar": "سبع بهارات",
-      "en": "سبع بهارات",
-      "de": "سبع بهارات",
-      "fr": "سبع بهارات"
+      "en": "Seven-spice blend",
+      "de": "Sieben-Gewürze-Mischung",
+      "fr": "Mélange sept épices"
     },
     "desc": {
       "ar": "خلطات جاهزة للاستخدام اليومي والطبخ الشامي.",
@@ -3720,9 +3720,9 @@ const products = [
     "category": "mixes",
     "name": {
       "ar": "سمك",
-      "en": "سمك",
-      "de": "سمك",
-      "fr": "سمك"
+      "en": "Fish seasoning",
+      "de": "Fischgewürz",
+      "fr": "Assaisonnement pour poisson"
     },
     "desc": {
       "ar": "خلطات جاهزة للاستخدام اليومي والطبخ الشامي.",
@@ -3768,9 +3768,9 @@ const products = [
     "category": "mixes",
     "name": {
       "ar": "بهارات فروج بالفرن",
-      "en": "بهارات فروج بالفرن",
-      "de": "بهارات فروج بالفرن",
-      "fr": "بهارات فروج بالفرن"
+      "en": "Oven-roast chicken seasoning",
+      "de": "Gewürz für Ofenhähnchen",
+      "fr": "Assaisonnement pour poulet au four"
     },
     "desc": {
       "ar": "خلطات جاهزة للاستخدام اليومي والطبخ الشامي.",
@@ -3816,9 +3816,9 @@ const products = [
     "category": "mixes",
     "name": {
       "ar": "همبرغر دجاج",
-      "en": "همبرغر دجاج",
-      "de": "همبرغر دجاج",
-      "fr": "همبرغر دجاج"
+      "en": "Chicken burger seasoning",
+      "de": "Hähnchenburger-Gewürz",
+      "fr": "Assaisonnement pour burger de poulet"
     },
     "desc": {
       "ar": "خلطات جاهزة للاستخدام اليومي والطبخ الشامي.",
@@ -3864,9 +3864,9 @@ const products = [
     "category": "mixes",
     "name": {
       "ar": "همبرغر لحمة",
-      "en": "همبرغر لحمة",
-      "de": "همبرغر لحمة",
-      "fr": "همبرغر لحمة"
+      "en": "Meat burger seasoning",
+      "de": "Fleischburger-Gewürz",
+      "fr": "Assaisonnement pour burger de viande"
     },
     "desc": {
       "ar": "خلطات جاهزة للاستخدام اليومي والطبخ الشامي.",
@@ -3912,9 +3912,9 @@ const products = [
     "category": "mixes",
     "name": {
       "ar": "فلافل",
-      "en": "فلافل",
-      "de": "فلافل",
-      "fr": "فلافل"
+      "en": "Falafel seasoning",
+      "de": "Falafelgewürz",
+      "fr": "Assaisonnement pour falafels"
     },
     "desc": {
       "ar": "خلطات جاهزة للاستخدام اليومي والطبخ الشامي.",
@@ -3960,9 +3960,9 @@ const products = [
     "category": "mixes",
     "name": {
       "ar": "فلافل اكسترا",
-      "en": "فلافل اكسترا",
-      "de": "فلافل اكسترا",
-      "fr": "فلافل اكسترا"
+      "en": "Extra falafel seasoning",
+      "de": "Falafelgewürz Extra",
+      "fr": "Assaisonnement pour falafels extra"
     },
     "desc": {
       "ar": "خلطات جاهزة للاستخدام اليومي والطبخ الشامي.",
@@ -4008,9 +4008,9 @@ const products = [
     "category": "mixes",
     "name": {
       "ar": "كاري",
-      "en": "كاري",
-      "de": "كاري",
-      "fr": "كاري"
+      "en": "Curry spice blend",
+      "de": "Curry-Gewürzmischung",
+      "fr": "Mélange curry"
     },
     "desc": {
       "ar": "خلطات جاهزة للاستخدام اليومي والطبخ الشامي.",
@@ -4056,9 +4056,9 @@ const products = [
     "category": "mixes",
     "name": {
       "ar": "كبسة",
-      "en": "كبسة",
-      "de": "كبسة",
-      "fr": "كبسة"
+      "en": "Kabsa spice blend",
+      "de": "Kabsa-Gewürzmischung",
+      "fr": "Mélange d’épices pour kabsa"
     },
     "desc": {
       "ar": "خلطات جاهزة للاستخدام اليومي والطبخ الشامي.",
@@ -4104,9 +4104,9 @@ const products = [
     "category": "mixes",
     "name": {
       "ar": "مندي",
-      "en": "مندي",
-      "de": "مندي",
-      "fr": "مندي"
+      "en": "Mandi spice blend",
+      "de": "Mandi-Gewürzmischung",
+      "fr": "Mélange d’épices pour mandi"
     },
     "desc": {
       "ar": "خلطات جاهزة للاستخدام اليومي والطبخ الشامي.",
@@ -4152,9 +4152,9 @@ const products = [
     "category": "mixes",
     "name": {
       "ar": "برياني",
-      "en": "برياني",
-      "de": "برياني",
-      "fr": "برياني"
+      "en": "Biryani spice blend",
+      "de": "Biryani-Gewürzmischung",
+      "fr": "Mélange d’épices pour biryani"
     },
     "desc": {
       "ar": "خلطات جاهزة للاستخدام اليومي والطبخ الشامي.",
@@ -4200,9 +4200,9 @@ const products = [
     "category": "mixes",
     "name": {
       "ar": "بهارات بيضاء",
-      "en": "بهارات بيضاء",
-      "de": "بهارات بيضاء",
-      "fr": "بهارات بيضاء"
+      "en": "White spice blend",
+      "de": "Weiße Gewürzmischung",
+      "fr": "Mélange d’épices blanches"
     },
     "desc": {
       "ar": "خلطات جاهزة للاستخدام اليومي والطبخ الشامي.",
@@ -4248,9 +4248,9 @@ const products = [
     "category": "mixes",
     "name": {
       "ar": "بطاطا",
-      "en": "بطاطا",
-      "de": "بطاطا",
-      "fr": "بطاطا"
+      "en": "Potato seasoning",
+      "de": "Kartoffelgewürz",
+      "fr": "Assaisonnement pour pommes de terre"
     },
     "desc": {
       "ar": "خلطات جاهزة للاستخدام اليومي والطبخ الشامي.",
@@ -4296,9 +4296,9 @@ const products = [
     "category": "mixes",
     "name": {
       "ar": "شاورما",
-      "en": "شاورما",
-      "de": "شاورما",
-      "fr": "شاورما"
+      "en": "Shawarma seasoning",
+      "de": "Shawarma-Gewürz",
+      "fr": "Assaisonnement pour chawarma"
     },
     "desc": {
       "ar": "خلطات جاهزة للاستخدام اليومي والطبخ الشامي.",
@@ -4344,9 +4344,9 @@ const products = [
     "category": "mixes",
     "name": {
       "ar": "شاورما لحمة",
-      "en": "شاورما لحمة",
-      "de": "شاورما لحمة",
-      "fr": "شاورما لحمة"
+      "en": "Meat shawarma seasoning",
+      "de": "Fleisch-Shawarma-Gewürz",
+      "fr": "Assaisonnement pour chawarma de viande"
     },
     "desc": {
       "ar": "خلطات جاهزة للاستخدام اليومي والطبخ الشامي.",
@@ -4392,9 +4392,9 @@ const products = [
     "category": "mixes",
     "name": {
       "ar": "كريسبي",
-      "en": "كريسبي",
-      "de": "كريسبي",
-      "fr": "كريسبي"
+      "en": "Crispy chicken seasoning",
+      "de": "Gewürz für knuspriges Hähnchen",
+      "fr": "Assaisonnement pour poulet croustillant"
     },
     "desc": {
       "ar": "خلطات جاهزة للاستخدام اليومي والطبخ الشامي.",
@@ -4440,9 +4440,9 @@ const products = [
     "category": "mixes",
     "name": {
       "ar": "شيش",
-      "en": "شيش",
-      "de": "شيش",
-      "fr": "شيش"
+      "en": "Shish seasoning",
+      "de": "Shish-Gewürz",
+      "fr": "Assaisonnement pour chich"
     },
     "desc": {
       "ar": "خلطات جاهزة للاستخدام اليومي والطبخ الشامي.",
@@ -4488,9 +4488,9 @@ const products = [
     "category": "mixes",
     "name": {
       "ar": "دجاج مدخن",
-      "en": "دجاج مدخن",
-      "de": "دجاج مدخن",
-      "fr": "دجاج مدخن"
+      "en": "Smoked chicken seasoning",
+      "de": "Gewürz für geräuchertes Hähnchen",
+      "fr": "Assaisonnement pour poulet fumé"
     },
     "desc": {
       "ar": "خلطات جاهزة للاستخدام اليومي والطبخ الشامي.",
@@ -4536,9 +4536,9 @@ const products = [
     "category": "mixes",
     "name": {
       "ar": "كليجة",
-      "en": "كليجة",
-      "de": "كليجة",
-      "fr": "كليجة"
+      "en": "Kleicha spice blend",
+      "de": "Kleicha-Gewürzmischung",
+      "fr": "Mélange d’épices pour kleicha"
     },
     "desc": {
       "ar": "خلطات جاهزة للاستخدام اليومي والطبخ الشامي.",
@@ -4584,9 +4584,9 @@ const products = [
     "category": "mixes",
     "name": {
       "ar": "محاشي",
-      "en": "محاشي",
-      "de": "محاشي",
-      "fr": "محاشي"
+      "en": "Stuffed vegetable seasoning",
+      "de": "Gewürz für gefülltes Gemüse",
+      "fr": "Assaisonnement pour légumes farcis"
     },
     "desc": {
       "ar": "خلطات جاهزة للاستخدام اليومي والطبخ الشامي.",
@@ -4632,9 +4632,9 @@ const products = [
     "category": "mixes",
     "name": {
       "ar": "فاهيتا",
-      "en": "فاهيتا",
-      "de": "فاهيتا",
-      "fr": "فاهيتا"
+      "en": "Fajita seasoning",
+      "de": "Fajita-Gewürz",
+      "fr": "Assaisonnement pour fajitas"
     },
     "desc": {
       "ar": "خلطات جاهزة للاستخدام اليومي والطبخ الشامي.",
@@ -4680,9 +4680,9 @@ const products = [
     "category": "mixes",
     "name": {
       "ar": "فرانشيسكو",
-      "en": "فرانشيسكو",
-      "de": "فرانشيسكو",
-      "fr": "فرانشيسكو"
+      "en": "Francisco seasoning",
+      "de": "Francisco-Gewürz",
+      "fr": "Assaisonnement Francisco"
     },
     "desc": {
       "ar": "خلطات جاهزة للاستخدام اليومي والطبخ الشامي.",
@@ -4728,9 +4728,9 @@ const products = [
     "category": "mixes",
     "name": {
       "ar": "مكسيكانو",
-      "en": "مكسيكانو",
-      "de": "مكسيكانو",
-      "fr": "مكسيكانو"
+      "en": "Mexicano seasoning",
+      "de": "Mexicano-Gewürz",
+      "fr": "Assaisonnement Mexicano"
     },
     "desc": {
       "ar": "خلطات جاهزة للاستخدام اليومي والطبخ الشامي.",
@@ -4776,9 +4776,9 @@ const products = [
     "category": "mixes",
     "name": {
       "ar": "بهارات سلطة",
-      "en": "بهارات سلطة",
-      "de": "بهارات سلطة",
-      "fr": "بهارات سلطة"
+      "en": "Salad seasoning",
+      "de": "Salatgewürz",
+      "fr": "Assaisonnement pour salade"
     },
     "desc": {
       "ar": "خلطات جاهزة للاستخدام اليومي والطبخ الشامي.",
@@ -4824,9 +4824,9 @@ const products = [
     "category": "mixes",
     "name": {
       "ar": "سجق",
-      "en": "سجق",
-      "de": "سجق",
-      "fr": "سجق"
+      "en": "Sujuk sausage seasoning",
+      "de": "Sucuk-Gewürz",
+      "fr": "Assaisonnement pour soudjouk"
     },
     "desc": {
       "ar": "خلطات جاهزة للاستخدام اليومي والطبخ الشامي.",
@@ -4872,9 +4872,9 @@ const products = [
     "category": "mixes",
     "name": {
       "ar": "بروستد",
-      "en": "بروستد",
-      "de": "بروستد",
-      "fr": "بروستد"
+      "en": "Broasted chicken seasoning",
+      "de": "Broasted-Hähnchengewürz",
+      "fr": "Assaisonnement pour poulet broasted"
     },
     "desc": {
       "ar": "خلطات جاهزة للاستخدام اليومي والطبخ الشامي.",
@@ -4920,9 +4920,9 @@ const products = [
     "category": "mixes",
     "name": {
       "ar": "بهارات مشاوي",
-      "en": "بهارات مشاوي",
-      "de": "بهارات مشاوي",
-      "fr": "بهارات مشاوي"
+      "en": "Grill seasoning",
+      "de": "Grillgewürz",
+      "fr": "Assaisonnement pour grillades"
     },
     "desc": {
       "ar": "خلطات جاهزة للاستخدام اليومي والطبخ الشامي.",
@@ -4968,9 +4968,9 @@ const products = [
     "category": "flavors",
     "name": {
       "ar": "جبنة",
-      "en": "جبنة",
-      "de": "جبنة",
-      "fr": "جبنة"
+      "en": "Cheese flavouring",
+      "de": "Käsearoma",
+      "fr": "Arôme fromage"
     },
     "desc": {
       "ar": "نكهات مختارة للمطبخ والاستخدامات الغذائية.",
@@ -5016,9 +5016,9 @@ const products = [
     "category": "flavors",
     "name": {
       "ar": "كتشب",
-      "en": "كتشب",
-      "de": "كتشب",
-      "fr": "كتشب"
+      "en": "Ketchup flavouring",
+      "de": "Ketchup-Aroma",
+      "fr": "Arôme ketchup"
     },
     "desc": {
       "ar": "نكهات مختارة للمطبخ والاستخدامات الغذائية.",
@@ -5064,9 +5064,9 @@ const products = [
     "category": "flavors",
     "name": {
       "ar": "خل",
-      "en": "خل",
-      "de": "خل",
-      "fr": "خل"
+      "en": "Vinegar flavouring",
+      "de": "Essigaroma",
+      "fr": "Arôme vinaigre"
     },
     "desc": {
       "ar": "نكهات مختارة للمطبخ والاستخدامات الغذائية.",
@@ -5112,9 +5112,9 @@ const products = [
     "category": "flavors",
     "name": {
       "ar": "بيتزا",
-      "en": "بيتزا",
-      "de": "بيتزا",
-      "fr": "بيتزا"
+      "en": "Pizza flavouring",
+      "de": "Pizza-Aroma",
+      "fr": "Arôme pizza"
     },
     "desc": {
       "ar": "نكهات مختارة للمطبخ والاستخدامات الغذائية.",
@@ -5160,9 +5160,9 @@ const products = [
     "category": "flavors",
     "name": {
       "ar": "باربكيو",
-      "en": "باربكيو",
-      "de": "باربكيو",
-      "fr": "باربكيو"
+      "en": "Barbecue flavouring",
+      "de": "Barbecue-Aroma",
+      "fr": "Arôme barbecue"
     },
     "desc": {
       "ar": "نكهات مختارة للمطبخ والاستخدامات الغذائية.",
@@ -5208,9 +5208,9 @@ const products = [
     "category": "flavors",
     "name": {
       "ar": "نكهة ذرة",
-      "en": "نكهة ذرة",
-      "de": "نكهة ذرة",
-      "fr": "نكهة ذرة"
+      "en": "Corn flavouring",
+      "de": "Maisaroma",
+      "fr": "Arôme maïs"
     },
     "desc": {
       "ar": "نكهات مختارة للمطبخ والاستخدامات الغذائية.",
@@ -5256,9 +5256,9 @@ const products = [
     "category": "flavors",
     "name": {
       "ar": "مدخن",
-      "en": "مدخن",
-      "de": "مدخن",
-      "fr": "مدخن"
+      "en": "Smoke flavouring",
+      "de": "Raucharoma",
+      "fr": "Arôme fumé"
     },
     "desc": {
       "ar": "نكهات مختارة للمطبخ والاستخدامات الغذائية.",
@@ -5304,9 +5304,9 @@ const products = [
     "category": "zaatar",
     "name": {
       "ar": "زعتر أخضر",
-      "en": "زعتر أخضر",
-      "de": "زعتر أخضر",
-      "fr": "زعتر أخضر"
+      "en": "Green zaatar blend",
+      "de": "Grüne Zaatar-Mischung",
+      "fr": "Mélange de zaatar vert"
     },
     "desc": {
       "ar": "أنواع زعتر مختارة للفطور والمناقيش.",
@@ -5345,9 +5345,9 @@ const products = [
     "category": "zaatar",
     "name": {
       "ar": "زعتر أحمر",
-      "en": "زعتر أحمر",
-      "de": "زعتر أحمر",
-      "fr": "زعتر أحمر"
+      "en": "Red zaatar blend",
+      "de": "Rote Zaatar-Mischung",
+      "fr": "Mélange de zaatar rouge"
     },
     "desc": {
       "ar": "أنواع زعتر مختارة للفطور والمناقيش.",
@@ -5386,9 +5386,9 @@ const products = [
     "category": "zaatar",
     "name": {
       "ar": "زعتر مناقيش",
-      "en": "زعتر مناقيش",
-      "de": "زعتر مناقيش",
-      "fr": "زعتر مناقيش"
+      "en": "Manakish zaatar blend",
+      "de": "Zaatar für Manakish",
+      "fr": "Zaatar pour manakich"
     },
     "desc": {
       "ar": "أنواع زعتر مختارة للفطور والمناقيش.",
@@ -5427,9 +5427,9 @@ const products = [
     "category": "herbs",
     "name": {
       "ar": "مليسة",
-      "en": "مليسة",
-      "de": "مليسة",
-      "fr": "مليسة"
+      "en": "Lemon balm",
+      "de": "Zitronenmelisse",
+      "fr": "Mélisse"
     },
     "desc": {
       "ar": "أعشاب وزهورات مختارة بعناية.",
@@ -5468,9 +5468,9 @@ const products = [
     "category": "herbs",
     "name": {
       "ar": "بابونج",
-      "en": "بابونج",
-      "de": "بابونج",
-      "fr": "بابونج"
+      "en": "Chamomile",
+      "de": "Kamille",
+      "fr": "Camomille"
     },
     "desc": {
       "ar": "أعشاب وزهورات مختارة بعناية.",
@@ -5509,9 +5509,9 @@ const products = [
     "category": "herbs",
     "name": {
       "ar": "ورد جوري",
-      "en": "ورد جوري",
-      "de": "ورد جوري",
-      "fr": "ورد جوري"
+      "en": "Damask rose flowers",
+      "de": "Damaszener-Rosenblüten",
+      "fr": "Fleurs de rose de Damas"
     },
     "desc": {
       "ar": "أعشاب وزهورات مختارة بعناية.",
@@ -5550,9 +5550,9 @@ const products = [
     "category": "herbs",
     "name": {
       "ar": "ورد جوري زرار",
-      "en": "ورد جوري زرار",
-      "de": "ورد جوري زرار",
-      "fr": "ورد جوري زرار"
+      "en": "Damask rosebuds",
+      "de": "Damaszener-Rosenknospen",
+      "fr": "Boutons de rose de Damas"
     },
     "desc": {
       "ar": "أعشاب وزهورات مختارة بعناية.",
@@ -5591,9 +5591,9 @@ const products = [
     "category": "herbs",
     "name": {
       "ar": "زهرة البنفسج",
-      "en": "زهرة البنفسج",
-      "de": "زهرة البنفسج",
-      "fr": "زهرة البنفسج"
+      "en": "Violet flowers",
+      "de": "Veilchenblüten",
+      "fr": "Fleurs de violette"
     },
     "desc": {
       "ar": "أعشاب وزهورات مختارة بعناية.",
@@ -5632,9 +5632,9 @@ const products = [
     "category": "herbs",
     "name": {
       "ar": "لسان العصفور",
-      "en": "لسان العصفور",
-      "de": "لسان العصفور",
-      "fr": "لسان العصفور"
+      "en": "Lisan Al-Asfour",
+      "de": "Lisan Al-Asfour",
+      "fr": "Lisan Al-Asfour"
     },
     "desc": {
       "ar": "أعشاب وزهورات مختارة بعناية.",
@@ -5673,9 +5673,9 @@ const products = [
     "category": "herbs",
     "name": {
       "ar": "ختمية بيضاء",
-      "en": "ختمية بيضاء",
-      "de": "ختمية بيضاء",
-      "fr": "ختمية بيضاء"
+      "en": "White hollyhock flowers",
+      "de": "Weiße Stockrosenblüten",
+      "fr": "Fleurs de rose trémière blanches"
     },
     "desc": {
       "ar": "أعشاب وزهورات مختارة بعناية.",
@@ -5714,9 +5714,9 @@ const products = [
     "category": "herbs",
     "name": {
       "ar": "ختمية سوداء",
-      "en": "ختمية سوداء",
-      "de": "ختمية سوداء",
-      "fr": "ختمية سوداء"
+      "en": "Black hollyhock flowers",
+      "de": "Schwarze Stockrosenblüten",
+      "fr": "Fleurs de rose trémière noires"
     },
     "desc": {
       "ar": "أعشاب وزهورات مختارة بعناية.",
@@ -5755,9 +5755,9 @@ const products = [
     "category": "herbs",
     "name": {
       "ar": "عشرق",
-      "en": "عشرق",
-      "de": "عشرق",
-      "fr": "عشرق"
+      "en": "Ishriq",
+      "de": "Ishriq",
+      "fr": "Ishriq"
     },
     "desc": {
       "ar": "أعشاب وزهورات مختارة بعناية.",
@@ -5796,9 +5796,9 @@ const products = [
     "category": "herbs",
     "name": {
       "ar": "سنامكي",
-      "en": "سنامكي",
-      "de": "سنامكي",
-      "fr": "سنامكي"
+      "en": "Senna leaves",
+      "de": "Sennesblätter",
+      "fr": "Feuilles de séné"
     },
     "desc": {
       "ar": "أعشاب وزهورات مختارة بعناية.",
@@ -5837,9 +5837,9 @@ const products = [
     "category": "herbs",
     "name": {
       "ar": "ميرمية",
-      "en": "ميرمية",
-      "de": "ميرمية",
-      "fr": "ميرمية"
+      "en": "Sage",
+      "de": "Salbei",
+      "fr": "Sauge"
     },
     "desc": {
       "ar": "أعشاب وزهورات مختارة بعناية.",
@@ -5878,9 +5878,9 @@ const products = [
     "category": "herbs",
     "name": {
       "ar": "كركديه",
-      "en": "كركديه",
-      "de": "كركديه",
-      "fr": "كركديه"
+      "en": "Hibiscus",
+      "de": "Hibiskus",
+      "fr": "Hibiscus"
     },
     "desc": {
       "ar": "أعشاب وزهورات مختارة بعناية.",
@@ -5919,9 +5919,9 @@ const products = [
     "category": "herbs",
     "name": {
       "ar": "زوفا",
-      "en": "زوفا",
-      "de": "زوفا",
-      "fr": "زوفا"
+      "en": "Hyssop",
+      "de": "Ysop",
+      "fr": "Hysope"
     },
     "desc": {
       "ar": "أعشاب وزهورات مختارة بعناية.",
@@ -5960,9 +5960,9 @@ const products = [
     "category": "herbs",
     "name": {
       "ar": "زهرة الرمان (الجلنار)",
-      "en": "زهرة الرمان (الجلنار)",
-      "de": "زهرة الرمان (الجلنار)",
-      "fr": "زهرة الرمان (الجلنار)"
+      "en": "Pomegranate flowers (jullanar)",
+      "de": "Granatapfelblüten (Jullanar)",
+      "fr": "Fleurs de grenadier (jullanar)"
     },
     "desc": {
       "ar": "أعشاب وزهورات مختارة بعناية.",
@@ -6001,9 +6001,9 @@ const products = [
     "category": "herbs",
     "name": {
       "ar": "ورق زيتون",
-      "en": "ورق زيتون",
-      "de": "ورق زيتون",
-      "fr": "ورق زيتون"
+      "en": "Olive leaves",
+      "de": "Olivenblätter",
+      "fr": "Feuilles d’olivier"
     },
     "desc": {
       "ar": "أعشاب وزهورات مختارة بعناية.",
@@ -6042,9 +6042,9 @@ const products = [
     "category": "herbs",
     "name": {
       "ar": "زهرة الألماسة",
-      "en": "زهرة الألماسة",
-      "de": "زهرة الألماسة",
-      "fr": "زهرة الألماسة"
+      "en": "Almasa flowers",
+      "de": "Almasa-Blüten",
+      "fr": "Fleurs d’Almasa"
     },
     "desc": {
       "ar": "أعشاب وزهورات مختارة بعناية.",
@@ -6083,9 +6083,9 @@ const products = [
     "category": "herbs",
     "name": {
       "ar": "زعتر بري",
-      "en": "زعتر بري",
-      "de": "زعتر بري",
-      "fr": "زعتر بري"
+      "en": "Wild thyme",
+      "de": "Wilder Thymian",
+      "fr": "Thym sauvage"
     },
     "desc": {
       "ar": "أعشاب وزهورات مختارة بعناية.",
@@ -6124,9 +6124,9 @@ const products = [
     "category": "herbs",
     "name": {
       "ar": "زعتر فارسي",
-      "en": "زعتر فارسي",
-      "de": "زعتر فارسي",
-      "fr": "زعتر فارسي"
+      "en": "Persian thyme",
+      "de": "Persischer Thymian",
+      "fr": "Thym persan"
     },
     "desc": {
       "ar": "أعشاب وزهورات مختارة بعناية.",
@@ -6165,9 +6165,9 @@ const products = [
     "category": "herbs",
     "name": {
       "ar": "زهرة الياسمين",
-      "en": "زهرة الياسمين",
-      "de": "زهرة الياسمين",
-      "fr": "زهرة الياسمين"
+      "en": "Jasmine flowers",
+      "de": "Jasminblüten",
+      "fr": "Fleurs de jasmin"
     },
     "desc": {
       "ar": "أعشاب وزهورات مختارة بعناية.",
@@ -6206,9 +6206,9 @@ const products = [
     "category": "herbs",
     "name": {
       "ar": "عشبة القديسين",
-      "en": "عشبة القديسين",
-      "de": "عشبة القديسين",
-      "fr": "عشبة القديسين"
+      "en": "St John's wort",
+      "de": "Johanniskraut",
+      "fr": "Millepertuis"
     },
     "desc": {
       "ar": "أعشاب وزهورات مختارة بعناية.",
@@ -6247,9 +6247,9 @@ const products = [
     "category": "herbs",
     "name": {
       "ar": "خلطة زهورات شامية",
-      "en": "خلطة زهورات شامية",
-      "de": "خلطة زهورات شامية",
-      "fr": "خلطة زهورات شامية"
+      "en": "Damascene herbal infusion blend",
+      "de": "Damaszener-Kräuterteemischung",
+      "fr": "Mélange d’infusion damascène"
     },
     "desc": {
       "ar": "أعشاب وزهورات مختارة بعناية.",
@@ -6288,9 +6288,9 @@ const products = [
     "category": "herbs",
     "name": {
       "ar": "خلطة زهورات آسيوية",
-      "en": "خلطة زهورات آسيوية",
-      "de": "خلطة زهورات آسيوية",
-      "fr": "خلطة زهورات آسيوية"
+      "en": "Asian herbal infusion blend",
+      "de": "Asiatische Kräuterteemischung",
+      "fr": "Mélange d’infusion asiatique"
     },
     "desc": {
       "ar": "أعشاب وزهورات مختارة بعناية.",
@@ -6329,9 +6329,9 @@ const products = [
     "category": "herbs",
     "name": {
       "ar": "قريص",
-      "en": "قريص",
-      "de": "قريص",
-      "fr": "قريص"
+      "en": "Nettle",
+      "de": "Brennnessel",
+      "fr": "Ortie"
     },
     "desc": {
       "ar": "أعشاب وزهورات مختارة بعناية.",
@@ -6370,9 +6370,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "حرمل",
-      "en": "حرمل",
-      "de": "حرمل",
-      "fr": "حرمل"
+      "en": "Harmal (Syrian rue)",
+      "de": "Harmal (Steppenraute)",
+      "fr": "Harmal (rue de Syrie)"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -6411,9 +6411,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "حنة طبيعية",
-      "en": "حنة طبيعية",
-      "de": "حنة طبيعية",
-      "fr": "حنة طبيعية"
+      "en": "Natural henna",
+      "de": "Natürliches Henna",
+      "fr": "Henné naturel"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -6452,9 +6452,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "صمغ عربي حب",
-      "en": "صمغ عربي حب",
-      "de": "صمغ عربي حب",
-      "fr": "صمغ عربي حب"
+      "en": "Gum arabic pieces",
+      "de": "Gummi arabicum in Stücken",
+      "fr": "Gomme arabique en morceaux"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -6493,9 +6493,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "صمغ عربي مطحون",
-      "en": "صمغ عربي مطحون",
-      "de": "صمغ عربي مطحون",
-      "fr": "صمغ عربي مطحون"
+      "en": "Gum arabic powder",
+      "de": "Gummi arabicum gemahlen",
+      "fr": "Gomme arabique en poudre"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -6534,9 +6534,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "ورق السدر",
-      "en": "ورق السدر",
-      "de": "ورق السدر",
-      "fr": "ورق السدر"
+      "en": "Sidr leaves",
+      "de": "Sidr-Blätter",
+      "fr": "Feuilles de sidr"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -6575,9 +6575,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "ورق السدر مطحون",
-      "en": "ورق السدر مطحون",
-      "de": "ورق السدر مطحون",
-      "fr": "ورق السدر مطحون"
+      "en": "Ground sidr leaves",
+      "de": "Sidr-Blätter gemahlen",
+      "fr": "Feuilles de sidr moulues"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -6616,9 +6616,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "لبان الذكر",
-      "en": "لبان الذكر",
-      "de": "لبان الذكر",
-      "fr": "لبان الذكر"
+      "en": "Frankincense",
+      "de": "Weihrauch",
+      "fr": "Encens oliban"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -6657,9 +6657,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "المرة (مرمكي)",
-      "en": "المرة (مرمكي)",
-      "de": "المرة (مرمكي)",
-      "fr": "المرة (مرمكي)"
+      "en": "Myrrh",
+      "de": "Myrrhe",
+      "fr": "Myrrhe"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -6698,9 +6698,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "بزور القاطونة",
-      "en": "بزور القاطونة",
-      "de": "بزور القاطونة",
-      "fr": "بزور القاطونة"
+      "en": "Psyllium seeds",
+      "de": "Flohsamen",
+      "fr": "Graines de psyllium"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -6739,9 +6739,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "بزر كتان",
-      "en": "بزر كتان",
-      "de": "بزر كتان",
-      "fr": "بزر كتان"
+      "en": "Flaxseeds",
+      "de": "Leinsamen",
+      "fr": "Graines de lin"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -6780,9 +6780,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "بزر رشاد",
-      "en": "بزر رشاد",
-      "de": "بزر رشاد",
-      "fr": "بزر رشاد"
+      "en": "Garden cress seeds",
+      "de": "Gartenkressesamen",
+      "fr": "Graines de cresson alénois"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -6821,9 +6821,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "بزور الشيا",
-      "en": "بزور الشيا",
-      "de": "بزور الشيا",
-      "fr": "بزور الشيا"
+      "en": "Chia seeds",
+      "de": "Chiasamen",
+      "fr": "Graines de chia"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -6862,9 +6862,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "قسط هندي حب",
-      "en": "قسط هندي حب",
-      "de": "قسط هندي حب",
-      "fr": "قسط هندي حب"
+      "en": "Whole Indian costus root",
+      "de": "Indische Kostuswurzel ganz",
+      "fr": "Racine de costus indien entière"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -6903,9 +6903,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "قسط هندي مطحون",
-      "en": "قسط هندي مطحون",
-      "de": "قسط هندي مطحون",
-      "fr": "قسط هندي مطحون"
+      "en": "Ground Indian costus root",
+      "de": "Indische Kostuswurzel gemahlen",
+      "fr": "Racine de costus indien moulue"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -6944,9 +6944,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "فاسوخ",
-      "en": "فاسوخ",
-      "de": "فاسوخ",
-      "fr": "فاسوخ"
+      "en": "Fasoukh resin",
+      "de": "Fasoukh-Harz",
+      "fr": "Résine de fasoukh"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -6985,9 +6985,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "عكبر حب",
-      "en": "عكبر حب",
-      "de": "عكبر حب",
-      "fr": "عكبر حب"
+      "en": "Propolis pieces",
+      "de": "Propolis in Stücken",
+      "fr": "Propolis en morceaux"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -7026,9 +7026,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "عكبر مطحون",
-      "en": "عكبر مطحون",
-      "de": "عكبر مطحون",
-      "fr": "عكبر مطحون"
+      "en": "Ground propolis",
+      "de": "Propolis gemahlen",
+      "fr": "Propolis moulue"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -7067,9 +7067,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "حبوب اللقاح",
-      "en": "حبوب اللقاح",
-      "de": "حبوب اللقاح",
-      "fr": "حبوب اللقاح"
+      "en": "Pollen granules",
+      "de": "Blütenpollengranulat",
+      "fr": "Granules de pollen"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -7108,9 +7108,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "طلع النخيل",
-      "en": "طلع النخيل",
-      "de": "طلع النخيل",
-      "fr": "طلع النخيل"
+      "en": "Date palm pollen",
+      "de": "Dattelpalmenpollen",
+      "fr": "Pollen de palmier dattier"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -7149,9 +7149,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "تين الفيل",
-      "en": "تين الفيل",
-      "de": "تين الفيل",
-      "fr": "تين الفيل"
+      "en": "Tin Al-Fil",
+      "de": "Tin Al-Fil",
+      "fr": "Tin Al-Fil"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -7190,9 +7190,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "هندي شعيري",
-      "en": "هندي شعيري",
-      "de": "هندي شعيري",
-      "fr": "هندي شعيري"
+      "en": "Hindi Shaeeri",
+      "de": "Hindi Shaeeri",
+      "fr": "Hindi Shaeeri"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -7231,9 +7231,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "راوند",
-      "en": "راوند",
-      "de": "راوند",
-      "fr": "راوند"
+      "en": "Rhubarb",
+      "de": "Rhabarber",
+      "fr": "Rhubarbe"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -7272,9 +7272,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "كف مريم",
-      "en": "كف مريم",
-      "de": "كف مريم",
-      "fr": "كف مريم"
+      "en": "Kaff Maryam",
+      "de": "Kaff Maryam",
+      "fr": "Kaff Maryam"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -7313,9 +7313,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "بذور الأكبة",
-      "en": "بذور الأكبة",
-      "de": "بذور الأكبة",
-      "fr": "بذور الأكبة"
+      "en": "Akba seeds",
+      "de": "Akba-Samen",
+      "fr": "Graines d’Akba"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -7354,9 +7354,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "بذور شوك الجمل",
-      "en": "بذور شوك الجمل",
-      "de": "بذور شوك الجمل",
-      "fr": "بذور شوك الجمل"
+      "en": "Milk thistle seeds",
+      "de": "Mariendistelsamen",
+      "fr": "Graines de chardon-Marie"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -7395,9 +7395,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "عشبة شوك الجمل",
-      "en": "عشبة شوك الجمل",
-      "de": "عشبة شوك الجمل",
-      "fr": "عشبة شوك الجمل"
+      "en": "Milk thistle herb",
+      "de": "Mariendistelkraut",
+      "fr": "Chardon-Marie"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -7436,9 +7436,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "صبرا",
-      "en": "صبرا",
-      "de": "صبرا",
-      "fr": "صبرا"
+      "en": "Sabra",
+      "de": "Sabra",
+      "fr": "Sabra"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -7477,9 +7477,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "حنظل",
-      "en": "حنظل",
-      "de": "حنظل",
-      "fr": "حنظل"
+      "en": "Colocynth",
+      "de": "Koloquinte",
+      "fr": "Coloquinte"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -7518,9 +7518,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "شرش الرباص",
-      "en": "شرش الرباص",
-      "de": "شرش الرباص",
-      "fr": "شرش الرباص"
+      "en": "Rabbas root",
+      "de": "Rabbas-Wurzel",
+      "fr": "Racine de rabbas"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -7559,9 +7559,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "قشر الرمان",
-      "en": "قشر الرمان",
-      "de": "قشر الرمان",
-      "fr": "قشر الرمان"
+      "en": "Pomegranate peel",
+      "de": "Granatapfelschalen",
+      "fr": "Écorces de grenade"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -7600,9 +7600,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "خلة",
-      "en": "خلة",
-      "de": "خلة",
-      "fr": "خلة"
+      "en": "Khella",
+      "de": "Khella",
+      "fr": "Khella"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -7641,9 +7641,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "شبة حجر",
-      "en": "شبة حجر",
-      "de": "شبة حجر",
-      "fr": "شبة حجر"
+      "en": "Alum stone",
+      "de": "Alaunstein",
+      "fr": "Pierre d’alun"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -7682,9 +7682,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "شبة مطحونة",
-      "en": "شبة مطحونة",
-      "de": "شبة مطحونة",
-      "fr": "شبة مطحونة"
+      "en": "Alum powder",
+      "de": "Alaunpulver",
+      "fr": "Alun en poudre"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -7723,9 +7723,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "جاوي أسود",
-      "en": "جاوي أسود",
-      "de": "جاوي أسود",
-      "fr": "جاوي أسود"
+      "en": "Black benzoin resin",
+      "de": "Schwarzes Benzoeharz",
+      "fr": "Benjoin noir"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -7764,9 +7764,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "جاوي أحمر",
-      "en": "جاوي أحمر",
-      "de": "جاوي أحمر",
-      "fr": "جاوي أحمر"
+      "en": "Red benzoin resin",
+      "de": "Rotes Benzoeharz",
+      "fr": "Benjoin rouge"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -7805,9 +7805,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "جاوي أبيض",
-      "en": "جاوي أبيض",
-      "de": "جاوي أبيض",
-      "fr": "جاوي أبيض"
+      "en": "White benzoin resin",
+      "de": "Weißes Benzoeharz",
+      "fr": "Benjoin blanc"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -7846,9 +7846,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "عرعر",
-      "en": "عرعر",
-      "de": "عرعر",
-      "fr": "عرعر"
+      "en": "Juniper",
+      "de": "Wacholder",
+      "fr": "Genévrier"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -7887,9 +7887,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "شيح",
-      "en": "شيح",
-      "de": "شيح",
-      "fr": "شيح"
+      "en": "Wormwood",
+      "de": "Wermut",
+      "fr": "Armoise"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -7928,9 +7928,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "عشبة مورينغا",
-      "en": "عشبة مورينغا",
-      "de": "عشبة مورينغا",
-      "fr": "عشبة مورينغا"
+      "en": "Moringa herb",
+      "de": "Moringakraut",
+      "fr": "Moringa"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -7969,9 +7969,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "ماتشا",
-      "en": "ماتشا",
-      "de": "ماتشا",
-      "fr": "ماتشا"
+      "en": "Matcha",
+      "de": "Matcha",
+      "fr": "Matcha"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -8010,9 +8010,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "علكة عربية (علك بطم)",
-      "en": "علكة عربية (علك بطم)",
-      "de": "علكة عربية (علك بطم)",
-      "fr": "علكة عربية (علك بطم)"
+      "en": "Terebinth chewing gum",
+      "de": "Terebinthen-Kaugummi",
+      "fr": "Gomme à mâcher de térébinthe"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -8051,9 +8051,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "زعرور",
-      "en": "زعرور",
-      "de": "زعرور",
-      "fr": "زعرور"
+      "en": "Hawthorn",
+      "de": "Weißdorn",
+      "fr": "Aubépine"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -8092,9 +8092,9 @@ const products = [
     "category": "attara",
     "name": {
       "ar": "شرش الحلاوة",
-      "en": "شرش الحلاوة",
-      "de": "شرش الحلاوة",
-      "fr": "شرش الحلاوة"
+      "en": "Halawa root",
+      "de": "Halawa-Wurzel",
+      "fr": "Racine de halawa"
     },
     "desc": {
       "ar": "مواد عطارة تقليدية من قائمة المتجر.",
@@ -8133,9 +8133,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "قهوة حسيب الذهبية",
-      "en": "قهوة حسيب الذهبية",
-      "de": "قهوة حسيب الذهبية",
-      "fr": "قهوة حسيب الذهبية"
+      "en": "Haseeb Gold coffee",
+      "de": "Haseeb Gold Kaffee",
+      "fr": "Café Haseeb Gold"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -8160,9 +8160,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "رز محمود طويل",
-      "en": "رز محمود طويل",
-      "de": "رز محمود طويل",
-      "fr": "رز محمود طويل"
+      "en": "Mahmood long-grain rice",
+      "de": "Mahmood Langkornreis",
+      "fr": "Riz long Mahmood"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -8187,9 +8187,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "رز سيدي هشام قصير",
-      "en": "رز سيدي هشام قصير",
-      "de": "رز سيدي هشام قصير",
-      "fr": "رز سيدي هشام قصير"
+      "en": "Sidi Hisham short-grain rice",
+      "de": "Sidi Hisham Rundkornreis",
+      "fr": "Riz à grains courts Sidi Hisham"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -8214,9 +8214,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "شعيرية",
-      "en": "شعيرية",
-      "de": "شعيرية",
-      "fr": "شعيرية"
+      "en": "Vermicelli",
+      "de": "Fadennudeln",
+      "fr": "Vermicelles"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -8241,9 +8241,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "أرضي شوكي كبير",
-      "en": "أرضي شوكي كبير",
-      "de": "أرضي شوكي كبير",
-      "fr": "أرضي شوكي كبير"
+      "en": "Large artichokes",
+      "de": "Große Artischocken",
+      "fr": "Gros artichauts"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -8268,9 +8268,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "أرضي شوكي صغير",
-      "en": "أرضي شوكي صغير",
-      "de": "أرضي شوكي صغير",
-      "fr": "أرضي شوكي صغير"
+      "en": "Small artichokes",
+      "de": "Kleine Artischocken",
+      "fr": "Petits artichauts"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -8295,9 +8295,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "مخلل خيار كبير",
-      "en": "مخلل خيار كبير",
-      "de": "مخلل خيار كبير",
-      "fr": "مخلل خيار كبير"
+      "en": "Large pickled cucumbers",
+      "de": "Große eingelegte Gurken",
+      "fr": "Gros concombres marinés"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -8322,9 +8322,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "مخلل خيار صغير",
-      "en": "مخلل خيار صغير",
-      "de": "مخلل خيار صغير",
-      "fr": "مخلل خيار صغير"
+      "en": "Small pickled cucumbers",
+      "de": "Kleine eingelegte Gurken",
+      "fr": "Petits concombres marinés"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -8349,9 +8349,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "ورق عنب",
-      "en": "ورق عنب",
-      "de": "ورق عنب",
-      "fr": "ورق عنب"
+      "en": "Vine leaves",
+      "de": "Weinblätter",
+      "fr": "Feuilles de vigne"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -8376,9 +8376,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "ورق عنب مفرغ من الهواء",
-      "en": "ورق عنب مفرغ من الهواء",
-      "de": "ورق عنب مفرغ من الهواء",
-      "fr": "ورق عنب مفرغ من الهواء"
+      "en": "Vacuum-packed vine leaves",
+      "de": "Vakuumverpackte Weinblätter",
+      "fr": "Feuilles de vigne sous vide"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -8403,9 +8403,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "بديل الليمون",
-      "en": "بديل الليمون",
-      "de": "بديل الليمون",
-      "fr": "بديل الليمون"
+      "en": "Lemon substitute",
+      "de": "Zitronenersatz",
+      "fr": "Substitut de citron"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -8430,9 +8430,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "مربى التوت الشامي",
-      "en": "مربى التوت الشامي",
-      "de": "مربى التوت الشامي",
-      "fr": "مربى التوت الشامي"
+      "en": "Damascene mulberry jam",
+      "de": "Damaszener-Maulbeerkonfitüre",
+      "fr": "Confiture de mûres de Damas"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -8457,9 +8457,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "مربى الباذنجان",
-      "en": "مربى الباذنجان",
-      "de": "مربى الباذنجان",
-      "fr": "مربى الباذنجان"
+      "en": "Aubergine jam",
+      "de": "Auberginenkonfitüre",
+      "fr": "Confiture d’aubergines"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -8484,9 +8484,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "مربى اليقطين",
-      "en": "مربى اليقطين",
-      "de": "مربى اليقطين",
-      "fr": "مربى اليقطين"
+      "en": "Pumpkin jam",
+      "de": "Kürbiskonfitüre",
+      "fr": "Confiture de potiron"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -8511,9 +8511,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "مربى المانغو",
-      "en": "مربى المانغو",
-      "de": "مربى المانغو",
-      "fr": "مربى المانغو"
+      "en": "Mango jam",
+      "de": "Mangokonfitüre",
+      "fr": "Confiture de mangue"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -8538,9 +8538,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "مربى التين",
-      "en": "مربى التين",
-      "de": "مربى التين",
-      "fr": "مربى التين"
+      "en": "Fig jam",
+      "de": "Feigenkonfitüre",
+      "fr": "Confiture de figues"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -8565,9 +8565,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "مربى المشمش",
-      "en": "مربى المشمش",
-      "de": "مربى المشمش",
-      "fr": "مربى المشمش"
+      "en": "Apricot jam",
+      "de": "Aprikosenkonfitüre",
+      "fr": "Confiture d’abricots"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -8592,9 +8592,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "دبس رمان",
-      "en": "دبس رمان",
-      "de": "دبس رمان",
-      "fr": "دبس رمان"
+      "en": "Pomegranate molasses",
+      "de": "Granatapfelsirup",
+      "fr": "Mélasse de grenade"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -8619,9 +8619,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "دبس رمان 4,8kg",
-      "en": "دبس رمان 4,8kg",
-      "de": "دبس رمان 4,8kg",
-      "fr": "دبس رمان 4,8kg"
+      "en": "Pomegranate molasses, 4.8 kg",
+      "de": "Granatapfelsirup, 4,8 kg",
+      "fr": "Mélasse de grenade, 4,8 kg"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -8646,9 +8646,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "مركز توت شامي",
-      "en": "مركز توت شامي",
-      "de": "مركز توت شامي",
-      "fr": "مركز توت شامي"
+      "en": "Damascene mulberry concentrate",
+      "de": "Damaszener-Maulbeerkonzentrat",
+      "fr": "Concentré de mûres de Damas"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -8673,9 +8673,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "حمض حصرم",
-      "en": "حمض حصرم",
-      "de": "حمض حصرم",
-      "fr": "حمض حصرم"
+      "en": "Verjuice (sour grape juice)",
+      "de": "Verjus (Saft unreifer Trauben)",
+      "fr": "Verjus (jus de raisin vert)"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -8700,9 +8700,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "مركز شراب الورد",
-      "en": "مركز شراب الورد",
-      "de": "مركز شراب الورد",
-      "fr": "مركز شراب الورد"
+      "en": "Rose drink concentrate",
+      "de": "Rosengetränk-Konzentrat",
+      "fr": "Concentré de boisson à la rose"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -8727,9 +8727,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "ماء زهر",
-      "en": "ماء زهر",
-      "de": "ماء زهر",
-      "fr": "ماء زهر"
+      "en": "Orange blossom water",
+      "de": "Orangenblütenwasser",
+      "fr": "Eau de fleur d’oranger"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -8754,9 +8754,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "ماء ورد",
-      "en": "ماء ورد",
-      "de": "ماء ورد",
-      "fr": "ماء ورد"
+      "en": "Rose water",
+      "de": "Rosenwasser",
+      "fr": "Eau de rose"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -8781,9 +8781,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "برغل ناعم kg",
-      "en": "برغل ناعم kg",
-      "de": "برغل ناعم kg",
-      "fr": "برغل ناعم kg"
+      "en": "Fine bulgur, 1 kg",
+      "de": "Feiner Bulgur, 1 kg",
+      "fr": "Boulgour fin, 1 kg"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -8808,9 +8808,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "برغل خشن kg",
-      "en": "برغل خشن kg",
-      "de": "برغل خشن kg",
-      "fr": "برغل خشن kg"
+      "en": "Coarse bulgur, 1 kg",
+      "de": "Grober Bulgur, 1 kg",
+      "fr": "Boulgour gros, 1 kg"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -8835,9 +8835,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "عدس مجروش kg",
-      "en": "عدس مجروش kg",
-      "de": "عدس مجروش kg",
-      "fr": "عدس مجروش kg"
+      "en": "Split lentils, 1 kg",
+      "de": "Geschälte, gespaltene Linsen, 1 kg",
+      "fr": "Lentilles décortiquées, 1 kg"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -8862,9 +8862,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "فاصولياء كلاوي kg",
-      "en": "فاصولياء كلاوي kg",
-      "de": "فاصولياء كلاوي kg",
-      "fr": "فاصولياء كلاوي kg"
+      "en": "Kidney beans, 1 kg",
+      "de": "Kidneybohnen, 1 kg",
+      "fr": "Haricots rouges, 1 kg"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -8889,9 +8889,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "فول يابس سوري kg",
-      "en": "فول يابس سوري kg",
-      "de": "فول يابس سوري kg",
-      "fr": "فول يابس سوري kg"
+      "en": "Syrian dried broad beans, 1 kg",
+      "de": "Syrische getrocknete Ackerbohnen, 1 kg",
+      "fr": "Fèves sèches syriennes, 1 kg"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -8916,9 +8916,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "نشاء قمح خشن kg",
-      "en": "نشاء قمح خشن kg",
-      "de": "نشاء قمح خشن kg",
-      "fr": "نشاء قمح خشن kg"
+      "en": "Coarse wheat starch, 1 kg",
+      "de": "Grobe Weizenstärke, 1 kg",
+      "fr": "Amidon de blé grossier, 1 kg"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -8943,9 +8943,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "نشاء ذرة kg",
-      "en": "نشاء ذرة kg",
-      "de": "نشاء ذرة kg",
-      "fr": "نشاء ذرة kg"
+      "en": "Corn starch, 1 kg",
+      "de": "Maisstärke, 1 kg",
+      "fr": "Amidon de maïs, 1 kg"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -8970,9 +8970,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "حمص حب kg",
-      "en": "حمص حب kg",
-      "de": "حمص حب kg",
-      "fr": "حمص حب kg"
+      "en": "Whole chickpeas, 1 kg",
+      "de": "Kichererbsen ganz, 1 kg",
+      "fr": "Pois chiches entiers, 1 kg"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -8997,9 +8997,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "طحينة 800g",
-      "en": "طحينة 800g",
-      "de": "طحينة 800g",
-      "fr": "طحينة 800g"
+      "en": "Tahini, 800 g",
+      "de": "Tahini, 800 g",
+      "fr": "Tahini, 800 g"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -9024,9 +9024,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "طحينة 5kg",
-      "en": "طحينة 5kg",
-      "de": "طحينة 5kg",
-      "fr": "طحينة 5kg"
+      "en": "Tahini, 5 kg",
+      "de": "Tahini, 5 kg",
+      "fr": "Tahini, 5 kg"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -9051,9 +9051,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "فانيليا 500g",
-      "en": "فانيليا 500g",
-      "de": "فانيليا 500g",
-      "fr": "فانيليا 500g"
+      "en": "Vanilla, 500 g",
+      "de": "Vanille, 500 g",
+      "fr": "Vanille, 500 g"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -9078,9 +9078,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "شاي ظروف 100",
-      "en": "شاي ظروف 100",
-      "de": "شاي ظروف 100",
-      "fr": "شاي ظروف 100"
+      "en": "Tea, 100 bags",
+      "de": "Tee, 100 Beutel",
+      "fr": "Thé, 100 sachets"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -9105,9 +9105,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "شاي مولانا",
-      "en": "شاي مولانا",
-      "de": "شاي مولانا",
-      "fr": "شاي مولانا"
+      "en": "Mawlana tea",
+      "de": "Mawlana-Tee",
+      "fr": "Thé Mawlana"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -9132,9 +9132,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "شاي كرزة 450g",
-      "en": "شاي كرزة 450g",
-      "de": "شاي كرزة 450g",
-      "fr": "شاي كرزة 450g"
+      "en": "Karaza tea, 450 g",
+      "de": "Karaza-Tee, 450 g",
+      "fr": "Thé Karaza, 450 g"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -9159,9 +9159,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "شاي كرزة 900g",
-      "en": "شاي كرزة 900g",
-      "de": "شاي كرزة 900g",
-      "fr": "شاي كرزة 900g"
+      "en": "Karaza tea, 900 g",
+      "de": "Karaza-Tee, 900 g",
+      "fr": "Thé Karaza, 900 g"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -9186,9 +9186,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "ماجي مكعبات",
-      "en": "ماجي مكعبات",
-      "de": "ماجي مكعبات",
-      "fr": "ماجي مكعبات"
+      "en": "Maggi stock cubes",
+      "de": "Maggi-Brühwürfel",
+      "fr": "Cubes de bouillon Maggi"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -9213,9 +9213,9 @@ const products = [
     "category": "food",
     "name": {
       "ar": "كشكة kg",
-      "en": "كشكة kg",
-      "de": "كشكة kg",
-      "fr": "كشكة kg"
+      "en": "Kishk, 1 kg",
+      "de": "Kishk, 1 kg",
+      "fr": "Kichk, 1 kg"
     },
     "desc": {
       "ar": "مواد غذائية أساسية ومختارة للبيت.",
@@ -9240,9 +9240,9 @@ const products = [
     "category": "body-care",
     "name": {
       "ar": "ميم حناجر",
-      "en": "ميم حناجر",
-      "de": "ميم حناجر",
-      "fr": "ميم حناجر"
+      "en": "Mim Hanajer",
+      "de": "Mim Hanajer",
+      "fr": "Mim Hanajer"
     },
     "desc": {
       "ar": "منتجات عناية واحتياجات يومية من قائمة المتجر.",
@@ -9267,9 +9267,9 @@ const products = [
     "category": "body-care",
     "name": {
       "ar": "ميم شرائح دبل",
-      "en": "ميم شرائح دبل",
-      "de": "ميم شرائح دبل",
-      "fr": "ميم شرائح دبل"
+      "en": "Mim double strips",
+      "de": "Mim Doppelstreifen",
+      "fr": "Mim bandes doubles"
     },
     "desc": {
       "ar": "منتجات عناية واحتياجات يومية من قائمة المتجر.",
@@ -9294,9 +9294,9 @@ const products = [
     "category": "body-care",
     "name": {
       "ar": "فاربن حناجر",
-      "en": "فاربن حناجر",
-      "de": "فاربن حناجر",
-      "fr": "فاربن حناجر"
+      "en": "Farben Hanajer",
+      "de": "Farben Hanajer",
+      "fr": "Farben Hanajer"
     },
     "desc": {
       "ar": "منتجات عناية واحتياجات يومية من قائمة المتجر.",
@@ -9321,9 +9321,9 @@ const products = [
     "category": "body-care",
     "name": {
       "ar": "فاربن شرائح",
-      "en": "فاربن شرائح",
-      "de": "فاربن شرائح",
-      "fr": "فاربن شرائح"
+      "en": "Farben strips",
+      "de": "Farben Streifen",
+      "fr": "Farben bandes"
     },
     "desc": {
       "ar": "منتجات عناية واحتياجات يومية من قائمة المتجر.",
@@ -9348,9 +9348,9 @@ const products = [
     "category": "body-care",
     "name": {
       "ar": "ميليا",
-      "en": "ميليا",
-      "de": "ميليا",
-      "fr": "ميليا"
+      "en": "Milia",
+      "de": "Milia",
+      "fr": "Milia"
     },
     "desc": {
       "ar": "منتجات عناية واحتياجات يومية من قائمة المتجر.",
@@ -9375,9 +9375,9 @@ const products = [
     "category": "body-care",
     "name": {
       "ar": "كريم الشبة (شهد العسل)",
-      "en": "كريم الشبة (شهد العسل)",
-      "de": "كريم الشبة (شهد العسل)",
-      "fr": "كريم الشبة (شهد العسل)"
+      "en": "Alum cream (Shahd Al-Asal)",
+      "de": "Alauncreme (Shahd Al-Asal)",
+      "fr": "Crème à l’alun (Shahd Al-Asal)"
     },
     "desc": {
       "ar": "منتجات عناية واحتياجات يومية من قائمة المتجر.",
@@ -9402,9 +9402,9 @@ const products = [
     "category": "body-care",
     "name": {
       "ar": "كحلة عربية",
-      "en": "كحلة عربية",
-      "de": "كحلة عربية",
-      "fr": "كحلة عربية"
+      "en": "Traditional Arabic kohl",
+      "de": "Traditioneller arabischer Kajal",
+      "fr": "Khôl arabe traditionnel"
     },
     "desc": {
       "ar": "منتجات عناية واحتياجات يومية من قائمة المتجر.",
@@ -9429,9 +9429,9 @@ const products = [
     "category": "body-care",
     "name": {
       "ar": "حنة شعر أسود",
-      "en": "حنة شعر أسود",
-      "de": "حنة شعر أسود",
-      "fr": "حنة شعر أسود"
+      "en": "Black hair henna",
+      "de": "Henna für schwarzes Haar",
+      "fr": "Henné pour cheveux noirs"
     },
     "desc": {
       "ar": "منتجات عناية واحتياجات يومية من قائمة المتجر.",
@@ -9456,9 +9456,9 @@ const products = [
     "category": "body-care",
     "name": {
       "ar": "حنة شعر بني",
-      "en": "حنة شعر بني",
-      "de": "حنة شعر بني",
-      "fr": "حنة شعر بني"
+      "en": "Brown hair henna",
+      "de": "Henna für braunes Haar",
+      "fr": "Henné pour cheveux bruns"
     },
     "desc": {
       "ar": "منتجات عناية واحتياجات يومية من قائمة المتجر.",
@@ -9483,9 +9483,9 @@ const products = [
     "category": "body-care",
     "name": {
       "ar": "حنة شعر كستنائي",
-      "en": "حنة شعر كستنائي",
-      "de": "حنة شعر كستنائي",
-      "fr": "حنة شعر كستنائي"
+      "en": "Chestnut hair henna",
+      "de": "Henna für kastanienbraunes Haar",
+      "fr": "Henné pour cheveux châtains"
     },
     "desc": {
       "ar": "منتجات عناية واحتياجات يومية من قائمة المتجر.",
@@ -9510,9 +9510,9 @@ const products = [
     "category": "body-care",
     "name": {
       "ar": "صابون غار الملكة",
-      "en": "صابون غار الملكة",
-      "de": "صابون غار الملكة",
-      "fr": "صابون غار الملكة"
+      "en": "Al-Malika laurel soap",
+      "de": "Al-Malika Lorbeerseife",
+      "fr": "Savon au laurier Al-Malika"
     },
     "desc": {
       "ar": "منتجات عناية واحتياجات يومية من قائمة المتجر.",
@@ -9537,9 +9537,9 @@ const products = [
     "category": "body-care",
     "name": {
       "ar": "صابون زيت الزيتون",
-      "en": "صابون زيت الزيتون",
-      "de": "صابون زيت الزيتون",
-      "fr": "صابون زيت الزيتون"
+      "en": "Olive oil soap",
+      "de": "Olivenölseife",
+      "fr": "Savon à l’huile d’olive"
     },
     "desc": {
       "ar": "منتجات عناية واحتياجات يومية من قائمة المتجر.",
@@ -9564,9 +9564,9 @@ const products = [
     "category": "body-care",
     "name": {
       "ar": "بوكس صابون مشكل",
-      "en": "بوكس صابون مشكل",
-      "de": "بوكس صابون مشكل",
-      "fr": "بوكس صابون مشكل"
+      "en": "Assorted soap box",
+      "de": "Seifen-Geschenkbox gemischt",
+      "fr": "Coffret de savons assortis"
     },
     "desc": {
       "ar": "منتجات عناية واحتياجات يومية من قائمة المتجر.",
@@ -9591,9 +9591,9 @@ const products = [
     "category": "body-care",
     "name": {
       "ar": "ليف طبيعي",
-      "en": "ليف طبيعي",
-      "de": "ليف طبيعي",
-      "fr": "ليف طبيعي"
+      "en": "Natural loofah",
+      "de": "Natürlicher Luffaschwamm",
+      "fr": "Loofah naturel"
     },
     "desc": {
       "ar": "منتجات عناية واحتياجات يومية من قائمة المتجر.",
@@ -9618,9 +9618,9 @@ const products = [
     "category": "body-care",
     "name": {
       "ar": "ليف كف",
-      "en": "ليف كف",
-      "de": "ليف كف",
-      "fr": "ليف كف"
+      "en": "Loofah mitt",
+      "de": "Luffa-Handschuh",
+      "fr": "Gant de loofah"
     },
     "desc": {
       "ar": "منتجات عناية واحتياجات يومية من قائمة المتجر.",
@@ -9645,9 +9645,9 @@ const products = [
     "category": "body-care",
     "name": {
       "ar": "ليف طويل",
-      "en": "ليف طويل",
-      "de": "ليف طويل",
-      "fr": "ليف طويل"
+      "en": "Long loofah",
+      "de": "Langer Luffaschwamm",
+      "fr": "Loofah long"
     },
     "desc": {
       "ar": "منتجات عناية واحتياجات يومية من قائمة المتجر.",
@@ -9672,9 +9672,9 @@ const products = [
     "category": "body-care",
     "name": {
       "ar": "كيس حمام",
-      "en": "كيس حمام",
-      "de": "كيس حمام",
-      "fr": "كيس حمام"
+      "en": "Exfoliating hammam mitt",
+      "de": "Hammam-Peelinghandschuh",
+      "fr": "Gant de gommage hammam"
     },
     "desc": {
       "ar": "منتجات عناية واحتياجات يومية من قائمة المتجر.",
@@ -9699,9 +9699,9 @@ const products = [
     "category": "body-care",
     "name": {
       "ar": "أبو الفاس",
-      "en": "أبو الفاس",
-      "de": "أبو الفاس",
-      "fr": "أبو الفاس"
+      "en": "Abu Al-Fas",
+      "de": "Abu Al-Fas",
+      "fr": "Abu Al-Fas"
     },
     "desc": {
       "ar": "منتجات عناية واحتياجات يومية من قائمة المتجر.",
@@ -9726,9 +9726,9 @@ const products = [
     "category": "body-care",
     "name": {
       "ar": "حجر حمام",
-      "en": "حجر حمام",
-      "de": "حجر حمام",
-      "fr": "حجر حمام"
+      "en": "Bath stone",
+      "de": "Badestein",
+      "fr": "Pierre de bain"
     },
     "desc": {
       "ar": "منتجات عناية واحتياجات يومية من قائمة المتجر.",
@@ -9753,9 +9753,9 @@ const products = [
     "category": "nuts",
     "name": {
       "ar": "لوز ني",
-      "en": "لوز ني",
-      "de": "لوز ني",
-      "fr": "لوز ني"
+      "en": "Raw almonds",
+      "de": "Mandeln roh",
+      "fr": "Amandes crues"
     },
     "desc": {
       "ar": "مكسرات وبزر مختارة حسب قائمة المتجر.",
@@ -9787,9 +9787,9 @@ const products = [
     "category": "nuts",
     "name": {
       "ar": "كاجو ني",
-      "en": "كاجو ني",
-      "de": "كاجو ني",
-      "fr": "كاجو ني"
+      "en": "Raw cashews",
+      "de": "Cashewkerne roh",
+      "fr": "Noix de cajou crues"
     },
     "desc": {
       "ar": "مكسرات وبزر مختارة حسب قائمة المتجر.",
@@ -9821,9 +9821,9 @@ const products = [
     "category": "nuts",
     "name": {
       "ar": "جوز",
-      "en": "جوز",
-      "de": "جوز",
-      "fr": "جوز"
+      "en": "Walnuts",
+      "de": "Walnüsse",
+      "fr": "Noix"
     },
     "desc": {
       "ar": "مكسرات وبزر مختارة حسب قائمة المتجر.",
@@ -9855,9 +9855,9 @@ const products = [
     "category": "nuts",
     "name": {
       "ar": "مكسرات مشكلة مالح",
-      "en": "مكسرات مشكلة مالح",
-      "de": "مكسرات مشكلة مالح",
-      "fr": "مكسرات مشكلة مالح"
+      "en": "Salted mixed nuts",
+      "de": "Gesalzene Nussmischung",
+      "fr": "Mélange de fruits à coque salés"
     },
     "desc": {
       "ar": "مكسرات وبزر مختارة حسب قائمة المتجر.",
@@ -9889,9 +9889,9 @@ const products = [
     "category": "nuts",
     "name": {
       "ar": "مكسرات مشكلة مدخن",
-      "en": "مكسرات مشكلة مدخن",
-      "de": "مكسرات مشكلة مدخن",
-      "fr": "مكسرات مشكلة مدخن"
+      "en": "Smoked mixed nuts",
+      "de": "Geräucherte Nussmischung",
+      "fr": "Mélange de fruits à coque fumés"
     },
     "desc": {
       "ar": "مكسرات وبزر مختارة حسب قائمة المتجر.",
@@ -9923,9 +9923,9 @@ const products = [
     "category": "nuts",
     "name": {
       "ar": "مكسرات مشكلة حامض",
-      "en": "مكسرات مشكلة حامض",
-      "de": "مكسرات مشكلة حامض",
-      "fr": "مكسرات مشكلة حامض"
+      "en": "Sour mixed nuts",
+      "de": "Säuerliche Nussmischung",
+      "fr": "Mélange de fruits à coque acidulés"
     },
     "desc": {
       "ar": "مكسرات وبزر مختارة حسب قائمة المتجر.",
@@ -9957,9 +9957,9 @@ const products = [
     "category": "nuts",
     "name": {
       "ar": "مكسرات مشكلة جبنة",
-      "en": "مكسرات مشكلة جبنة",
-      "de": "مكسرات مشكلة جبنة",
-      "fr": "مكسرات مشكلة جبنة"
+      "en": "Cheese-flavoured mixed nuts",
+      "de": "Nussmischung mit Käsegeschmack",
+      "fr": "Mélange de fruits à coque saveur fromage"
     },
     "desc": {
       "ar": "مكسرات وبزر مختارة حسب قائمة المتجر.",
@@ -9991,9 +9991,9 @@ const products = [
     "category": "nuts",
     "name": {
       "ar": "كسرات مشكلة حد",
-      "en": "كسرات مشكلة حد",
-      "de": "كسرات مشكلة حد",
-      "fr": "كسرات مشكلة حد"
+      "en": "Mixed nuts (Had)",
+      "de": "Nussmischung (Had)",
+      "fr": "Mélange de fruits à coque (Had)"
     },
     "desc": {
       "ar": "مكسرات وبزر مختارة حسب قائمة المتجر.",
@@ -10025,9 +10025,9 @@ const products = [
     "category": "nuts",
     "name": {
       "ar": "مكسرات صينية",
-      "en": "مكسرات صينية",
-      "de": "مكسرات صينية",
-      "fr": "مكسرات صينية"
+      "en": "Chinese-style nut mix",
+      "de": "Nussmischung nach chinesischer Art",
+      "fr": "Mélange de fruits à coque à la chinoise"
     },
     "desc": {
       "ar": "مكسرات وبزر مختارة حسب قائمة المتجر.",
@@ -10059,9 +10059,9 @@ const products = [
     "category": "nuts",
     "name": {
       "ar": "بزر أبيض قرع",
-      "en": "بزر أبيض قرع",
-      "de": "بزر أبيض قرع",
-      "fr": "بزر أبيض قرع"
+      "en": "White pumpkin seeds",
+      "de": "Weiße Kürbiskerne",
+      "fr": "Graines de courge blanches"
     },
     "desc": {
       "ar": "مكسرات وبزر مختارة حسب قائمة المتجر.",
@@ -10093,9 +10093,9 @@ const products = [
     "category": "nuts",
     "name": {
       "ar": "بزر أبيض كوسا",
-      "en": "بزر أبيض كوسا",
-      "de": "بزر أبيض كوسا",
-      "fr": "بزر أبيض كوسا"
+      "en": "White courgette seeds",
+      "de": "Weiße Zucchinisamen",
+      "fr": "Graines de courgette blanches"
     },
     "desc": {
       "ar": "مكسرات وبزر مختارة حسب قائمة المتجر.",
@@ -10127,9 +10127,9 @@ const products = [
     "category": "nuts",
     "name": {
       "ar": "بزر أسود",
-      "en": "بزر أسود",
-      "de": "بزر أسود",
-      "fr": "بزر أسود"
+      "en": "Black snack seeds",
+      "de": "Schwarze Knabberkerne",
+      "fr": "Graines à grignoter noires"
     },
     "desc": {
       "ar": "مكسرات وبزر مختارة حسب قائمة المتجر.",
@@ -10161,9 +10161,9 @@ const products = [
     "category": "nuts",
     "name": {
       "ar": "بزر أحمر",
-      "en": "بزر أحمر",
-      "de": "بزر أحمر",
-      "fr": "بزر أحمر"
+      "en": "Red snack seeds",
+      "de": "Rote Knabberkerne",
+      "fr": "Graines à grignoter rouges"
     },
     "desc": {
       "ar": "مكسرات وبزر مختارة حسب قائمة المتجر.",
@@ -10195,9 +10195,9 @@ const products = [
     "category": "nuts",
     "name": {
       "ar": "بزر أصفر",
-      "en": "بزر أصفر",
-      "de": "بزر أصفر",
-      "fr": "بزر أصفر"
+      "en": "Yellow snack seeds",
+      "de": "Gelbe Knabberkerne",
+      "fr": "Graines à grignoter jaunes"
     },
     "desc": {
       "ar": "مكسرات وبزر مختارة حسب قائمة المتجر.",
@@ -10779,123 +10779,14 @@ function hasArabicText(value) {
   return /[\u0600-\u06ff]/.test(String(value || ""));
 }
 
-const arabicProductBaseNames = {
-  "زنجبيل": { en: "Ginger", de: "Ingwer", fr: "Gingembre" },
-  "فلفل أسود": { en: "Black pepper", de: "Schwarzer Pfeffer", fr: "Poivre noir" },
-  "فلفل أبيض": { en: "White pepper", de: "Weisser Pfeffer", fr: "Poivre blanc" },
-  "خولنجان": { en: "Galangal", de: "Galgant", fr: "Galanga" },
-  "كركم": { en: "Turmeric", de: "Kurkuma", fr: "Curcuma" },
-  "كمون": { en: "Cumin", de: "Kreuzkuemmel", fr: "Cumin" },
-  "يانسون نجمة": { en: "Star anise", de: "Sternanis", fr: "Badiane" },
-  "يانسون": { en: "Anise", de: "Anis", fr: "Anis" },
-  "كزبرة": { en: "Coriander", de: "Koriander", fr: "Coriandre" },
-  "قرنفل": { en: "Cloves", de: "Nelken", fr: "Clous de girofle" },
-  "لومي": { en: "Dried lime", de: "Getrocknete Limette", fr: "Citron noir seche" },
-  "شمرا": { en: "Fennel", de: "Fenchel", fr: "Fenouil" },
-  "بهار حلو": { en: "Allspice", de: "Piment", fr: "Piment de la Jamaique" },
-  "قرفة عيدان": { en: "Cinnamon sticks", de: "Zimtstangen", fr: "Batons de cannelle" },
-  "قرفة سيجار": { en: "Cinnamon sticks", de: "Zimtstangen", fr: "Batons de cannelle" },
-  "قرفة": { en: "Cinnamon", de: "Zimt", fr: "Cannelle" },
-  "سمسم": { en: "Sesame", de: "Sesam", fr: "Sesame" },
-  "حبة البركة": { en: "Nigella seeds", de: "Schwarzkuemmel", fr: "Nigelle" },
-  "سماق": { en: "Sumac", de: "Sumach", fr: "Sumac" },
-  "قشر السماق": { en: "Sumac peel", de: "Sumachschale", fr: "Ecorce de sumac" },
-  "هيل": { en: "Cardamom", de: "Kardamom", fr: "Cardamome" },
-  "ملح صيني": { en: "Chinese salt", de: "Chinasalz", fr: "Sel chinois" },
-  "ثوم": { en: "Garlic", de: "Knoblauch", fr: "Ail" },
-  "بصل": { en: "Onion", de: "Zwiebel", fr: "Oignon" },
-  "محلب": { en: "Mahlab", de: "Mahlab", fr: "Mahlab" },
-  "فليفلة حلوة": { en: "Sweet paprika", de: "Edelsuesser Paprika", fr: "Paprika doux" },
-  "فليفلة وسط": { en: "Medium paprika", de: "Mittelscharfer Paprika", fr: "Paprika moyen" },
-  "شطة": { en: "Chili", de: "Chili", fr: "Piment" },
-  "أوريغانو": { en: "Oregano", de: "Oregano", fr: "Origan" },
-  "حلبة": { en: "Fenugreek", de: "Bockshornklee", fr: "Fenugrec" },
-  "ورق غار": { en: "Bay leaves", de: "Lorbeerblaetter", fr: "Laurier" },
-  "كراوية": { en: "Caraway", de: "Kuemmel", fr: "Carvi" },
-  "رز": { en: "Rice", de: "Reis", fr: "Riz" },
-  "كربونة": { en: "Baking soda", de: "Natron", fr: "Bicarbonate" },
-  "قلي": { en: "Qali", de: "Qali", fr: "Qali" },
-  "نعنع": { en: "Mint", de: "Minze", fr: "Menthe" },
-  "جوزة الطيب": { en: "Nutmeg", de: "Muskatnuss", fr: "Noix de muscade" },
-  "فلفل مشكل": { en: "Mixed pepper", de: "Pfeffermischung", fr: "Poivre melange" },
-  "ماجي أبيض": { en: "White Maggi blend", de: "Weisse Maggi-Mischung", fr: "Melange Maggi blanc" },
-  "ماجي": { en: "Maggi blend", de: "Maggi-Mischung", fr: "Melange Maggi" },
-  "سبع بهارات": { en: "Seven spice blend", de: "Sieben-Gewuerze-Mischung", fr: "Sept epices" },
-  "سمك": { en: "Fish spice blend", de: "Fischgewuerz", fr: "Epices poisson" },
-  "بهارات فروج بالفرن": { en: "Oven chicken spice blend", de: "Backhendl-Gewuerz", fr: "Epices poulet au four" },
-  "همبرغر دجاج": { en: "Chicken burger spice blend", de: "Chickenburger-Gewuerz", fr: "Epices burger poulet" },
-  "همبرغر لحمة": { en: "Beef burger spice blend", de: "Burger-Gewuerz", fr: "Epices burger viande" },
-  "زعتر": { en: "Zaatar", de: "Zaatar", fr: "Zaatar" },
-  "أهليج": { en: "Ahlij", de: "Ahlij", fr: "Ahlij" },
-  "زعفران": { en: "Saffron", de: "Safran", fr: "Safran" },
-};
-
-function translatedArabicProductName(arabicName, product) {
-  const source = String(arabicName || "").trim();
-  const baseKey = Object.keys(arabicProductBaseNames)
-    .sort((a, b) => b.length - a.length)
-    .find((key) => source.includes(key));
-  const category = productCategory(product);
-  const fallback = `${localize(category?.name || { en: "Product" })} ${String(product.id).split("-").pop() || ""}`.trim();
-  if (!baseKey) return fallback;
-
-  let name = arabicProductBaseNames[baseKey][state.lang] || arabicProductBaseNames[baseKey].en;
-  const descriptors = {
-    en: [
-      ["مطحونة", "ground"],
-      ["مطحون", "ground"],
-      ["بودرة", "powder"],
-      ["حب", "whole"],
-      ["عيدان", "sticks"],
-      ["سيجار", "sticks"],
-      ["ني", "raw"],
-      ["محمص", "roasted"],
-      ["أبيض", "white"],
-      ["أسود", "black"],
-      ["أحمر", "red"],
-      ["أصفر", "yellow"],
-    ],
-    de: [
-      ["مطحونة", "gemahlen"],
-      ["مطحون", "gemahlen"],
-      ["بودرة", "Pulver"],
-      ["حب", "ganz"],
-      ["عيدان", "Stangen"],
-      ["سيجار", "Stangen"],
-      ["ني", "roh"],
-      ["محمص", "geroestet"],
-      ["أبيض", "weiss"],
-      ["أسود", "schwarz"],
-      ["أحمر", "rot"],
-      ["أصفر", "gelb"],
-    ],
-    fr: [
-      ["مطحونة", "moulu"],
-      ["مطحون", "moulu"],
-      ["بودرة", "poudre"],
-      ["حب", "entier"],
-      ["عيدان", "batons"],
-      ["سيجار", "batons"],
-      ["ني", "cru"],
-      ["محمص", "grille"],
-      ["أبيض", "blanc"],
-      ["أسود", "noir"],
-      ["أحمر", "rouge"],
-      ["أصفر", "jaune"],
-    ],
-  };
-  const extras = (descriptors[state.lang] || descriptors.en)
-    .filter(([arabicWord]) => source.includes(arabicWord) && !baseKey.includes(arabicWord))
-    .map(([, translated]) => translated);
-  return [name, ...new Set(extras)].join(" ");
-}
 
 function productNameObject(product) {
   const override = productNameOverrides[product.id];
   const baseName = { ...product.name };
-  if (!baseName.en || hasArabicText(baseName.en)) baseName.en = translatedArabicProductName(baseName.ar, product);
-  if (!baseName.de || hasArabicText(baseName.de)) baseName.de = translatedArabicProductName(baseName.ar, product);
-  if (!baseName.fr || hasArabicText(baseName.fr)) baseName.fr = translatedArabicProductName(baseName.ar, product);
+  const fallbackName = [baseName.en, baseName.de, baseName.fr].find((name) => name && !hasArabicText(name)) || baseName.ar || "";
+  ["en", "de", "fr"].forEach((lang) => {
+    if (!baseName[lang] || hasArabicText(baseName[lang])) baseName[lang] = fallbackName;
+  });
   if (!override) return baseName;
   if (typeof override === "string") {
     return hasArabicText(override) ? { ...baseName, ar: override } : { ar: override, de: override, en: override, fr: override };
